@@ -2,6 +2,8 @@
 
 The _Hello World_ program for microcontrollers, is to turn an LED on and off every second.
 
+<code-group>
+<code-block title="AS">
 ```ts
 // Blinking LED example
 import {pinMode, PinMode, PinVoltage, digitalWrite, delay} from "as-warduino";
@@ -20,3 +22,56 @@ export function main(): void {
     }
 }
 ```
+</code-block>
+
+<code-block title="Rust">
+```rust
+// Blinking LED example
+use warduino::{delay, digital_write, pin_mode, PinMode, PinVoltage};
+
+mod config;
+
+#[no_mangle]
+pub fn main() {
+    let led: u32 = config::LED;
+    pin_mode(led, PinMode::OUTPUT);
+
+    let pause: u32 = 1000;
+    loop {
+        digital_write(led, PinVoltage::HIGH);
+        delay(pause);
+        digital_write(led, PinVoltage::LOW);
+        delay(pause);
+    }
+}
+```
+</code-block>
+</code-group>
+
+The example uses a config file to specify the number of the digital pin to which the LED is connected.
+The contents of the file looks as follows:
+
+<code-group>
+<code-block title="AS">
+```ts
+class Config {
+    led: u32;
+
+    constructor(led: u32) {
+        this.led = led;
+    }
+}
+
+export let config: Config = new Config(26);
+```
+</code-block>
+
+<code-block title="Rust">
+```rust
+pub static LED: u32 = 26;
+```
+</code-block>
+</code-group>
+
+The config is not saved as a `.json` or `.yaml` file since the configuration needs to be embedded in the code when compiling to WebAssembly. If this sounds weird, remember that WebAssembly has no standard way of reading from files.
+

@@ -54,5 +54,5 @@ footer: Made by TOPL lab team with ❤️
 
 ### Research Prototypes
 
-<p>The projects under the WARDuino umbrella are developed by researchers at the TOPL lab (Ghent University) and the DisCo group (Vrije Universiteit Brussel). The software are developed in the first place as research prototypes. Expect possible bugs or performance issues.</p>
+The projects under the WARDuino umbrella are developed by researchers at the [TOPL lab](https://users.ugent.be/~chscholl/) (Ghent University) and the [DisCo group](https://soft.vub.ac.be/disco/) (Vrije Universiteit Brussel). The software are developed in the first place as research prototypes. Expect possible bugs or performance issues.
 

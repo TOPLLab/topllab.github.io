@@ -1,4 +1,4 @@
-# WARDuino Documenation website
+# WARDuino Documentation website
 
 ```bash
 yarn install
