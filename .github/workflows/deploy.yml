@@ -1,0 +1,17 @@
+name: Deploy WARDuino pages
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: vuepress-deploy
+      uses: jenkey2011/vuepress-deploy@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.PAGES_TOKEN }}
+        TARGET_REPO: topllab/WARDuino
+        TARGET_BRANCH: gh-pages
+        BUILD_SCRIPT: cd warduino/ && yarn && yarn build
+        BUILD_DIR: .vuepress/dist
