@@ -5,7 +5,7 @@ module.exports = {
     title: 'WARDuino Docs',
     description: description,
 
-    base: '/warduino/',
+    base: '/WARDuino/',
 
     locales: {
         '/en/': {
