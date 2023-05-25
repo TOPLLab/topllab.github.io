@@ -4,6 +4,16 @@
 You can find the archives for each of the releases on [GitHub](https://github.com/TOPLLab/WARDuino).
 :::
 
+## Version 0.3.1
+
+### :ambulance: Hotfixes
+
+- Restore callbackmapping synchronization for EDWARD
+
+### :construction_worker: CI
+
+- Use `v5.0.2` in idf compilation action
+
 ## Version 0.3.0
 
 ### :boom: Breaking Changes
