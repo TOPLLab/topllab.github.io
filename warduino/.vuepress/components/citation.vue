@@ -1,7 +1,7 @@
 <template>
   <div>
     <b>Cite this work</b>
-    <p class="light">If you use this work, please cite it using the metadata below. <a href="https://doi.org/10.1145/3546918.3546920">Online article</a>
+    <p class="light">If you use this work, please cite it using the metadata below. <a :href="url">Online article</a>
     </p>
     
     <ul>
@@ -23,7 +23,14 @@
 <script>
 export default {
   props: {
-    cff: String,
+    url: {
+        type: String,
+        required: true
+    },
+    metadata: {
+        type: String,
+        required: true
+    }
   },
 
   methods: {
@@ -37,13 +44,6 @@ export default {
         });
     }
   },
-
-  data() {
-      return {
-        metadata: "@inproceedings{EDWARD23, author = {Lauwaerts, Tom and Castillo, Carlos Rojas and Singh, Robbert Gurdeep and Marra, Matteo and Scholliers, Christophe and Gonzalez Boix, Elisa}, title = {Event-Based Out-of-Place Debugging}, year = {2022}, isbn = {9781450396967}, publisher = {Association for Computing Machinery}, address = {New York, NY, USA}, url = {https://doi.org/10.1145/3546918.3546920}, doi = {10.1145/3546918.3546920}, abstract = {Debugging IoT applications is challenging due to the hardware constraints of IoT devices, making advanced techniques like record-replay debugging impractical. As a result, programmers often rely on manual resets or inefficient and time-consuming debugging techniques such as printf. Although simulators can help in that regard, their applicability is limited because they fall short of accurately simulating and reproducing the runtime conditions where bugs appear. In this work, we explore a novel debugging approach called event-based out-of-place debugging in which developers can capture a remotely running program and debug it locally on a (more powerful) machine. Our approach thus provides rich debugging features (e.g., step-back) that normally would not run on the hardware restricted devices. Two different strategies are offered to deal with resources which cannot be easily transferred (e.g., sensors): pull-based (akin to remote debugging), or push-based (where data updates are pushed to developer’s machine during the debug session). We present EDWARD, an event-based out-of-place debugger prototype, implemented by extending the WARDuino WebAssembly microcontroller Virtual Machine, that has been integrated into Visual Studio Code. To validate our approach, we show how our debugger helps uncover IoT bugs representative of real-world applications through several use-case applications. Initial benchmarks show that event-based out-of-place debugging can drastically reduce debugging latency.}, booktitle = {Proceedings of the 19th International Conference on Managed Programming Languages and Runtimes}, pages = {85–97}, numpages = {13}, keywords = {WARDuino, Internet-of-Things, Virtual Machine, Out-of-place debugging, Debugger, WebAssembly}, location = {Brussels, Belgium}, series = {MPLR '22}}"
-      }
-  },
-
 }
 </script>
 
