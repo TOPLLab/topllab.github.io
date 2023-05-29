@@ -2,7 +2,10 @@
 
 The EDWARD debugger implements a novel debugging approach called event-based out-of-place debugging that allows developers to capture a remotely running program and debug it locally on their own (more powerful) machine.
 
+<citation class="citation" cff="EDWARD.cff" />
+
 ## Motivation
+
 
 Debugging IoT applications is challenging due to the hardware constraints of IoT devices, making advanced techniques like recordreplay debugging impractical.
 As a result, programmers often rely on manual resets or inefficient and time-consuming debugging techniques such as printf.

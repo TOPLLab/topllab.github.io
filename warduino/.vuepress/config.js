@@ -1,4 +1,4 @@
-const {description} = require('../package')
+const { description } = require('../package')
 const { defaultTheme } = require('@vuepress/theme-default')
 
 module.exports = {
@@ -13,6 +13,19 @@ module.exports = {
             title: 'WARDuino Docs',
         }
     },
+
+    plugins: [
+        ['vuepress-plugin-redirect', {
+            locales: true
+        }],
+       // ['register-components', {
+       //     components: [{
+       //     name: 'citation',
+       //     path: 'components/citation.vue'
+       //   }
+       // ]
+       // }],
+    ],
 
     themeConfig: {
         // pages under different sub paths will use different sidebar
