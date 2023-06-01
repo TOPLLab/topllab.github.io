@@ -3,6 +3,7 @@ logs
 node_modules
 npm-debug.log
 coverage/
+cache/
 run
 dist
 .DS_Store

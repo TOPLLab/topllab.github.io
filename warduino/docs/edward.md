@@ -1,3 +1,7 @@
+<script setup>
+import citation from '../components/citation.vue'
+</script>
+
 # EDWARD
 
 The EDWARD debugger implements a novel debugging approach called **event-based out-of-place debugging** that allows developers to capture a remotely running program and debug it locally on their own (more powerful) machine.

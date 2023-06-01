@@ -1,20 +1,11 @@
 {
-  "name": "docs",
-  "version": "0.0.1",
-  "description": "TOPL lab docs",
-  "main": "index.js",
-  "authors": {
-    "name": "TOPL lab team",
-    "email": ""
-  },
-  "repository": "git@github.com:TOPLLab/topllab.github.io.git/docs",
   "scripts": {
-    "dev": "vuepress dev .",
-    "build": "vuepress build ."
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
   },
-  "license": "MIT",
-  "devDependencies": {
-    "@vuepress/theme-default": "^1.9.9",
-    "vuepress": "^1.5.3"
+  "dependencies": {
+    "vitepress": "^1.0.0-beta.1",
+    "vue": "^3.3.4"
   }
 }

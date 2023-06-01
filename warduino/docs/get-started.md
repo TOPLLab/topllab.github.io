@@ -6,21 +6,19 @@ In this guide, you will find instructions on how to start programming software f
 
 To get started you need to install the WARDuino library for your favorite language. You can use the following command:
 
-<code-group>
-<code-block title="AS">
-```bash
+::: code-group
+
+```bash [AS]
 npm install as-warduino
 ```
-</code-block>
 
-<code-block title="Rust">
-```bash
+```bash [Rust]
 cargo install warduino
 ```
-</code-block>
-</code-group>
 
-The command install the language library that provides you access to the [primitives](/en/warduino/modules/) of the WARDuino from AssemblyScript or Rust. It does not yet install the VM and all necessary tools to compile and upload your program to your microcontroller. Once you have written your program with the language library, and compiled it to WebAssembly, you need to install WARDuino and toolchain of the platform you are targeting.
+:::
+
+The command install the language library that provides you access to the [primitives](/docs/primitives) of the WARDuino from AssemblyScript or Rust. It does not yet install the VM and all necessary tools to compile and upload your program to your microcontroller. Once you have written your program with the language library, and compiled it to WebAssembly, you need to install WARDuino and toolchain of the platform you are targeting.
 
 To install the virtual machine use the following commands.
 

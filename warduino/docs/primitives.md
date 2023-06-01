@@ -2,7 +2,7 @@
 
 ::: tip Programming in high-level languages
 
-Language specific libraries for AssemblyScript and Rust, give access to the built-in primitives. [This guide](/en/guide/) has more information on how to get started with them.
+Language specific libraries for AssemblyScript and Rust, give access to the built-in primitives. [This guide](/docs/get-started) has more information on how to get started with them.
 
 :::
 

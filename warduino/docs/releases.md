@@ -45,9 +45,9 @@ You can find the archives for each of the releases on [GitHub](https://github.co
 
 ### :rotating_light: Testing
 
-+ Add [Latch](/en/latch/) test framework :fireworks:
++ Add [Latch](/latch/) test framework :fireworks:
 + Add test suites for: remote debugger, primitives
-+ Refactor Wasm spec tests to [Latch](/en/latch/)
++ Refactor Wasm spec tests to [Latch](/latch/)
 
 ### :racehorse: Performance
 
