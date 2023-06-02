@@ -4,6 +4,12 @@
 You can find the archives for each of the releases on [GitHub](https://github.com/TOPLLab/WARDuino/releases).
 :::
 
+## Version 0.3.2
+
+### :ambulance: Hotfixes
+
+- Add recompile option to fix [#182](https://github.com/TOPLLab/WARDuino/issues/182)
+
 ## Version 0.3.1
 
 ### :ambulance: Hotfixes
