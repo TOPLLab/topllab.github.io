@@ -18,7 +18,7 @@ features:
     details: Release notes and documentation of the WARDuino virtual machine.
     link: /docs/
   - title: Programmer's Guide
-    details: How to start writing programs for WARDuino.
+    details: How to start writing programs with WARDuino.
     link: /docs/get-started
   - title: Remote Debugger
     details: The API and documentation for the classic remote debugger of WARDuino.

@@ -5,7 +5,8 @@ The _Hello World_ program for microcontrollers, is to turn an LED on and off eve
 ::: code-group
 ```ts [AS]
 // Blinking LED example
-import {pinMode, PinMode, PinVoltage, digitalWrite, delay} from "as-warduino";
+import {pinMode, PinMode, PinVoltage,
+        digitalWrite, delay} from "as-warduino";
 import {config} from "./config";
 
 export function main(): void {

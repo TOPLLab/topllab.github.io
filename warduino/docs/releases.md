@@ -1,14 +1,14 @@
 # Release Notes
 
-::: warning Archives
-You can find the archives for each of the releases on [GitHub](https://github.com/TOPLLab/WARDuino).
+::: tip Archives
+You can find the archives for each of the releases on [GitHub](https://github.com/TOPLLab/WARDuino/releases).
 :::
 
 ## Version 0.3.1
 
 ### :ambulance: Hotfixes
 
-- Restore callbackmapping synchronization for EDWARD
+- Restore callbackmapping synchronization for [EDWARD](/docs/edward)
 
 ### :construction_worker: CI
 

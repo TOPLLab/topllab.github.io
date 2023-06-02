@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <b>Cite this work</b>
     <p class="light">If you use this work, please cite it using the metadata below. <a :href="url">Online article</a>
     </p>
@@ -63,24 +63,28 @@ li {
 }
 
 path {
-    fill: #4c4f69;
+    fill: var(--vp-custom-block-tip-border);
 }
 
-.citation {
-    border-radius: 6px;
-    border: 0.08rem solid #e6e9ef;
+.container {
+    margin: 16px 0;
+    box-sizing: border-box;
+
+    font-size: var(--vp-custom-block-font-size);
+    color: var(--vp-custom-block-tip-text);
+
+    border-radius: 8px;
+    border: 1px solid var(--vp-custom-block-tip-border);
     
     padding: 1.25rem 1.5rem;
-    margin: 0.85rem 1.60rem;
+    background-color: var(--vp-custom-block-tip-bg);
 
     overflow: auto;
-
-    box-shadow: 0 8px 24px rgba(140,149,159,0.2);
 }
 
 .light {
-    font-size: 0.75em;
-    color: #9ca0b0;
+    font-size: 0.90em;
+    color: var(--vp-c-text-1);
 }
 
 .copy-text {
@@ -95,10 +99,9 @@ form {
     display:flex;
     flex-direction:row;
   
-    font-size: 0.65em;
-    color: #4c4f69;
+    color: var(--vp-c-text-1);
 
-    background: #eff1f5;
+    background: none;
 
     border: none;
     border-radius: 6px;
@@ -123,7 +126,7 @@ button.tab {
 button.tab:hover {
     border-radius: 6px;
 
-    background: #e6e9ef;
+    background: var(--vp-c-brand-dimm);
 }
 
 button.tab:hover {
@@ -131,20 +134,20 @@ button.tab:hover {
 }
 
 li.active {
-    border-bottom: 2px solid #8839ef;
+    border-bottom: 2px solid var(--vp-custom-block-tip-text);
     margin-bottom: -2px;
 }
 
 button.copy {
   /* Just a little styling to make it pretty */
-    border: 0.08rem solid #e6e9ef;
+    border: 1px solid var(--vp-custom-block-tip-border);
     border-collapse: collapse;
 
     padding: 0 10px;
 
     color: inherit;
 
-    background: #eff1f5;
+    background: var(--vp-custom-block-tip-bg);
 
     border-top-right-radius: 6px;
     border-top-left-radius: 0;
@@ -153,7 +156,7 @@ button.copy {
 }
 
 button.copy:active {
-    background: #e6e9ef;
+    background: var(--vp-c-brand-lightest);
 }
 
 input:focus {
@@ -161,8 +164,9 @@ input:focus {
 }
 
 input {
-    background: #eff1f5;
+    background: var(--vp-custom-block-tip-bg);
 
+    font-size: 0.85em;
     color: inherit;
 
     flex-grow:2;
@@ -170,7 +174,7 @@ input {
 
     padding: 0 1.5rem;
 
-    border: 0.08rem solid #e6e9ef;
+    border: 1px solid var(--vp-custom-block-tip-border);
     border-top-right-radius: 0;
     border-top-left-radius: 6px;
     border-bottom-right-radius: 0;

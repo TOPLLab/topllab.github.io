@@ -76,7 +76,6 @@ arduino-cli lib install "Adafruit NeoPixel"
 
 If you haven't done so already, clone (or symlink) the WARDuino repository to `~/Arduino/libraries` to make it available to Arduino.
 
-
 ## Flashing using Arduino
 
 If you have setup the Arduino toolchain as described above, you can upload the example program as follows, starting from the root of the WARDuino repository:
