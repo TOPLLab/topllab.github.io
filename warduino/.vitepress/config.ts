@@ -7,8 +7,13 @@ export default defineConfig({
 
   base: '/WARDuino/',
 
+  lastUpdated: true,
+
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
+    search: {
+      provider: 'local'
+    },
+
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Documentation', link: '/docs/' }
@@ -28,14 +33,18 @@ export default defineConfig({
       },
 
       {
-        text: 'Guide',
+        text: "Programmer's Guide",
         items: [
           { text: 'Getting Started', link: '/docs/get-started' },
           { text: 'Examples',  
             items: [
               { text: 'Overview', link: '/docs/examples/' },
               { text: 'Analog', link: '/docs/examples/analog' },
-              { text: 'Blink', link: '/docs/examples/blink' }
+              { text: 'Blink', link: '/docs/examples/blink' },
+              { text: 'Blink Without Delay', link: '/docs/examples/blink-without-delay' },
+              { text: 'Analog In, Out Serial', link: '/docs/examples/analog-io' },
+              { text: 'Wi-Fi Connection', link: '/docs/examples/wifi' },
+              { text: 'MQTT Smartlamp', link: '/docs/examples/smartlamp' },
             ]
           },
         ]

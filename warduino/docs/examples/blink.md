@@ -1,6 +1,62 @@
 # Blink
 
-The _Hello World_ program for microcontrollers, is to turn an LED on and off every second.
+The traditional _Hello World_ program for microcontrollers, is to turn an LED on and off every second.
+In this example, we'll show you step-by-step how to write this kind of program in a high-level language for WARDuino.
+
+## Circuit
+
+## Program
+
+Once you have built the circuit, you can write the blinking LED example for WARDuino.
+First you need to initialize the pin connecting the LED as an output pin.
+
+::: code-group
+```ts [AS]
+pinMode(led, PinMode.OUTPUT);
+```
+```rust [Rust]
+pin_mode(led, PinMode::OUTPUT);
+```
+:::
+
+Then in an infinite loop, we want to turn the LED on.
+In the code we use a variable `led` that holds the correct pin number.
+
+::: code-group
+```ts [AS]
+digitalWrite(led, PinVoltage.HIGH);
+```
+```rust [Rust]
+digital_write(led, PinVoltage::HIGH);
+```
+:::
+
+The above primitives supply 5 volts to the LED anode, turning the LED on.
+Next we want to turn the LED off, by bringing the pin back to 0 volts.
+
+::: code-group
+```ts [AS]
+digitalWrite(led, PinVoltage.LOW);
+```
+```rust [Rust]
+digital_write(led, PinVoltage::LOW);
+```
+:::
+
+Without a delay between these commands, a person could never observe the change.
+So we can tell the board to do nothing for a number of milliseconds.
+
+::: code-group
+```ts [AS]
+delay(1000);
+```
+```rust [Rust]
+delay(1000);
+```
+:::
+
+Here is the full code.
+The example uses a config file to specify the digital pin number to which the LED is connected.
 
 ::: code-group
 ```ts [AS]
@@ -45,8 +101,7 @@ pub fn main() {
 ```
 :::
 
-The example uses a config file to specify the number of the digital pin to which the LED is connected.
-The contents of the file looks as follows:
+The contents of the config file looks as follows:
 
 ::: code-group
 ```ts [AS]
@@ -67,4 +122,8 @@ pub static LED: u32 = 26;
 ::: code-group
 
 The config is not saved as a `.json` or `.yaml` file since the configuration needs to be embedded in the code when compiling to WebAssembly. If this sounds weird, remember that WebAssembly has no standard way of reading from files.
+
+## Learn More
+
+Also, check out the [Blink Without Delay](./blink-without-delay.md) example to learn how to create a delay while doing other things.
 

@@ -1,3 +1,6 @@
+---
+next: 'Examples'
+---
 # Getting Started
 
 In this guide, you will find instructions on how to start programming software for microcontrollers in AssemblyScript and Rust by using WARDuino.
@@ -29,7 +32,7 @@ git clone git@github.com:TOPLLab/WARDuino.git
 
 WARDuino currently supports both the Arduino and ESP-IDF toolchains. To use Arduino, you need to install the [arduino-cli](https://github.com/arduino/arduino-cli). For ESP-IDF you need to install the full toolchain, instructions can be found on the [official website](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html#get-started-step-by-step).
 
-### Arduino Toolchain Setup
+## Arduino Toolchain Setup
 
 In order to setup the Arduino toolchain for WARDuino, you need to first install the [arduino-cli](https://arduino.github.io/arduino-cli/0.21/installation/).
 You will also need `python3` with the `pyserial` package.
@@ -78,13 +81,25 @@ If you haven't done so already, clone (or symlink) the WARDuino repository to `~
 
 ## Flashing using Arduino
 
-If you have setup the Arduino toolchain as described above, you can upload the example program as follows, starting from the root of the WARDuino repository:
+If you have setup the Arduino toolchain as described above, you can upload your programs with the Makefile in the `platforms/Arduino` folder of the WARDuino virtual machine.
+You can supply all the arguments through the command-line, or write all of them in a `.config` file in the same directory as the Makefile.
+
+```make
+PORT   = /dev/ttyUSB0
+FQBN   = esp32:esp32:esp32wrover
+PAUSED = true
+BINARY = /path/to/test.wasm
+```
+
+Starting from the root of the WARDuino repository, run the following commands:
 
 ```bash
 cd platforms/Arduino
 make compile
 make flash
 ```
+
+Command-line arguments always overwrite commands in the `.config` file.
 
 ## Flashing using ESP-IDF
 
