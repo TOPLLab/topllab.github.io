@@ -21,7 +21,7 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Documentation',
+        text: 'WARDuino Reference',
         items: [
           { text: 'Overview', link: '/docs/' },
           { text: 'Primitives', link: '/docs/primitives' },
@@ -29,6 +29,19 @@ export default defineConfig({
           { text: 'EDWARD', link: '/docs/edward' },
           { text: 'VS Code Plugin', link: '/docs/plugin' },
           { text: 'Release Notes', link: '/docs/releases' }
+        ]
+      },
+
+      {
+        text: 'EDWARD Reference',
+        items: [
+          { text: 'Overview', link: '/edward/' },
+          { text: 'Examples',  
+            items: [
+              { text: 'Debugging Hardware', link: '/edward/hardware' },
+              { text: 'Debugging Concurrency', link: '/edward/concurrency' }
+            ]
+          },
         ]
       },
 
@@ -51,9 +64,10 @@ export default defineConfig({
       },
 
       {
-        text: 'Latch',
+        text: 'Latch Reference',
         items: [
           { text: 'Overview', link: '/latch/' },
+          { text: 'Getting Started', link: '/latch/get-started' },
           { text: 'Latch API', link: '/latch/api' }
         ]
       }

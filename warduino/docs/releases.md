@@ -14,7 +14,7 @@ You can find the archives for each of the releases on [GitHub](https://github.co
 
 ### :ambulance: Hotfixes
 
-- Restore callbackmapping synchronization for [EDWARD](/docs/edward)
+- Restore callbackmapping synchronization for [EDWARD](/edward/)
 
 ### :construction_worker: CI
 
