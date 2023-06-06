@@ -28,7 +28,7 @@ features:
     link: /docs/plugin
   - title: EDWARD
     details: Documentation on the EDWARD debugger.
-    link: /docs/edward
+    link: /edward/
   - title: Latch
     details: Documentation on the latch project.
     link: /latch/

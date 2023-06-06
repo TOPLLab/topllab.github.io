@@ -41,6 +41,9 @@
   --vp-code-tab-divider: none;
 }
 
+.vp-doc .line-numbers-wrapper {
+    border-right: none;
+}
 
 /**
  * Component: Home

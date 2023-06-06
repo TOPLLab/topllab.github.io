@@ -15,12 +15,10 @@ export function main(): void {
     init();
 
     // Subscribe to MQTT topics and turn on LED
-    MQTT.subscribe("increase",
-        (topic: string, payload: string) => {
+    MQTT.subscribe("increase", (topic: string, payload: string) => {
             delta = 5
         });
-    MQTT.subscribe("decrease",
-        (topic: string, payload: string) => {
+    MQTT.subscribe("decrease", (topic: string, payload: string) => {
             delta = -5
         });
 // ...
@@ -44,7 +42,8 @@ The `updateBrightness` function updates the LED in the following manner:
 
 ```ts
 function updateBrightness(): void {
-    brightness += delta;
+    brightness += (delta);
+    delta = 0;
     if (brightness < 0) {
         brightness = 0;
     }
@@ -52,7 +51,6 @@ function updateBrightness(): void {
         brightness = config.MAX_BRIGHTNESS;
     }
     analogWrite(config.CHANNEL, brightness, config.MAX_BRIGHTNESS);
-    delta = 0;
 }
 ```
 
@@ -95,13 +93,11 @@ This is a classic concurrency issue.
 To fix it, the program should increase (and decrease) the value of `delta` instead of overwriting it.
 
 ```ts [AS]
-MQTT.subscribe("increase",
-    (topic: string, payload: string) => {
+MQTT.subscribe("increase", (topic: string, payload: string) => {
         delta = 5  // [!code  --]
         delta += 5  // [!code  ++]
     });
-MQTT.subscribe("decrease",
-    (topic: string, payload: string) => {
+MQTT.subscribe("decrease", (topic: string, payload: string) => {
         delta = -5  // [!code  --]
         delta -= 5  // [!code  ++]
     });
@@ -112,15 +108,14 @@ MQTT.subscribe("decrease",
 Here is the full code.
 The example uses a config file to specify the global constants for the LED pin, maximum brightness, channel, MQTT client id, Wi-Fi SSID, and Wi-Fi password.
 
-```ts
-import {
-    analogAttach,
-    analogSetup,
-    analogWrite, 
-    delay,
-    MQTT,
-    print,
-    WiFi} from "as-warduino";
+```ts:line-numbers
+import {analogAttach,
+        analogSetup,
+        analogWrite, 
+        delay,
+        MQTT,
+        print,
+        WiFi} from "as-warduino";
 import * as config from "./config";
 
 let brightness: i32 = 0;
@@ -159,6 +154,7 @@ function init(): void {
 
 function updateBrightness(): void {
     brightness += delta;
+    delta = 0;
     if (brightness < 0) {
         brightness = 0;
     }
@@ -166,19 +162,16 @@ function updateBrightness(): void {
         brightness = config.MAX_BRIGHTNESS;
     }
     analogWrite(config.CHANNEL, brightness, config.MAX_BRIGHTNESS);
-    delta = 0;
 }
 
 export function main(): void {
     init();
 
     // Subscribe to MQTT topics and turn on LED
-    MQTT.subscribe("increase",
-        (topic: string, payload: string) => {
+    MQTT.subscribe("increase", (topic: string, payload: string) => {
             delta = 5
         });
-    MQTT.subscribe("decrease",
-        (topic: string, payload: string) => {
+    MQTT.subscribe("decrease", (topic: string, payload: string) => {
             delta = -5
         });
 
@@ -191,13 +184,11 @@ export function main(): void {
 
 The contents of the config file looks as follows:
 
-```ts
+```ts:line-numbers
 export const LED: i32            = 10;
-export const MAX_BRIGHTNESS: i32 = 255;
-export const UP_BUTTON: i32      = 37;
-export const DOWN_BUTTON: i32    = 39;
+export const MAX_BRIGHTNESS: i32 = 100;
 export const CHANNEL: i32        = 0;
-export const SSID                = "local-network";
-export const PASSWORD            = "network-password";
-export const CLIENT_ID           = "random-mqtt-client-id";
+export const SSID: string        = "local-network";
+export const PASSWORD: string    = "network-password";
+export const CLIENT_ID: string   = "random-mqtt-client-id";
 ```

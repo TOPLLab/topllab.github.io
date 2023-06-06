@@ -9,6 +9,10 @@ export default defineConfig({
 
   lastUpdated: true,
 
+  markdown: {
+    //lineNumbers: true
+  },
+
   themeConfig: {
     search: {
       provider: 'local'
@@ -26,7 +30,6 @@ export default defineConfig({
           { text: 'Overview', link: '/docs/' },
           { text: 'Primitives', link: '/docs/primitives' },
           { text: 'Remote Debugger', link: '/docs/debugger' },
-          { text: 'EDWARD', link: '/docs/edward' },
           { text: 'VS Code Plugin', link: '/docs/plugin' },
           { text: 'Release Notes', link: '/docs/releases' }
         ]
