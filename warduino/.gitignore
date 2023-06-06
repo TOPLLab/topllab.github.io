@@ -12,3 +12,5 @@ dist
 config.local.js
 basement_dist
 .idea
+*.cff
+*.sh

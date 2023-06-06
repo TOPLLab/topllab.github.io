@@ -39,8 +39,8 @@ During developement, we found that the framework implements a few novel testing 
 We use the framework to test three core aspects of WARDuino:
 
 1. The virtual machine folllows the WebAssembly specication.
-2. The debugger implements the [API](/docs/debugger)  correctly.
-3. The [built-in modules](/docs/primitives) work correctly.
+2. The debugger implements the [API](/reference/debugger)  correctly.
+3. The [built-in modules](/reference/primitives) work correctly.
 
 The test suites written in <span style="font-variant: small-caps;">latch</span> can be found in the [GitHub repository](https://github.com/TOPLLab/WARDuino/tree/main/tests/latch).
 

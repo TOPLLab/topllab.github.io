@@ -1,5 +1,5 @@
 <script setup>
-import citation from '../components/citation.vue'
+import citation from '../../components/citation.vue'
 </script>
 
 # EDWARD

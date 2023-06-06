@@ -20,57 +20,61 @@ export default defineConfig({
 
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Documentation', link: '/docs/' }
+      { text: 'Documentation', link: '/guide/get-started' }
     ],
 
     sidebar: [
-      {
-        text: 'WARDuino Reference',
-        items: [
-          { text: 'Overview', link: '/docs/' },
-          { text: 'Primitives', link: '/docs/primitives' },
-          { text: 'Remote Debugger', link: '/docs/debugger' },
-          { text: 'VS Code Plugin', link: '/docs/plugin' },
-          { text: 'Release Notes', link: '/docs/releases' }
-        ]
-      },
-
-      {
-        text: 'EDWARD Reference',
-        items: [
-          { text: 'Overview', link: '/edward/' },
-          { text: 'Examples',  
-            items: [
-              { text: 'Debugging Hardware', link: '/edward/hardware' },
-              { text: 'Debugging Concurrency', link: '/edward/concurrency' }
-            ]
-          },
-        ]
-      },
 
       {
         text: "Programmer's Guide",
         items: [
-          { text: 'Getting Started', link: '/docs/get-started' },
+          { text: 'Getting Started', link: '/guide/get-started' },
           { text: 'Examples',  
             items: [
-              { text: 'Overview', link: '/docs/examples/' },
-              { text: 'Analog', link: '/docs/examples/analog' },
-              { text: 'Blink', link: '/docs/examples/blink' },
-              { text: 'Blink Without Delay', link: '/docs/examples/blink-without-delay' },
-              { text: 'Analog In, Out Serial', link: '/docs/examples/analog-io' },
-              { text: 'Wi-Fi Connection', link: '/docs/examples/wifi' },
-              { text: 'MQTT Smartlamp', link: '/docs/examples/smartlamp' },
+              { text: 'Overview', link: '/guide/examples/' },
+              { text: 'Analog', link: '/guide/examples/analog' },
+              { text: 'Blink', link: '/guide/examples/blink' },
+              { text: 'Blink Without Delay', link: '/guide/examples/blink-without-delay' },
+              { text: 'Analog In, Out Serial', link: '/guide/examples/analog-io' },
+              { text: 'Wi-Fi Connection', link: '/guide/examples/wifi' },
+              { text: 'MQTT Smartlamp', link: '/guide/examples/smartlamp' },
             ]
           },
+          { text: 'VS Code Plugin', link: '/guide/plugin' },
+          { text: 'Testing on Hardware', link: '/guide/latch' }
+        ]
+      },
+
+      {
+        text: 'WARDuino Reference',
+        collapsed: true,
+        items: [
+          { text: 'Overview', link: '/reference/' },
+          { text: 'Primitives', link: '/reference/primitives' },
+          { text: 'Remote Debugger', link: '/reference/debugger' },
+          {
+            text: 'EDWARD Reference',
+            collapsed: true,
+            items: [
+              { text: 'Overview', link: '/reference/edward/' },
+              { text: 'Examples',  
+                items: [
+                  { text: 'Debugging Hardware', link: '/reference/edward/hardware' },
+                  { text: 'Debugging Concurrency', link: '/reference/edward/concurrency' }
+                ]
+              },
+            ]
+          },
+
+          { text: 'Release Notes', link: '/reference/releases' }
         ]
       },
 
       {
         text: 'Latch Reference',
+        collapsed: true,
         items: [
           { text: 'Overview', link: '/latch/' },
-          { text: 'Getting Started', link: '/latch/get-started' },
           { text: 'Latch API', link: '/latch/api' }
         ]
       }

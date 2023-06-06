@@ -17,7 +17,7 @@ The code below uses hardware interrupts to program a button to toggle an LED on 
 
 ```ts
 export function main() : void {
-  interruptOn(BUTTON, FALLING, buttonPressed);
+  interruptOn(BUTTON, InterruptMode.FALLING, buttonPressed);
   while(true);
 }
 
@@ -32,7 +32,7 @@ Many device issues are related to handling interrupts.
 The example application listens for a hardware interrupts triggered on the falling edge of the button pin.
 
 ```ts
-interruptOn(BUTTON, FALLING, buttonPressed);
+interruptOn(BUTTON, InterruptMode.FALLING, buttonPressed);
 ```
 
 Upon receiving an interrupt, the `buttonPressed` function is called, which toggles the LED.
@@ -97,7 +97,7 @@ There is no need to restart the program and try to guess what the right conditio
 ```ts:line-numbers
 import {digitalRead,
         digitalWrite,
-        FALLING,
+        InterruptMode,
         interruptOn} from "as-warduino";
 
 const LED: u32 = 25;
@@ -108,7 +108,7 @@ function buttonPressed(): void {
 }
 
 export function main() : void {
-  interruptOn(BUTTON, FALLING, buttonPressed);
+  interruptOn(BUTTON, InterruptMode.FALLING, buttonPressed);
   while(true);
 }
 ```

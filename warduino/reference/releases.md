@@ -1,5 +1,5 @@
 ---
-next: 'EDWARD'
+next: Latch Reference
 ---
 # Release Notes
 
@@ -17,7 +17,7 @@ You can find the archives for each of the releases on [GitHub](https://github.co
 
 ### :ambulance: Hotfixes
 
-- Restore callbackmapping synchronization for [EDWARD](/edward/)
+- Restore callbackmapping synchronization for [EDWARD](/reference/edward/)
 
 ### :construction_worker: CI
 

@@ -8,28 +8,28 @@ hero:
     actions:
         - theme: brand
           text: Get Started
-          link: /docs/get-started
+          link: /guide/get-started
         - theme: alt
           text: View on GitHub
           link: https://github.com/TOPLLab/WARDuino
 
 features:
-  - title: WARDuino
-    details: Release notes and documentation of the WARDuino virtual machine.
-    link: /docs/
   - title: Programmer's Guide
-    details: How to start writing programs with WARDuino.
-    link: /docs/get-started
-  - title: Remote Debugger
-    details: The API and documentation for the classic remote debugger of WARDuino.
-    link: /docs/debugger
+    details: Start developing programs with WARDuino.
+    link: /guide/get-started
   - title: WARDuino Plugin
     details: Manual for the WARDuino VS Code plugin.
-    link: /docs/plugin
-  - title: EDWARD
-    details: Documentation on the EDWARD debugger.
-    link: /edward/
+    link: /guide/plugin
   - title: Latch
-    details: Documentation on the latch project.
-    link: /latch/
+    details: Get started with the Latch testing framework.
+    link: /guide/latch
+  - title: Examples & Tutorials
+    details: A collection of examples to get you started with WARDuino.
+    link: /guide/examples/
+  - title: WARDuino
+    details: Documentation of the WARDuino virtual machine implementation.
+    link: /reference/
+  - title: Release Notes
+    details: Release notes of WARDuino.
+    link: /reference/releases
 ---

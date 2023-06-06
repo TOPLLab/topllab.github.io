@@ -1,3 +1,6 @@
+---
+next: EDWARD
+---
 # Classic Remote Debugger
 
 ::: warning
