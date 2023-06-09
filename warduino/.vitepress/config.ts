@@ -52,6 +52,7 @@ export default defineConfig({
           { text: 'Overview', link: '/reference/' },
           { text: 'Primitives', link: '/reference/primitives' },
           { text: 'Remote Debugger', link: '/reference/debugger' },
+          { text: 'Debug Protocol', link: '/reference/debug-protocol' },
           {
             text: 'EDWARD Reference',
             collapsed: true,
@@ -64,9 +65,7 @@ export default defineConfig({
                 ]
               },
             ]
-          },
-
-          { text: 'Release Notes', link: '/reference/releases' }
+          }
         ]
       },
 
@@ -76,6 +75,14 @@ export default defineConfig({
         items: [
           { text: 'Overview', link: '/latch/' },
           { text: 'Latch API', link: '/latch/api' }
+        ]
+      },
+
+      {
+        text: 'Research Articles',
+        collapsed: true,
+        items: [
+            { text: 'Overview', link: '/articles/' },
         ]
       }
     ],

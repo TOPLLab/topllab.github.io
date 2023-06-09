@@ -1,6 +1,7 @@
 ---
 title: Latch API
 description: "The Latch API"
+next: Research Articles
 ---
 # <span style="font-variant: small-caps;">Latch</span> API
 

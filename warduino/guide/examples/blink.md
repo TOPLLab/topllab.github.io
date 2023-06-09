@@ -1,7 +1,7 @@
 # Blink
 
-The traditional _Hello World_ program for microcontrollers, is to turn an LED on and off every second.
-In this example, we'll show you step-by-step how to write this kind of program in a high-level language for WARDuino.
+The blinking LED example is the traditional _Hello World_ program for microcontrollers.
+The program turns an LED on and off at a regular interval.
 
 ## Circuit
 
@@ -31,7 +31,7 @@ digital_write(led, PinVoltage::HIGH);
 ```
 :::
 
-The above primitives supply 5 volts to the LED anode, turning the LED on.
+Here, the `digitialWrite` primitive makes the microcontroller supply 5 volts to the LED anode, turning the LED on.
 Next we want to turn the LED off, by bringing the pin back to 0 volts.
 
 ::: code-group
@@ -63,10 +63,10 @@ The example uses a config file to specify the digital pin number to which the LE
 // Blinking LED example
 import {pinMode, PinMode, PinVoltage,
         digitalWrite, delay} from "as-warduino";
-import {config} from "./config";
+import * as config from "./config";
 
 export function main(): void {
-    let led = config.led;
+    let led = config.LED;
     pinMode(led, PinMode.OUTPUT);
 
     let pause: u32 = 1000;
@@ -105,15 +105,7 @@ The contents of the config file looks as follows:
 
 ::: code-group
 ```ts [AS]
-class Config {
-    led: u32;
-
-    constructor(led: u32) {
-        this.led = led;
-    }
-}
-
-export let config: Config = new Config(26);
+export const LED: u32 = 26;
 ```
 
 ```rust [Rust]

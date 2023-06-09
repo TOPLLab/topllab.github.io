@@ -26,10 +26,10 @@ features:
   - title: Examples & Tutorials
     details: A collection of examples to get you started with WARDuino.
     link: /guide/examples/
-  - title: WARDuino
+  - title: WARDuino Technical Reference
     details: Documentation of the WARDuino virtual machine implementation.
     link: /reference/
-  - title: Release Notes
-    details: Release notes of WARDuino.
-    link: /reference/releases
+  - title: Research Articles
+    details: Research articles published around the WARDuino project.
+    link: /articles/
 ---
