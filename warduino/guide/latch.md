@@ -1,4 +1,5 @@
 ---
+title: Latch
 next: WARDuino Reference
 ---
 # Testing: Latch framework
@@ -7,3 +8,16 @@ next: WARDuino Reference
 
 ## Getting Started
 
+Latch is a TypeScript library, you can install it as a npm package.
+
+::: code-group
+
+```bash [npm]
+npm install latch
+```
+
+```bash [yarn]
+yarn add latch
+```
+
+:::

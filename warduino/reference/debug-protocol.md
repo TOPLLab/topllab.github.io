@@ -20,7 +20,7 @@ Debug messages are separated by newlines.
 
 The following debug messages can be sent by the remote debugger at anytime when a specific event occurs.
 
-| Event            | Notification    | Example            |
-|------------------|-----------------|--------------------|
-| Hit a breakpoint | AT [address]!   | AT 0x561f105f0afc! |
+| Event            | Notification    | Example              |
+|------------------|-----------------|----------------------|
+| Hit a breakpoint | AT [address]!   | `AT 0x561f105f0afc!` |
 
