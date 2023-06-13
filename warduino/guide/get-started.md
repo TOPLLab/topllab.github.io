@@ -32,6 +32,12 @@ git clone git@github.com:TOPLLab/WARDuino.git
 
 WARDuino currently supports both the Arduino and ESP-IDF toolchains. To use Arduino, you need to install the [arduino-cli](https://github.com/arduino/arduino-cli). For ESP-IDF you need to install the full toolchain, instructions can be found on the [official website](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html#get-started-step-by-step).
 
+::: warning
+
+WARDuino currently works with AssemblyScript 0.17.14
+
+:::
+
 ## Arduino Toolchain Setup
 
 In order to setup the Arduino toolchain for WARDuino, you need to first install the [arduino-cli](https://arduino.github.io/arduino-cli/0.21/installation/).

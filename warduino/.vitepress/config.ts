@@ -58,6 +58,7 @@ export default defineConfig({
             collapsed: true,
             items: [
               { text: 'Overview', link: '/reference/edward/' },
+              { text: 'Protocol', link: '/reference/edward/protocol' },
               { text: 'Examples',  
                 items: [
                   { text: 'Debugging Hardware', link: '/reference/edward/hardware' },
