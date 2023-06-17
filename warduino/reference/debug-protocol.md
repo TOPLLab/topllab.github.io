@@ -24,6 +24,13 @@ The following debug messages can be sent by the remote debugger at anytime when 
 |------------------|-----------------|----------------------|
 | Hit a breakpoint | AT [address]!   | `AT 0x561f105f0afc!` |
 
+## Dump formats
+
+The WARDuino debugger provides a variety of debug messages for inspecting different aspects of the VM's state.
+These debug messages return *dumps* of information in json format.
+
+
+
 ## Additional Information
 
 WARDuino also supports out-of-place debugging through the EDWARD debugger. A similar overview of the debug messages for EDWARD can be found in [this reference sheet](/reference/edward/protocol).

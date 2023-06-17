@@ -7,11 +7,11 @@ hero:
     tagline: This website includes documentation for the WARDuino virtual machine and related projects.
     actions:
         - theme: brand
-          text: Get Started
-          link: /guide/get-started
-        - theme: alt
           text: View on GitHub
           link: https://github.com/TOPLLab/WARDuino
+        - theme: alt
+          text: Get Started
+          link: /guide/get-started
 
 features:
   - title: Programmer's Guide

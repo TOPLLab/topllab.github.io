@@ -9,6 +9,13 @@ In this guide, you will find instructions on how to start programming software f
 
 To get started you need to install the WARDuino library for your favorite language. You can use the following command:
 
+::: warning
+
+The WARDuino library packages for AssemblyScript and Rust have not been released officially yet.
+You can download them from [GitHub](https://github.com/TOPLLab/WARDuino-libs).
+
+:::
+
 ::: code-group
 
 ```bash [AS]
