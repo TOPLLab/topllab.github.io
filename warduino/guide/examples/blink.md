@@ -62,7 +62,7 @@ The example uses a config file to specify the digital pin number to which the LE
 ```ts [AS]
 // Blinking LED example
 import {pinMode, PinMode, PinVoltage,
-        digitalWrite, delay} from "as-warduino";
+        digitalWrite, delay} from "as-warduino/assembly";
 import * as config from "./config";
 
 export function main(): void {

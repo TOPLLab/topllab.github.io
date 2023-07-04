@@ -28,7 +28,7 @@ Finally, <span style="font-variant: small-caps;">latch</span> addresses the issu
 
 ## Testing WARDuino
 
-We started designing the <span style="font-variant: small-caps;">latch</span> framework because there were no testing frameworks that met the requirements we needed to fully test WARDuino. Specifically, there was no testing framework that could help us execute large test suites such as the [official WebAssembly specication tests](https://github.com/WebAssembly/testsuite) on microcontrollers. Neither was there a framework that could easily test the debugger functionality.
+We started designing the <span style="font-variant: small-caps;">latch</span> framework because there were no testing frameworks that met the requirements we needed to fully test WARDuino. Specifically, there was no testing framework that could help us execute large test suites such as the [official WebAssembly specification tests](https://github.com/WebAssembly/testsuite) on microcontrollers. Neither was there a framework that could easily test the debugger functionality.
 
 During developement, we found that the framework implements a few novel testing concepts, and solves some interesting problems that have not been previously explored. They are:
 

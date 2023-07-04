@@ -7,7 +7,7 @@
 
 ```ts [AS]
 import {digitalRead, digitalWrite, InterruptMode, MQTT, pinMode,
-        PinMode, PinVoltage, print, sleep, WiFi} from "as-warduino";
+        PinMode, PinVoltage, print, sleep, WiFi} from "as-warduino/assembly";
 import * as config from "./config";
 
 function until(attempt: () => void,

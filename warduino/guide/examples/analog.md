@@ -11,7 +11,7 @@ Read a sensor, print its state out to the serial bus.
 
 ::: code-group
 ```ts [AS]
-import {analogRead, delay, print} from "as-warduino";
+import {analogRead, delay, print} from "as-warduino/assembly";
 
 export function main(): void {
     const value = analogRead(13);

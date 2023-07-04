@@ -118,7 +118,7 @@ import {analogAttach,
         delay,
         MQTT,
         print,
-        WiFi} from "as-warduino";
+        WiFi} from "as-warduino/assembly";
 import * as config from "./config";
 
 let brightness: i32 = 0;

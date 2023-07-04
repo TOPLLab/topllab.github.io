@@ -28,7 +28,7 @@ cargo install warduino
 
 :::
 
-The command install the language library that provides you access to the [primitives](/reference/primitives) of the WARDuino from AssemblyScript or Rust. It does not yet install the VM and all necessary tools to compile and upload your program to your microcontroller. Once you have written your program with the language library, and compiled it to WebAssembly, you need to install WARDuino and toolchain of the platform you are targeting.
+The command installs the language library that provides you access to the [primitives](/reference/primitives) of the WARDuino from AssemblyScript or Rust. It does not yet install the VM and all necessary tools to compile and upload your program to your microcontroller. Once you have written your program with the language library, and compiled it to WebAssembly, you need to install WARDuino and toolchain of the platform you are targeting.
 
 To install the virtual machine use the following commands.
 

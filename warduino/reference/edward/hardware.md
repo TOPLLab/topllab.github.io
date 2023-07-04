@@ -98,7 +98,7 @@ There is no need to restart the program and try to guess what the right conditio
 import {digitalRead,
         digitalWrite,
         InterruptMode,
-        interruptOn} from "as-warduino";
+        interruptOn} from "as-warduino/assembly";
 
 const LED: u32 = 25;
 const BUTTON: u32 = 26;
