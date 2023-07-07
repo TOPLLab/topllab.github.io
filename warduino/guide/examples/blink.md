@@ -5,6 +5,8 @@ The program turns an LED on and off at a regular interval.
 
 ## Circuit
 
+<img src="/images/led-circuit.svg" class="circuit">
+
 ## Program
 
 Once you have built the circuit, you can write the blinking LED example for WARDuino.

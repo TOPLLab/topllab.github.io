@@ -101,3 +101,17 @@
   --docsearch-primary-color: var(--vp-c-brand) !important;
 }
 
+/**
+ * Custom styling
+ * -------------------------------------------------------------------------- */
+
+img.circuit { /* hardware circuit images */
+    width: 64%;
+    margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    img.circuit { /* hardware circuit images */
+        width: 90%;
+    }
+}

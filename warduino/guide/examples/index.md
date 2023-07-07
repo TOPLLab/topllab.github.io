@@ -10,6 +10,8 @@
 
 [-> Blink Without Delay](blink-without-delay.md)
 
+[-> How to Wire and Program a Button](button.md)
+
 ## Analog
 
 [-> Analog In, Out Serial](analog-io.md)

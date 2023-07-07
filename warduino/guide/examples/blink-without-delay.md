@@ -5,6 +5,8 @@ Alternatively, we want to avoid using the `delay` primitive, and instead do some
 
 ## Circuit
 
+<img src="/images/led-circuit.svg" class="circuit">
+
 ## Program
 
 We removed the delay from the previous blink example, and use the `millis` primitive that returns the number of milliseconds since the device started running.

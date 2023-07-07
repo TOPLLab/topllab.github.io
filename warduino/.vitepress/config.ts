@@ -35,6 +35,7 @@ export default defineConfig({
               { text: 'Analog', link: '/guide/examples/analog' },
               { text: 'Blink', link: '/guide/examples/blink' },
               { text: 'Blink Without Delay', link: '/guide/examples/blink-without-delay' },
+              { text: 'Wire a Button', link: '/guide/examples/button' },
               { text: 'Analog In, Out Serial', link: '/guide/examples/analog-io' },
               { text: 'Wi-Fi Connection', link: '/guide/examples/wifi' },
               { text: 'MQTT Smartlamp', link: '/guide/examples/smartlamp' },
