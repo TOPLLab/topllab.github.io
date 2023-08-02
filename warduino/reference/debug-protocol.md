@@ -16,8 +16,8 @@ Each debug message should be *converted* to a *hexa string* and consists of
 | Halt                  |  02  | -                            | -             | `02`               |
 | Pause                 |  03  | -                            | PAUSE!        | `03`               |
 | Step (into)           |  04  | -                            | STEP!         | `04`               |
-| Add breakpoint        |  06  | Breakpoint address as LEB128 | BP [address]! | `0606561F105F0AFC` |
-| Remove breakpoint     |  07  | Breakpoint address as LEB128 | BP [address]! | `0706561F105F0AFC` |
+| Add breakpoint        |  06  | Breakpoint address as Big Endian 32 | BP [address]! | `0606561F105F0AFC` |
+| Remove breakpoint     |  07  | Breakpoint address as Big Endian 32 | BP [address]! | `0706561F105F0AFC` |
 | Dump VM state         |  10  | -                            | json          | `10`               |
 | Dump local variables  |  11  | -                            | json          | `11`               |
 | Dump state and locals |  12  | -                            | json          | `12`               |
