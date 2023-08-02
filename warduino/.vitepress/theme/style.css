@@ -105,9 +105,14 @@
  * Custom styling
  * -------------------------------------------------------------------------- */
 
-img.circuit { /* hardware circuit images */
+img.circuit {  /* hardware circuit images */
     width: 64%;
     margin: auto;
+}
+
+html.dark img.circuit {  /* invert color during dark mode */
+    -webkit-filter: invert(85%);
+    filter: invert(85%);
 }
 
 @media only screen and (max-width: 600px) {
