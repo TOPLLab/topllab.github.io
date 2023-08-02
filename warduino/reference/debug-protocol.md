@@ -3,8 +3,12 @@ next: EDWARD
 ---
 # Debug Protocol Reference Sheet
 
-The debug instructions can be sent to a remote WARDuino debugger.
-Debug messages are separated by newlines.
+When the debugger is enabled, debug messages can be sent to a WARDuino VM  that either runs remotely on a MCU or locally as an emulator. Each debug message will be handled by the debugger present in the VM.
+
+Each debug message should be *converted* to a *hexa string* and consists of
+1. A *debug instruction* which tells the debugger which debug operation to apply.
+2. A *payload* needed by the debugger to correctly apply the debug instruction. Depending on the debug instruction the payloa may not be needed.
+3. A newline `\n`
 
 | Debug Instruction     | Code | Payload                      | Response      | Example            |
 |-----------------------|:----:|------------------------------|---------------|--------------------|
