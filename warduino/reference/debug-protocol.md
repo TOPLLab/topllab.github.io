@@ -3,31 +3,41 @@ next: EDWARD
 ---
 # Debug Protocol Reference Sheet
 
-When the debugger is enabled, debug messages can be sent to a WARDuino VM  that either runs remotely on a MCU or locally as an emulator. Each debug message will be handled by the debugger present in the VM.
+::: tip Debug protocol 0.4.2
 
-Each debug message should be *converted* to a *hexa string* and consists of
-1. A *debug instruction* which tells the debugger which debug operation to apply.
-2. A *payload* needed by the debugger to correctly apply the debug instruction. Depending on the debug instruction the payload may not be needed.
-3. A newline `\n`
+This page describe the debug protocol of WARDuino [version 0.4.2](https://github.com/TOPLLab/WARDuino/releases/tag/v0.4.2).
 
-| Debug Instruction     | Code | Payload                      | Response      | Example            |
-|-----------------------|:----:|------------------------------|---------------|--------------------|
-| Run                   |  01  | -                            | GO!           | `01`               |
-| Halt                  |  02  | -                            | -             | `02`               |
-| Pause                 |  03  | -                            | PAUSE!        | `03`               |
-| Step (into)           |  04  | -                            | STEP!         | `04`               |
-| Add breakpoint        |  06  | Breakpoint address as Big Endian 32 | BP [address]! | `0606561F105F0AFC` |
-| Remove breakpoint     |  07  | Breakpoint address as Big Endian 32 | BP [address]! | `0706561F105F0AFC` |
-| [Inspect](./debug-protocol#custom-dump-formats) specific state components |  09  | Number of components + their IDs | json          | `0900020104`               |
-| Dump VM state         |  10  | -                            | json          | `10`               |
-| Dump local variables  |  11  | -                            | json          | `11`               |
-| Dump state and locals |  12  | -                            | json          | `12`               |
+:::
+
+The debug protocol of WARDuino consist of a series of debug messages that can be sent to the debugger.
+Messages are resolved in order, and the debug message queue is checked before any instruction is executed in the virtual machine.
+
+## Overview
+
+The table below gives the full list of debug messages that can be sent to a remote WARDuino debugger.
+Debug messages start with a unique code identifying the instruction, followed by an optional payload.
+Messages are always ended by a newline.
+
+| Debug Instruction                                       | Code | Payload                              | Response              | Example      |
+|---------------------------------------------------------|:----:|--------------------------------------|-----------------------|--------------|
+| Run                                                     |  01  | -                                    | GO!                   | `01`         |
+| Halt                                                    |  02  | -                                    | -                     | `02`         |
+| Pause                                                   |  03  | -                                    | PAUSE!                | `03`         |
+| Step (into)                                             |  04  | -                                    | STEP!                 | `04`         |
+| Step (over)                                             |  05  | -                                    | STEP! / AT [address]! | `05`         |
+| Add breakpoint                                          |  06  | Breakpoint address encoded as LEB128 | BP [address]!         | `06345`      |
+| Remove breakpoint                                       |  07  | Breakpoint address encoded as LEB128 | BP [address]!         | `07345`      |
+| [Inspect](./debug-protocol#custom-dump-formats) specific state components |  09  | Number of components + their IDs     | json                  | `0900020104` |
+| Dump VM state                                           |  10  | -                                    | json                  | `10`         |
+| Dump local variables                                    |  11  | -                                    | json                  | `11`         |
+| Dump state and locals                                   |  12  | -                                    | json                  | `12`         |
+| Reset                                                   |  13  | -                                    | -                     | `13`         |
 
 The following debug messages can be sent by the remote debugger at anytime when a specific event occurs.
 
-| Event            | Notification    | Example              |
-|------------------|-----------------|----------------------|
-| Hit a breakpoint | AT [address]!   | `AT 345!` when a breakpoint is reached at wasm address 345. |
+| Event            | Notification    | Example   |                                                                                    |
+|------------------|-----------------|-----------|------------------------------------------------------------------------------------|
+| Hit a breakpoint | AT [address]!   | `AT 345!` | The address points to the next Wasm instruction to be executed. Encoded as LEB128. |
 
 ## Simple Dump Formats
 
@@ -86,7 +96,22 @@ DUMP!
  }
 ```
 
+## Stepping Behaviour
+
+There are different methods for stepping through Wasm code:
+
+- **step into.** Step over a single Wasm instruction and respond with `STEP!`.
+- **step over.** Step over any direct of indirect call and respond with the current address `AT [address]!`, otherwise step over a single instruction and respond with `STEP!`.
+
+## Breakpoint Behaviour
+
+Whenever a breakpoint is encountered the execution is paused, even when currently stepping over a call with the `step over (05)` debug message.
+
 ## Additional Information
+
+The `Halt (02)` debug message stops the virtual machine, while the `Reset (13)` debug message reloads the current program.
+
+## Out-of-place Debugging
 
 WARDuino also supports out-of-place debugging through the EDWARD debugger. A similar overview of the debug messages for EDWARD can be found in [this reference sheet](/reference/edward/protocol).
 
