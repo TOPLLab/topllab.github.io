@@ -26,7 +26,7 @@ The following debug messages can be sent by the remote debugger at anytime when 
 
 | Event            | Notification    | Example              |
 |------------------|-----------------|----------------------|
-| Hit a breakpoint | AT [address]!   | `AT 0x561f105f0afc!` |
+| Hit a breakpoint | AT [address]!   | `AT 345!` when a breakpoint is reached at wasm address 345. |
 
 ## Dump formats
 
