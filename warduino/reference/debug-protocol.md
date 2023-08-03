@@ -18,7 +18,7 @@ Each debug message should be *converted* to a *hexa string* and consists of
 | Step (into)           |  04  | -                            | STEP!         | `04`               |
 | Add breakpoint        |  06  | Breakpoint address as Big Endian 32 | BP [address]! | `0606561F105F0AFC` |
 | Remove breakpoint     |  07  | Breakpoint address as Big Endian 32 | BP [address]! | `0706561F105F0AFC` |
-| [Inspect state](#inspect-operation)         |  09  | The number of Wasm states requested as Big Endian 16 followed by each state requested                | json          | `0900020104`               |
+| [Inspect](#inspect-operation) specific state components |  09  | Number of components + their IDs | json          | `0900020104`               |
 | Dump VM state         |  10  | -                            | json          | `10`               |
 | Dump local variables  |  11  | -                            | json          | `11`               |
 | Dump state and locals |  12  | -                            | json          | `12`               |
@@ -29,53 +29,55 @@ The following debug messages can be sent by the remote debugger at anytime when 
 |------------------|-----------------|----------------------|
 | Hit a breakpoint | AT [address]!   | `AT 345!` when a breakpoint is reached at wasm address 345. |
 
-## Dump formats
+## Simple Dump Formats
 
 The WARDuino debugger provides a variety of debug messages for inspecting different aspects of the VM's state.
 These debug messages return *dumps* of information in json format.
 
-### Inspect operation
+The VM's state includes both Wasm state (e.g., variables, memory pages) and debugger-specific state (e.g., breakpoints).
 
-An operation that lets a tool client request state of interest.
-The state is either Wasm state (e.g., global variables, memory pages, table elements) or debugger-specific state (e.g., breakpoints).
-This debug message is useful for optimistation.
-For instance, if a tool client is only interested in the global variables and table of a wasm.
-The tool client can then make a request to only inspect that state and nothing more.
+## Custom Dump Formats
 
-The following table lists all the possible states that can be requested:
+Custom dump formats can be generated with the `inspect (09)` debug message.
+This is useful for minimizing data transfer sizes, by only requesting specific parts of the VM's state.
 
-| State Kind | Nr | Description |
-|------------|--|---------------|
-| Program counter | 01 | The program counter|
-| Breakpoints | 02 | The breakpoints that have been set by tool clients |
-| Callstack | 03 | The callstack |
-| Globals | 04 | The global variables | 
-| Table | 05 | The table | 
-| Memory pages | 06 | The memory pages
-| Branching Table | 07 | The table used for branching instructions | 
-| Stack | 08 | The stack of values that results from wasm instructions such as `i32.const` |
-| Callbacks | 09| The registered callbacks |
-| Events | 10 | The events that still need to be handled by the Event handler system | 
 
-#### Example
-To *request* the *program counter* and *global variables* of a Wasm module. 
-A tool client will generate the following debug message:
+The following table lists the different components of the VM's state that can be requested separately:
+
+| Component       | ID (hex) | Description                                |
+|-----------------|:--------:|--------------------------------------------|
+| Program counter |    01    | The program counter.                       |
+| Breakpoints     |    02    | The active breakpoints.                    |
+| Callstack       |    03    | The Wasm instruction stack.                |
+| Globals         |    04    | The global variables.                      | 
+| Table           |    05    | The table.                                 | 
+| Memory pages    |    06    | The Wasm memory pages.                     |
+| Branching Table |    07    | The table used for branching instructions. | 
+| Stack           |    08    | The Wasm operand stack.                    |
+| Callbacks       |    09    | The registered WARDuino callbacks.         |
+| Events          |    0a    | The WARDuino event queue.                  | 
+
+The payload of an inspect debug message starts with the number of requested components, followed immediately by the IDs of those components in no particular order.
+
+### Example
+
+Requesting the *program counter* and *global variables* can be done with the following debug message:
 
 ```
-"0900020104\n"
+0900020104\n
 ```
 
 This debug message consists of the following parts:
-- `09`: the inspect debug operation code which tells the debugger that the tool client is interested in inspecting some state.
-- `0002`: the number of states that the tool client wants to request. This number is provided as a Big Endian 16 and converted to hexa. In this example, we want to inspect the *program counter* and *globals* i.e., 2 states. Converted to Big Endian 16 we obtain `0002`.
-- `0104`: the state numbers that correspond with the states of interest. These numbers are appended together and converted to hexa.
-    - `01`: state number that corresponds with the program counter.
-    - `04`: state number that corresponds with the global variables.
+- `09`: the inspect debug operation code which tells the debugger what kind of debug message it received.
+- `0002`: the number of states that the tool client wants to request. This number is a hexadecimal number encoded as Big Endian 16.
+- `0104`: the IDs of the requested components.
+    - `01`: ID for the program counter.
+    - `04`: ID for the global variables.
 - The newline `\n` that marks the end of the debug message.
 
 The *response* will be a string printing *DUMP!* followed by the JSON containing the requested state:
 ```
-"DUMP!\n"
+DUMP!
 {"pc":7174,
  "globals":[
     {"idx":0,"type":"i32","value":0},
