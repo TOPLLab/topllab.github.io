@@ -8,8 +8,7 @@ This example adjusts the brightness of an LED based on an analog input.
 
 ## Program
 
-Read an analog input pin, map the value, and use it to adjust the LED brightness.
-
+This example program reads an analog input pin, maps the value, and uses it to adjust the LED brightness.
 To read an analog value from a potentiometer or similar sensor we use the `analogWrite` primitive:
 
 ::: code-group
@@ -22,7 +21,7 @@ let value: u32 = analog_read(13);
 ```
 :::
 
-Since the analog input ranges from 0 to 1023, and `analogWrite` only accepts values from 0 to 255, the potentiometer data must be converted to fit the smaller range before dimming the LED.
+The analog input spans from 0 to 1023 and `analogWrite` accepts values only from 0 to 255, therefore the input data needs to be converted to fit the smaller range before dimming the LED.
 
 ::: code-group
 ```ts [AS]
