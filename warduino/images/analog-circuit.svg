@@ -31,16 +31,8 @@
         fill: #e2e4e5;
       }
 
-      .cls-7 {
-        letter-spacing: -.01em;
-      }
-
       .cls-5 {
         fill: #818181;
-      }
-
-      .cls-8 {
-        letter-spacing: 0em;
       }
     </style>
   </defs>
@@ -85,23 +77,24 @@
         <rect class="cls-5" x="26.92" y="115.59" width="24.04" height="33.83" rx="7.42" ry="7.42" transform="translate(-93.57 171.44) rotate(-90)"/>
       </g>
       <g>
-        <rect class="cls-4" x="233.33" y="101.33" width="31.5" height="31.5" rx="10.73" ry="10.73"/>
-        <circle class="cls-2" cx="249.08" cy="117.08" r="7"/>
-      </g>
-      <g>
         <path class="cls-3" d="m119,56h55.93l2.32-5,4.64,10,4.64-10,4.64,10,4.64-10,4.64,10,4.64-10,4.64,10,2.32-5h28.97v-30.93s0-5.66,8.6-5.66,8.6,5.66,8.6,5.66v21.43h-17.2" pointer-events="all"/>
         <path class="cls-3" d="m236.49,41.46V9.06s0-8.56,13-8.56,13,8.56,13,8.56v32.4h-26"/>
       </g>
-      <path class="cls-3" d="m119,117h55.93l2.32-5,4.64,10,4.64-10,4.64,10,4.64-10,4.64,10,4.64-10,4.64,10,2.32-5h21.17" pointer-events="all"/>
       <polyline class="cls-3" points="119 197.24 316.29 197.24 316.26 56.03 258.21 56 258.21 46.5"/>
-      <text class="cls-6" transform="translate(120.72 114.55)"><tspan x="0" y="0">5 V</tspan></text>
       <text class="cls-6" transform="translate(179.08 71.76)"><tspan x="0" y="0">220 Ω</tspan></text>
-      <text class="cls-6" transform="translate(179.08 132.76)"><tspan x="0" y="0">10 kΩ</tspan></text>
       <text class="cls-6" transform="translate(121.63 194.32) scale(.7)"><tspan x="0" y="0">GND</tspan></text>
-      <text class="cls-6" transform="translate(121.05 154.52) scale(.7)"><tspan x="0" y="0">GPIO</tspan></text>
       <text class="cls-6" transform="translate(121.28 53.36) scale(.7)"><tspan x="0" y="0">GPIO</tspan></text>
       <text class="cls-6" transform="translate(264.83 36.02)"><tspan x="0" y="0">LED</tspan></text>
-      <text class="cls-6" transform="translate(234.72 95.25)"><tspan x="0" y="0">POTENTIOMETER</tspan></text>
+    </g>
+    <g id="Layer_2-2" data-name="Layer 2">
+      <g>
+        <circle class="cls-4" cx="249.08" cy="117.08" r="15.75"/>
+        <circle class="cls-2" cx="249.08" cy="117.08" r="5.28"/>
+      </g>
+      <line class="cls-3" x1="119" y1="117" x2="233.22" y2="117"/>
+      <text class="cls-6" transform="translate(120.72 114.55)"><tspan x="0" y="0">5 V</tspan></text>
+      <text class="cls-6" transform="translate(121.05 154.52) scale(.7)"><tspan x="0" y="0">GPIO</tspan></text>
+      <text class="cls-6" transform="translate(267.72 111.35)"><tspan x="0" y="0">SENSOR</tspan></text>
       <polyline class="cls-3" points="264.83 117 289.48 117 289.48 156.93 119 156.93"/>
     </g>
   </g>

@@ -4,6 +4,13 @@ This example adjusts the brightness of an LED based on an analog input.
 
 ## Circuit
 
+For this example you require:
+
+1. A microcontroller 
+2. Potentiometer or other sensor
+3. An LED
+4. 220 ohm resistor
+
 <img src="/images/analog-circuit.svg" class="circuit">
 
 ## Program
