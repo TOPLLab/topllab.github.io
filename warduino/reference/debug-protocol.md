@@ -27,7 +27,7 @@ Messages are always ended by a newline.
 | Step (over)                                   |  05  | -                                | STEP! / AT [address]! |         `05` |
 | Add [breakpoint](#breakpoints)                |  06  | Breakpoint address               | BP [address]!         |     `06d902` |
 | Remove [breakpoint](#breakpoints)             |  07  | Breakpoint address               | BP [address]!         |     `07d902` |
-| [Inspect](#inspect) specific state components |  09  | Number of components + their IDs | json                  | `0900020104` |
+| [Inspect](#inspect) specific state components |  09  | Number of components + their IDs | [json](#example)      | `0900020104` |
 | Dump VM state                                 |  10  | -                                | [json](#dumps)        |         `10` |
 | Dump local variables                          |  11  | -                                | [json](#dumps)        |         `11` |
 | Dump state and locals                         |  12  | -                                | [json](#dumps)        |         `12` |
@@ -85,7 +85,7 @@ This debug message consists of the following parts:
     - `04`: ID for the global variables.
 - The newline `\n` that marks the end of the debug message.
 
-The *response* will be a string printing *DUMP!* followed by the JSON containing the requested state:
+The response will be "DUMP!" followed by the JSON containing the requested state, starting on the next line:
 ```
 DUMP!
 {"pc":7174,

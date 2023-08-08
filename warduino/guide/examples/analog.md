@@ -1,9 +1,18 @@
 # Analog Read Serial
 
+This is the smallest example for WARDuino, the program shows how to read analog input from the physical world, and print it out via the serial bus.
+
 ## Circuit
 
 We can connect a potentiometer or similar sensor to one of the I/O pins of the embedded device.
 With WARDuino you can measure the resistance produced by the potentiometer.
+
+For this example you require:
+
+1. A microcontroller
+2. Potentiometer or other sensor
+
+<img src="/images/analog-circuit.svg" class="circuit">
 
 ## Program
 

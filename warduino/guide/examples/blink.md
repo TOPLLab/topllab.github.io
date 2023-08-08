@@ -5,6 +5,14 @@ The program turns an LED on and off at a regular interval.
 
 ## Circuit
 
+For this example you require:
+
+1. A microcontroller
+2. An LED (optional)
+3. 220 ohm resistor (optional)
+
+The LED and 220 ohm resistor are optional, most microcontrollers come with a built-in LED that you can use for this example.
+
 <img src="/images/led-circuit.svg" class="circuit">
 
 ## Program

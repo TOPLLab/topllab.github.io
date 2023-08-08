@@ -5,6 +5,14 @@ This example turns on an LED when you press the button.
 
 ## Circuit
 
+For this example you require:
+
+1. A microcontroller
+2. A momentary button or switch
+3. 10K ohm resistor
+4. An LED
+5. 220 ohm resistor
+
 <img src="/images/button-circuit.svg" class="circuit">
 
 ## Code

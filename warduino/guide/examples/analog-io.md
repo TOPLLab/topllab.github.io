@@ -11,7 +11,7 @@ For this example you require:
 3. An LED
 4. 220 ohm resistor
 
-<img src="/images/analog-circuit.svg" class="circuit">
+<img src="/images/analog-io-circuit.svg" class="circuit">
 
 ## Program
 

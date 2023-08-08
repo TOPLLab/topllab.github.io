@@ -5,6 +5,12 @@ Alternatively, we want to avoid using the `delay` primitive, and instead do some
 
 ## Circuit
 
+For this example you require:
+
+1. A microcontroller
+2. An LED
+3. 220 ohm resistor
+
 <img src="/images/led-circuit.svg" class="circuit">
 
 ## Program
