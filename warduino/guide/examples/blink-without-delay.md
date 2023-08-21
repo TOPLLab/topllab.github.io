@@ -22,13 +22,13 @@ We removed the delay from the previous blink example, and use the `millis` primi
 // Blinking LED example
 import {pinMode, PinMode, PinVoltage,
         digitalWrite, delay} from "as-warduino/assembly";
-import * as config from "./config";
 
 export function main(): void {
-    let led = config.LED;
+    const led = 26;
+    const pause: u32 = 1000;
+
     pinMode(led, PinMode.OUTPUT);
 
-    let pause: u32 = 1000;
     while (true) {
         digitalWrite(led, PinVoltage.HIGH);
         delay(pause);
@@ -42,14 +42,13 @@ export function main(): void {
 // Blinking LED example
 use warduino::{delay, digital_write, pin_mode, PinMode, PinVoltage};
 
-mod config;
-
 #[no_mangle]
 pub fn main() {
-    let led: u32 = config::LED;
+    let led: u32 = 26;
+    let pause: u32 = 1000;
+
     pin_mode(led, PinMode::OUTPUT);
 
-    let pause: u32 = 1000;
     loop {
         digital_write(led, PinVoltage::HIGH);
         delay(pause);

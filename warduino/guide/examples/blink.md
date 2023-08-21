@@ -66,20 +66,19 @@ delay(1000);
 :::
 
 Here is the full code.
-The example uses a config file to specify the digital pin number to which the LED is connected.
 
 ::: code-group
 ```ts [AS]
 // Blinking LED example
 import {pinMode, PinMode, PinVoltage,
         digitalWrite, delay} from "as-warduino/assembly";
-import * as config from "./config";
 
 export function main(): void {
-    let led = config.LED;
+    const led: u32 = 26;
+    const pause: u32 = 1000;
+
     pinMode(led, PinMode.OUTPUT);
 
-    let pause: u32 = 1000;
     while (true) {
         digitalWrite(led, PinVoltage.HIGH);
         delay(pause);
@@ -93,14 +92,13 @@ export function main(): void {
 // Blinking LED example
 use warduino::{delay, digital_write, pin_mode, PinMode, PinVoltage};
 
-mod config;
-
 #[no_mangle]
 pub fn main() {
-    let led: u32 = config::LED;
+    let led: u32 = 26;
+    let pause: u32 = 1000;
+
     pin_mode(led, PinMode::OUTPUT);
 
-    let pause: u32 = 1000;
     loop {
         digital_write(led, PinVoltage::HIGH);
         delay(pause);
@@ -110,20 +108,6 @@ pub fn main() {
 }
 ```
 :::
-
-The contents of the config file looks as follows:
-
-::: code-group
-```ts [AS]
-export const LED: u32 = 26;
-```
-
-```rust [Rust]
-pub static LED: u32 = 26;
-```
-::: code-group
-
-The config is not saved as a `.json` or `.yaml` file since the configuration needs to be embedded in the code when compiling to WebAssembly. If this sounds weird, remember that WebAssembly has no standard way of reading from files.
 
 ## Learn More
 

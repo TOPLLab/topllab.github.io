@@ -16,6 +16,10 @@
 
 [-> Analog In, Out Serial](analog-io.md)
 
+## Miscellaneous
+
+[-> Using a config file](config.md)
+
 ## Communication
 
 [-> Establish Wi-Fi Connection](wifi.md)

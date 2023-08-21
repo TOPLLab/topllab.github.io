@@ -76,8 +76,8 @@ export function main(): void {
 ```rust [Rust]
 use warduino::{analog_read, analog_write, delay, print};
 
-let IN: u32 = 13;
-let OUT: u32 = 9;
+static IN: u32 = 13;
+static OUT: u32 = 9;
 
 function map(value: u32, x1: u32, y1: u32, x2: u32, y2: u32) => u32 {
     ((value - x1) * (y2 - x2) / (y1 - x1) + x2).ceil();

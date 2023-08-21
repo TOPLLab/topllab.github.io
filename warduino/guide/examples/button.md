@@ -29,7 +29,9 @@ import {
     PinMode,
     PinVoltage
 } from "as-warduino/assembly";
-import {config} from "./config";
+
+const button = 25;
+const led = 26;
 
 function invert(voltage: PinVoltage): PinVoltage {
     switch (voltage) {
@@ -43,16 +45,16 @@ function invert(voltage: PinVoltage): PinVoltage {
 
 function toggleLED(_topic: string, _payload: string): void {
     // Get current status of LED
-    let status = digitalRead(config.led);
+    let status = digitalRead(led);
     // Toggle LED
-    digitalWrite(config.led, invert(status));
+    digitalWrite(led, invert(status));
 }
 
 export function main(): void {
-    pinMode(config.button, PinMode.INPUT);
-    pinMode(config.led, PinMode.OUTPUT);
+    pinMode(button, PinMode.INPUT);
+    pinMode(led, PinMode.OUTPUT);
 
-    interruptOn(config.button, InterruptMode.FALLING, toggleLED);
+    interruptOn(button, InterruptMode.FALLING, toggleLED);
 
     while (true) {
         delay(1000);
@@ -70,22 +72,23 @@ use warduino::{delay,
                PinVoltage,
                sub_interrupt};
 
-mod config;
+static BUTTON: u32 = 25;
+static LED: u32 = 26;
 
 fn callback(_topic: &str, _payload: &str, _length: u32) {
-    let voltage = digital_read(config::LED);
+    let voltage = digital_read(LED);
     match voltage {
-        PinVoltage::HIGH => digital_write(config::LED, PinVoltage::LOW),
-        PinVoltage::LOW => digital_write(config::LED, PinVoltage::HIGH)
+        PinVoltage::HIGH => digital_write(LED, PinVoltage::LOW),
+        PinVoltage::LOW => digital_write(LED, PinVoltage::HIGH)
     }
 }
 
 #[no_mangle]
 pub fn main() {
-    pin_mode(config::BUTTON, PinMode::INPUT);
-    pin_mode(config::LED, PinMode::OUTPUT);
+    pin_mode(BUTTON, PinMode::INPUT);
+    pin_mode(LED, PinMode::OUTPUT);
 
-    sub_interrupt(config::BUTTON, InterruptMode::FALLING, callback);
+    sub_interrupt(BUTTON, InterruptMode::FALLING, callback);
 
     loop {
         delay(1000);
