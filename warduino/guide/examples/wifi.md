@@ -2,6 +2,7 @@
 
 ## Program
 
+::: code-group
 ```ts [AS]
 import {sleep, WiFi} from "as-warduino/assembly";
 import * as config from "./config";
@@ -27,8 +28,9 @@ export function main(): void {
     }
 }
 ```
-
 :::
+
+The content of the configuration file:
 
 
 ::: code-group
