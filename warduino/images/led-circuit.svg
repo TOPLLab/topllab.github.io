@@ -17,7 +17,7 @@
 
       .cls-5 {
         fill: #414142;
-        font-family: Roboto-BoldItalic, Roboto;
+        font-family: Roboto-BoldItalic, Roboto, sans-serif;
         font-size: 10px;
         font-style: italic;
         font-weight: 700;
