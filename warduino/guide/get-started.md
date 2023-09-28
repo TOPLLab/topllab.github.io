@@ -7,7 +7,7 @@ In this guide, you will find instructions on how to start programming software f
 
 ## Installation
 
-To get started you need to install the WARDuino library for your favorite language. You can use the following command:
+To start writing programs for WARDuino in your favorite language you need to install the WARDuino **language library**.
 
 ::: warning
 
@@ -28,9 +28,8 @@ cargo install warduino
 
 :::
 
-The command installs the language library that provides you access to the [primitives](/reference/primitives) of the WARDuino from AssemblyScript or Rust. It does not yet install the VM and all necessary tools to compile and upload your program to your microcontroller. Once you have written your program with the language library, and compiled it to WebAssembly, you need to install WARDuino and toolchain of the platform you are targeting.
-
-To install the virtual machine use the following commands.
+The language library provides access to the [primitives](/reference/primitives) of WARDuino directly from AssemblyScript or Rust. 
+Once you have written your program and compiled it to WebAssembly, you need to install WARDuino and the toolchains of the platform you are targeting.
 
 ```bash
 cd $HOME/Arduino/libraries/
@@ -84,11 +83,11 @@ arduino-cli lib install "PubSubClient" # for MQTT
 arduino-cli lib install "Adafruit NeoPixel"
 ```
 
-If you haven't done so already, clone (or symlink) the WARDuino repository to `~/Arduino/libraries` to make it available to Arduino.
+If you haven't done so already, clone (or symlink) the WARDuino repository to `~/Arduino/libraries/WARDuino` to make it available to Arduino.
 
 ## Flashing using Arduino
 
-If you have setup the Arduino toolchain as described above, you can upload your programs with the Makefile in the `platforms/Arduino` folder of the WARDuino virtual machine.
+After setting up the Arduino toolchain, you can upload your programs with the Makefile in the `platforms/Arduino` folder of the WARDuino virtual machine.
 You can supply all the arguments through the command-line, or write all of them in a `.config` file in the same directory as the Makefile.
 
 ```make
