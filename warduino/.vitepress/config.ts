@@ -68,7 +68,8 @@ export default defineConfig({
                 ]
               },
             ]
-          }
+          },
+          { text: 'Hardware Support', link: '/reference/hardware' }
         ]
       },
 
