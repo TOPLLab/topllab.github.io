@@ -36,10 +36,17 @@ If you encounter an error, `LIBUSB_ERROR_ACCESS`, then this is mostly likely due
 
 #### Development Environment Setup
 
-**Step 1.** Add the "wrover kit" component to WARDuino:
+These steps are written for the WARDuino project.
+If you first want to try out the debugger on a different project, we recommend the IDF LCD example:
 
 ```bash
-cd $WARDUINO_FOLDER
+cp -r $IDF_PATH/examples/peripherals/spi_master/lcd .
+cd lcd
+```
+
+**Step 1.** In the WARDuino root folder, add the "wrover kit" component:
+
+```bash
 idf.py add-dependency "espressif/esp_wrover_kit^1.5.0"
 ```
 
