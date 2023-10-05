@@ -5,7 +5,7 @@ The EDWARD debugger adds the following debug messages to the existing remote deb
 | Debug Instruction     | Code | Payload                         | Response      | Example            |
 |-----------------------|:----:|---------------------------------|---------------|--------------------|
 | Snapshot              |  60  | -                               | json          | `60`               |
-| Load snapshot         |  62  | Response from message `60`      | done!         | `62`               |
+| Load snapshot         |  62  | Binary form of response to `60` | done!         | `62`               |
 | Proxify               |  65  | Wi-Fi SSID `\0` Wi-Fi pass `\0` | -             | `65`               |
 
 ## Additional Information
