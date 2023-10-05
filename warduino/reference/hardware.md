@@ -13,7 +13,7 @@ This is a major constraint for some microcontrollers, however all other parts of
 
 The following table lists the devices on which the WARDuino VM has been verified to work.
 
-| Module              |       Arduino         |        ESP IDF        |     Callbacks      |
+| Device Family       |       Arduino         |        ESP IDF        |     Callbacks      |
 |:------------------- |:---------------------:|:---------------------:|:------------------:|
 | [ESP8266](https://www.espressif.com/en/products/socs/esp8266) | :white_check_mark:    |  :white_check_mark:   |  :heavy_minus_sign:      |
 | [ESP32 WROOM](https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32e_esp32-wroom-32ue_datasheet_en.pdf)          | :white_check_mark:    | :exclamation:[*](https://github.com/TOPLLab/WARDuino/issues/210)   |  :exclamation:      |
