@@ -52,6 +52,7 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: 'Overview', link: '/reference/' },
+          { text: 'Development', link: '/reference/development' },
           { text: 'Primitives', link: '/reference/primitives' },
           { text: 'Remote Debugger', link: '/reference/debugger' },
           { text: 'Debug Protocol', link: '/reference/debug-protocol' },
