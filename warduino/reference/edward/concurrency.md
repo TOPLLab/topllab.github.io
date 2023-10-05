@@ -1,6 +1,3 @@
----
-next: Latch Reference
----
 # Debugging Concurrency
 
 The EDWARD debugger is can help debug concurrency issues better than the classic [remote debugger](/reference/debugger.md) of WARDuino. Here we will illustrate how with a representative example.
