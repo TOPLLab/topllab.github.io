@@ -3,6 +3,16 @@
  * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
  */
 
+/** Medium Zoom */
+
+.medium-zoom-overlay {
+  z-index: 20;
+}
+
+.medium-zoom-image {
+  z-index: 21;
+}
+
 /**
  * Colors
  * -------------------------------------------------------------------------- */

@@ -15,7 +15,7 @@ For this example you require:
 
 <img src="/images/button-circuit.svg" class="circuit">
 
-## Code
+## Program
 
 ::: code-group
 ```ts [AS]

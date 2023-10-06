@@ -5,6 +5,7 @@
     "preview": "vitepress preview"
   },
   "dependencies": {
+    "medium-zoom": "^1.0.8",
     "vitepress": "^1.0.0-beta.1",
     "vue": "^3.3.4"
   }
