@@ -72,7 +72,7 @@ export default defineConfig({
               },
             ]
           },
-          { text: 'Hardware Support', link: '/reference/hardware' }
+          { text: 'Platform Support', link: '/reference/platforms' }
         ]
       },
 

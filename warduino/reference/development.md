@@ -7,10 +7,11 @@ This guide is for people who want to help with development.
 For microcontrollers, WARDuino supports two different toolchains, Arduino and ESP-IDF.
 Additionally, there is a third version to run on desktops with its own command-line interface.
 
-Each version of the virtual machine has a slightly different way of receiving debugging messages, and has a different entry point.
+Each version of the virtual machine has a slightly different way of receiving debugging messages, has a different entry point, and has their own primitive implementations.
 Each version has its own folder under [platforms](https://github.com/TOPLLab/WARDuino/tree/main/platforms) in the git repository.
+The implementations of the primitives for each platform are found in the [Primitives](https://github.com/TOPLLab/WARDuino/tree/main/src/Primitives) folder.
 
-## Debugging the WARDuino Virtual Machine
+## Debugging the Virtual Machine
 
 While the WARDuino debugger allows developers to debug their programs on the microcontroller, the VM itself also needs to be debugged from time to time. That includes the debugger of the VM as well.
 Luckily the debugger can be debugged with the help of a JTAG interface.
