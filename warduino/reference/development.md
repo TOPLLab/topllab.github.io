@@ -2,12 +2,27 @@
 
 This guide is for people who want to help with development.
 
+## A Tale of three Versions
+
+For microcontrollers, WARDuino supports two different toolchains, Arduino and ESP-IDF.
+Additionally, there is a third version to run on desktops with its own command-line interface.
+
+Each version of the virtual machine has a slightly different way of receiving debugging messages, and has a different entry point.
+Each version has its own folder under [platforms](https://github.com/TOPLLab/WARDuino/tree/main/platforms) in the git repository.
+
 ## Debugging the WARDuino Virtual Machine
 
 While the WARDuino debugger allows developers to debug their programs on the microcontroller, the VM itself also needs to be debugged from time to time. That includes the debugger of the VM as well.
 Luckily the debugger can be debugged with the help of a JTAG interface.
 
 This tutorial goes over the steps you can take to debug the WARDuino virtual machine with the ESP32 WROVER KIT v4.1, but other boards and JTAGs can also be used.
+
+::: tip Debugging the Arduino version
+
+This tutorial uses OpenOCD to debug the ESP-IDF version of WARDuino.
+The Arduino version can be debugged using the new [Arduino IDE 2](https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-debugger).
+
+:::
 
 ### ESP32 WROVER KIT V4.1 Tutorial
 
@@ -28,7 +43,7 @@ It comes standard with a JTAG to USB interface, which makes debugging fairly eas
 openocd -f board/esp32-wrover-kit-3.3v.cfg
 ```
 
-::: warning
+::: tip Permission problems
 
 If you encounter an error, `LIBUSB_ERROR_ACCESS`, then this is mostly likely due to OpenOCD lacking the right permissions to access the serial port.
 
@@ -81,5 +96,5 @@ idf.py gdb
 
 **Debugging with VS Code.** Espressif has also developed a [VS Code plugin](https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/DEBUGGING.md) to use OpenOCD debugging.
 
-<img src="/images/openocd.png">
+![](/images/openocd.png){data-zoomable}
 

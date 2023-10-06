@@ -39,6 +39,7 @@ export default defineConfig({
               { text: 'Wire a Button', link: '/guide/examples/button' },
               { text: 'Analog In, Out Serial', link: '/guide/examples/analog-io' },
               { text: 'Configuration Files', link: '/guide/examples/config' },
+              { text: 'ASCII Table', link: '/guide/examples/ascii' },
               { text: 'Wi-Fi Connection', link: '/guide/examples/wifi' },
               { text: 'MQTT Smartlamp', link: '/guide/examples/smartlamp' },
             ]
