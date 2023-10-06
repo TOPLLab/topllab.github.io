@@ -30,6 +30,7 @@ export default defineConfig({
         items: [
           { text: 'Getting Started', link: '/guide/get-started' },
           { text: 'Examples',  
+            collapsed: true,
             items: [
               { text: 'Overview', link: '/guide/examples/' },
               { text: 'Analog', link: '/guide/examples/analog' },

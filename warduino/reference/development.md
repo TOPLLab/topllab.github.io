@@ -36,15 +36,15 @@ If you encounter an error, `LIBUSB_ERROR_ACCESS`, then this is mostly likely due
 
 #### Development Environment Setup
 
-These steps are written for the WARDuino project.
-If you first want to try out the debugger on a different project, we recommend the IDF LCD example:
+These steps are meant for debugging the WARDuino virtual machine, but can be used to debug other projects as well.
+If you first want to try out the debugger on an example project, we recommend the IDF LCD example:
 
 ```bash
 cp -r $IDF_PATH/examples/peripherals/spi_master/lcd .
 cd lcd
 ```
 
-**Step 1.** In the WARDuino root folder, add the "wrover kit" component:
+**Step 1.** In the project root folder, add the "wrover kit" component:
 
 ```bash
 idf.py add-dependency "espressif/esp_wrover_kit^1.5.0"
@@ -52,7 +52,7 @@ idf.py add-dependency "espressif/esp_wrover_kit^1.5.0"
 
 If you use a different board and JTAG this step will be different.
 
-**Step 2.** To use the `gdb` command-line interface, add a `gdbinit` file to the WARDuino root folder[<sup>\[2\]</sup>](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/jtag-debugging/using-debugger.html#command-line) with:
+**Step 2.** To use the `gdb` command-line interface, add a `gdbinit` file to the project root folder[<sup>\[2\]</sup>](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/jtag-debugging/using-debugger.html#command-line) with:
 
 ```
 target remote :3333
@@ -78,4 +78,8 @@ That concludes the setup. Now you are finally ready to start debugging.
 idf.py openocd &
 idf.py gdb
 ```
+
+**Debugging with VS Code.** Espressif has also developed a [VS Code plugin](https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/DEBUGGING.md) to use OpenOCD debugging.
+
+<img src="/images/openocd.png">
 
