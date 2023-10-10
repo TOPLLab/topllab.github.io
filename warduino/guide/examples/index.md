@@ -24,6 +24,8 @@ All examples can be found in the [repository](https://github.com/TOPLLab/WARDuin
 
 ## Communication
 
+[-> ASCII Table](ascii.md)
+
 [-> Establish Wi-Fi Connection](wifi.md)
 
 [-> Smartlamp App with MQTT](smartlamp.md)
