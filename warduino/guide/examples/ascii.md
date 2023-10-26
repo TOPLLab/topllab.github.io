@@ -43,7 +43,8 @@ pub fn main() {
     print("ASCII Table ~ Character Map\n");
 
     for byte in 33..=125 {
-        print(&format!("{}, dec: {}, hex: {:x}, oct: {:o}, bin: {:b}\n", char::from_u32(0xDE01).unwrap(), byte, byte, byte, byte).to_string());
+        print(&format!("{}, dec: {}, hex: {:x}, oct: {:o}, bin: {:b}\n",
+            char::from_u32(0xDE01).unwrap(), byte, byte, byte, byte).to_string());
     }
 }
 ```
