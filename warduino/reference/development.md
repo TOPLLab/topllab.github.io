@@ -18,7 +18,7 @@ Luckily the debugger can be debugged with the help of a JTAG interface.
 
 This tutorial goes over the steps you can take to debug the WARDuino virtual machine with the ESP32 WROVER KIT v4.1, but other boards and JTAGs can also be used.
 
-::: tip Debugging the Arduino version
+::: info Debugging the Arduino version
 
 This tutorial uses OpenOCD to debug the ESP-IDF version of WARDuino.
 The Arduino version can be debugged using the new [Arduino IDE 2](https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-debugger).
@@ -44,7 +44,7 @@ It comes standard with a JTAG to USB interface, which makes debugging fairly eas
 openocd -f board/esp32-wrover-kit-3.3v.cfg
 ```
 
-::: tip Permission problems
+::: danger Permission problems
 
 If you encounter an error, `LIBUSB_ERROR_ACCESS`, then this is mostly likely due to OpenOCD lacking the right permissions to access the serial port.
 
