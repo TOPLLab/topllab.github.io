@@ -1,6 +1,6 @@
 # ASCII Table
 
-Demonstrates advanced serial output functions.
+This example demonstrates advanced serial output functions.
 
 ## Circuit
 
