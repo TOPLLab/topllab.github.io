@@ -76,8 +76,8 @@ html::-webkit-scrollbar-thumb:hover, pre::-webkit-scrollbar-thumb:hover, aside::
   --vp-c-bg: rgb(var(--catppuccin-base));
   --vp-c-bg-elv: rgb(var(--catppuccin-mantle));
 
-  --vp-c-bg-soft: rgb(var(--catppuccin-base));
-  --vp-c-bg-soft-up: rgb(var(--catppuccin-base));
+  --vp-c-bg-soft: rgb(var(--catppuccin-mantle));
+  --vp-c-bg-soft-up: rgb(var(--catppuccin-crust));
 
   --vp-sidebar-bg-color: rgb(var(--catppuccin-mantle));
 
@@ -150,7 +150,14 @@ html::-webkit-scrollbar-thumb:hover, pre::-webkit-scrollbar-thumb:hover, aside::
  * Component: Button
  * -------------------------------------------------------------------------- */
 
-:root {
+:root:not(.dark) {
+  --vp-c-bg: #FFFFFF;
+
+  --vp-custom-block-info-bg: var(--vp-c-bg);
+  --vp-custom-block-tip-bg: var(--vp-c-bg);
+  --vp-custom-block-warning-bg: var(--vp-c-bg);
+  --vp-custom-block-danger-bg: var(--vp-c-bg);
+
   --vp-button-brand-border: var(--vp-c-brand-light);
   --vp-button-brand-text: var(--vp-c-white);
   --vp-button-brand-bg: var(--vp-c-brand);
