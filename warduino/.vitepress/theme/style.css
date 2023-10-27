@@ -15,22 +15,22 @@
 
 /** Scrollbar */
 
-html::-webkit-scrollbar, pre::-webkit-scrollbar, aside::-webkit-scrollbar {
+html::-webkit-scrollbar, pre::-webkit-scrollbar, aside::-webkit-scrollbar, div.results::-webkit-scrollbar {
   width: 20px;
 }
 
-html::-webkit-scrollbar-thumb, pre::-webkit-scrollbar-thumb, aside::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb, pre::-webkit-scrollbar-thumb, aside::-webkit-scrollbar-thumb, div.results::-webkit-scrollbar-thumb {
   background-color: rgba(var(--catppuccin-surface-0), 0.7);
   border-radius: 20px;
   border: 6px solid transparent;
   background-clip: content-box;
 }
 
-html::-webkit-scrollbar-track, pre::-webkit-scrollbar-track, aside::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track, pre::-webkit-scrollbar-track, aside::-webkit-scrollbar-track, div.results::-webkit-scrollbar-track {
   background-color: transparent;
 }
 
-html::-webkit-scrollbar-thumb:hover, pre::-webkit-scrollbar-thumb:hover, aside::-webkit-scrollbar-thumb:hover {
+html::-webkit-scrollbar-thumb:hover, pre::-webkit-scrollbar-thumb:hover, aside::-webkit-scrollbar-thumb:hover, div.results::-webkit-scrollbar-thumb:hover {
   background-color: rgba(var(--catppuccin-surface-0), 1);
 }
 
@@ -39,6 +39,7 @@ html::-webkit-scrollbar-thumb:hover, pre::-webkit-scrollbar-thumb:hover, aside::
  * -------------------------------------------------------------------------- */
 
  :root {
+  --catppuccin-overlay-0: 156, 160, 176;
   --catppuccin-surface-0: 204, 208, 218;
   --catppuccin-base: 239, 241, 245;
   --catppuccin-mantle: 230, 233, 239;
@@ -58,6 +59,7 @@ html::-webkit-scrollbar-thumb:hover, pre::-webkit-scrollbar-thumb:hover, aside::
 }
 
 .dark {
+  --catppuccin-overlay-0: 110, 115, 141;
   --catppuccin-surface-0: 54, 58, 79;
   --catppuccin-base: 36, 39, 58;
   --catppuccin-mantle: 30, 32, 48;
@@ -79,11 +81,18 @@ html::-webkit-scrollbar-thumb:hover, pre::-webkit-scrollbar-thumb:hover, aside::
 
   --vp-sidebar-bg-color: rgb(var(--catppuccin-mantle));
 
+  --vp-c-gutter: rgba(var(--catppuccin-crust), 1);
+  --vp-c-divider: rgba(var(--catppuccin-crust), 1);
+
   --vp-code-block-bg: var(--catppuccin-code);
 
   --vp-c-text-1: rgb(var(--catppuccin-text));
   --vp-c-text-2: rgb(var(--catppuccin-text));
   --vp-c-text-code: rgb(var(--catppuccin-text));
+
+  --vp-input-border-color: rgb(var(--catppuccin-crust));
+  --vp-input-hover-border-color: rgb(var(--catppuccin-overlay-0));
+  --vp-input-switch-bg-color: rgb(var(--catppuccin-mantle));
 
   --vp-c-brand: rgba(var(--catppuccin-blue), 1);
   --vp-c-brand-light: color-mix(in srgb, white 10%, rgb(var(--catppuccin-blue)));
@@ -94,7 +103,7 @@ html::-webkit-scrollbar-thumb:hover, pre::-webkit-scrollbar-thumb:hover, aside::
   --vp-c-brand-dimm: rgba(var(--catppuccin-blue), 0.08);
 
   --vp-button-alt-bg: rgb(var(--catppuccin-mantle));
-  --vp-button-alt-hover-bg: color-mix(in srgb, black 5%, rgb(var(--catppuccin-mantle)));
+  --vp-button-alt-hover-bg: rgb(var(--catppuccin-crust));
   --vp-button-alt-hover-text: rgb(var(--catppuccin-text));
   --vp-button-alt-hover-border: rgb(var(--catppuccin-crust));
   --vp-button-alt-border: rgb(var(--catppuccin-crust));
@@ -122,6 +131,12 @@ html::-webkit-scrollbar-thumb:hover, pre::-webkit-scrollbar-thumb:hover, aside::
   --vp-c-bg-soft-up: rgb(var(--catppuccin-surface-0));
 
   --vp-c-bg-alt: rgb(24, 24, 37); /* mocha mantle */
+
+  --vp-c-gutter: rgba(var(--catppuccin-overlay-0), 0.7);
+  --vp-c-divider: rgba(var(--catppuccin-overlay-0), 0.7);
+
+  --vp-input-border-color: rgba(var(--catppuccin-overlay-0), 0.7);
+  --vp-input-hover-border-color: rgba(var(--catppuccin-overlay-0), 1);
 
   --vp-button-alt-hover-bg: color-mix(in srgb, black 40%, rgb(var(--catppuccin-mantle)));
 
