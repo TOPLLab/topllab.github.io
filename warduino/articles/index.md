@@ -10,10 +10,10 @@ EDWARD is the advanced out-of-place debugger for WARDuino, developed to simplify
 
 More information can be found in the [EDWARD reference](/reference/edward/).
 
-<citation file="EDWARD.cff" url="https://doi.org/10.1145/3546918.3546920"/>
+<citation file="/EDWARD.cff" url="https://doi.org/10.1145/3546918.3546920"/>
 
 ## WARDuino (2019)
 
 WARDuino was the first WebAssembly virtual machine to target microcontrollers, such as the ESP32s, and included a remote debugger and support for partial over-the-air reprogramming of the devices.
 
-<citation file="WARDuino.cff" url="https://doi.org/10.1145/3357390.3361029" />
+<citation file="/WARDuino.cff" url="https://doi.org/10.1145/3357390.3361029" />

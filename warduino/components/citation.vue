@@ -29,6 +29,7 @@
 import Cite from 'citation-js';
 
 import '@citation-js/plugin-cff';
+import {withBase} from 'vitepress';
 
 export default {
   props: {
@@ -47,7 +48,7 @@ export default {
   },
 
   created() {
-    fetch(this.file, {
+    fetch(withBase(this.file), {
       headers: {
         'Content-Type': 'text/plain'
       }
