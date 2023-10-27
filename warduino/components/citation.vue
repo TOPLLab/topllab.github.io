@@ -5,9 +5,11 @@
     </p>
 
     <ul>
-      <!--<li><button class="tab"><span>APA</span></button></li>-->
-      <li class="active">
-        <button class="tab"><span>BibTex</span></button>
+      <li class="tab" :class="{ active: isBibTex }">
+        <button class="tab" @click="bibtex()"><span>BibTex</span></button>
+      </li>
+      <li class="tab" :class="{ active: isAPA }">
+        <button class="tab" @click="apa()"><span>APA</span></button>
       </li>
     </ul>
     <div style="clear: both;"></div>
@@ -44,7 +46,12 @@ export default {
   },
 
   data() {
-    return {metadata: 'loading ...'}
+    return {
+      citation: null,
+      metadata: 'text',
+      isBibTex: true,
+      isAPA: false
+    }
   },
 
   created() {
@@ -54,7 +61,8 @@ export default {
       }
     }).then((response) => {
       response.text().then((input) => {
-        this.metadata = new Cite(input).format('bibtex').replace(/\t/g, "").replace(/\n/g, " ").trim();
+        this.citation = new Cite(input);
+        this.bibtex();
       })
     });
   },
@@ -68,6 +76,16 @@ export default {
         console.error('Failed to copy');
         /* Rejected - text failed to copy to the clipboard */
       });
+    },
+    bibtex() {
+      this.isBibTex = true;
+      this.isAPA = false;
+      this.metadata = this.citation.format('bibtex').replace(/\t/g, '').replace(/\n/g, ' ').trim();
+    },
+    apa() {
+      this.isBibTex = false;
+      this.isAPA = true;
+      this.metadata = this.citation.format('bibliography', {format: 'text', template: 'apa'}).replace(/\n/g, '').trim();
     }
   },
 }
@@ -87,6 +105,10 @@ li {
   float: Left;
   margin-right: 3px;
   padding-bottom: 5px;
+}
+
+li.tab {
+  margin-top: 0px;
 }
 
 path {
@@ -198,7 +220,7 @@ input {
   flex-grow: 2;
   min-height: 2em;
 
-  padding: 0 1.5rem;
+  padding: 0 0.7rem;
 
   border: 1px solid var(--vp-custom-block-tip-border);
   border-top-right-radius: 0;
