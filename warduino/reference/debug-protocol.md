@@ -9,7 +9,7 @@ This page describe the debug protocol of WARDuino [version 0.4.2](https://github
 
 :::
 
-The debug protocol of WARDuino consist of a series of debug messages that can be sent to the debugger.
+The WARDuino debugger is operated through debug messages that can be sent over various channels.
 Messages are resolved in order, and the debug message queue is checked before any instruction is executed in the virtual machine.
 
 ## Overview
