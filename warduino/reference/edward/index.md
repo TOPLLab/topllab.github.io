@@ -6,7 +6,7 @@ import citation from '../../components/citation.vue'
 
 The EDWARD debugger implements a novel debugging approach called **event-based out-of-place debugging** that allows developers to capture a remotely running program and debug it locally on their own (more powerful) machine.
 
-<citation file="/EDWARD.cff" url="https://doi.org/10.1145/3546918.3546920"/>
+<citation file="/edward.bib" url="https://doi.org/10.1145/3546918.3546920"/>
 
 ## Motivation
 

@@ -9,4 +9,4 @@ The WARDuino virtual machine is a WebAssembly runtime for microcontrollers, whic
 Here you will find a full reference on the virtual machine and its core components.
 If you are looking to just get started with programming, [the Programmer's Guide](/guide/get-started) explains how to use WARDuino to write software using AssemblyScript or Rust.
 
-<citation file="/WARDuino.cff" url="https://doi.org/10.1145/3357390.3361029" />
+<citation file="/warduino.bib" url="https://doi.org/10.1145/3357390.3361029" />

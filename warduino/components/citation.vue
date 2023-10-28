@@ -29,8 +29,9 @@
 
 <script>
 import Cite from 'citation-js';
-
 import '@citation-js/plugin-cff';
+import '@citation-js/plugin-bibtex';
+
 import {withBase} from 'vitepress';
 
 export default {
