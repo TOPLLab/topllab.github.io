@@ -2,17 +2,38 @@
 <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 316.79 232.45">
   <defs>
     <style>
+          :root {
+        --catppuccin-overlay-0: 156, 160, 176;
+        --catppuccin-surface-0: 204, 208, 218;
+        --catppuccin-base: 239, 241, 245;
+        --catppuccin-mantle: 230, 233, 239;
+        --catppuccin-crust: 220, 224, 232;
+
+        --catppuccin-text: 76, 79, 105;
+
+        --catppuccin-blue: 30, 102, 245;
+        --catppuccin-red: 210, 15, 57;
+        --catppuccin-maroon: 230, 69, 83;
+        --catppuccin-yellow: 223, 142, 29;
+
+        --vp-c-white: #eff1f5;
+        --vp-c-mute: rgb(var(--catppuccin-mantle));
+
+        --catppuccin-code: #1e2030; /* Macchiato mantle */
+
+      }
+
       .cls-1 {
-        fill: #b4b4b4;
+        fill: rgb(var(--catppuccin-surface-0));
       }
 
       .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
-        stroke: #414142;
+        stroke: rgb(var(--catppuccin-text));
         stroke-miterlimit: 10;
       }
 
       .cls-2 {
-        fill: #f7a6b0;
+        fill: rgb(var(--catppuccin-maroon));
       }
 
       .cls-3 {
@@ -20,7 +41,7 @@
       }
 
       .cls-6 {
-        fill: #414142;
+        fill: rgb(var(--catppuccin-text));
         font-family: Roboto-BoldItalic, Roboto, sans-serif;
         font-size: 10px;
         font-style: italic;
@@ -28,19 +49,11 @@
       }
 
       .cls-4 {
-        fill: #e2e4e5;
-      }
-
-      .cls-7 {
-        letter-spacing: -.01em;
+        fill: rgb(var(--catppuccin-mantle));
       }
 
       .cls-5 {
-        fill: #818181;
-      }
-
-      .cls-8 {
-        letter-spacing: 0em;
+        fill: rgb(var(--catppuccin-overlay-0));
       }
     </style>
   </defs>
@@ -85,23 +98,24 @@
         <rect class="cls-5" x="26.92" y="115.59" width="24.04" height="33.83" rx="7.42" ry="7.42" transform="translate(-93.57 171.44) rotate(-90)"/>
       </g>
       <g>
-        <rect class="cls-4" x="233.33" y="101.33" width="31.5" height="31.5" rx="10.73" ry="10.73"/>
-        <circle class="cls-2" cx="249.08" cy="117.08" r="12.5"/>
-      </g>
-      <g>
         <path class="cls-3" d="m119,56h55.93l2.32-5,4.64,10,4.64-10,4.64,10,4.64-10,4.64,10,4.64-10,4.64,10,2.32-5h28.97v-30.93s0-5.66,8.6-5.66,8.6,5.66,8.6,5.66v21.43h-17.2" pointer-events="all"/>
         <path class="cls-3" d="m236.49,41.46V9.06s0-8.56,13-8.56,13,8.56,13,8.56v32.4h-26"/>
       </g>
-      <path class="cls-3" d="m119,117h55.93l2.32-5,4.64,10,4.64-10,4.64,10,4.64-10,4.64,10,4.64-10,4.64,10,2.32-5h21.17" pointer-events="all"/>
       <polyline class="cls-3" points="119 197.24 316.29 197.24 316.26 56.03 258.21 56 258.21 46.5"/>
-      <text class="cls-6" transform="translate(120.72 114.55)"><tspan x="0" y="0">5 V</tspan></text>
       <text class="cls-6" transform="translate(179.08 71.76)"><tspan x="0" y="0">220 Ω</tspan></text>
-      <text class="cls-6" transform="translate(179.08 132.76)"><tspan x="0" y="0">10 kΩ</tspan></text>
       <text class="cls-6" transform="translate(121.63 194.32) scale(.7)"><tspan x="0" y="0">GND</tspan></text>
-      <text class="cls-6" transform="translate(121.05 154.52) scale(.7)"><tspan x="0" y="0">GPIO</tspan></text>
       <text class="cls-6" transform="translate(121.28 53.36) scale(.7)"><tspan x="0" y="0">GPIO</tspan></text>
       <text class="cls-6" transform="translate(264.83 36.02)"><tspan x="0" y="0">LED</tspan></text>
-      <text class="cls-6" transform="translate(267.72 111.35)"><tspan x="0" y="0">BU</tspan><tspan class="cls-8" x="12.68" y="0">T</tspan><tspan class="cls-7" x="18.8" y="0">T</tspan><tspan x="24.72" y="0">ON</tspan></text>
+    </g>
+    <g id="Layer_2-2" data-name="Layer 2">
+      <g>
+        <circle class="cls-4" cx="249.08" cy="117.08" r="15.75"/>
+        <circle class="cls-2" cx="249.08" cy="117.08" r="5.28"/>
+      </g>
+      <line class="cls-3" x1="119" y1="117" x2="233.22" y2="117"/>
+      <text class="cls-6" transform="translate(120.72 114.55)"><tspan x="0" y="0">5 V</tspan></text>
+      <text class="cls-6" transform="translate(121.05 154.52) scale(.7)"><tspan x="0" y="0">GPIO</tspan></text>
+      <text class="cls-6" transform="translate(267.72 111.35)"><tspan x="0" y="0">SENSOR</tspan></text>
       <polyline class="cls-3" points="264.83 117 289.48 117 289.48 156.93 119 156.93"/>
     </g>
   </g>

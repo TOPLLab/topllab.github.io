@@ -1,3 +1,7 @@
+<script setup>
+import photo from '../../components/photo.vue'
+</script>
+
 # Blink Without Delay
 
 The previous [blink](/guide/examples/blink) example uses a busy loop and a delay, that prevents the program from doing anything useful in between changing the LED's state.
@@ -11,7 +15,7 @@ For this example you require:
 2. An LED
 3. 220 ohm resistor
 
-<img src="/images/led-circuit.svg" class="circuit">
+<photo src="/images/led-circuit.svg" darkmode="/images/led-circuit-dark.svg" classes="circuit"/>
 
 ## Program
 

@@ -1,3 +1,7 @@
+<script setup>
+import photo from '../../components/photo.vue'
+</script>
+
 # Analog Read Serial
 
 This is the smallest example for WARDuino, the program shows how to read analog input from the physical world, and print it out via the serial bus.
@@ -12,7 +16,7 @@ For this example you require:
 1. A microcontroller
 2. Potentiometer or other sensor
 
-<img src="/images/analog-circuit.svg" class="circuit">
+<photo src="/images/analog-circuit.svg" darkmode="/images/analog-circuit-dark.svg" classes="circuit"/>
 
 ## Program
 
