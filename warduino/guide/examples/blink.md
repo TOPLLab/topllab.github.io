@@ -1,3 +1,7 @@
+<script setup>
+import photo from '../../components/photo.vue'
+</script>
+
 # Blink
 
 The blinking LED example is the traditional _Hello World_ program for microcontrollers.
@@ -13,7 +17,7 @@ For this example you require:
 
 The LED and 220 ohm resistor are optional, most microcontrollers come with a built-in LED that you can use for this example.
 
-<img src="/images/led-circuit.svg" class="circuit">
+<photo src="/images/led-circuit.svg" darkmode="/images/led-circuit-dark.svg" classes="circuit"/>
 
 ## Program
 

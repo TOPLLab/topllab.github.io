@@ -253,7 +253,7 @@ html::-webkit-scrollbar-thumb:hover, pre::-webkit-scrollbar-thumb:hover, aside::
  * Circuits
  * -------------------------------------------------------------------------- */
 
-img.circuit { /* hardware circuit images */
+img.circuit, div.circuit { /* hardware circuit images */
     width: 64%;
     margin: auto;
 }

@@ -1,3 +1,7 @@
+<script setup>
+import photo from '../../components/photo.vue'
+</script>
+
 # Button
 
 Push-buttons and switches connect two points in a circuit when you press them.
@@ -13,7 +17,7 @@ For this example you require:
 4. An LED
 5. 220 ohm resistor
 
-<img src="/images/button-circuit.svg" class="circuit">
+<photo src="/images/button-circuit.svg" darkmode="/images/button-circuit-dark.svg" classes="circuit"/>
 
 ## Program
 

@@ -2,12 +2,27 @@
 <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 316.79 232.45">
   <defs>
     <style>
+          :root {
+  --catppuccin-overlay-0: 110, 115, 141;
+  --catppuccin-surface-0: 54, 58, 79;
+  --catppuccin-base: 36, 39, 58;
+  --catppuccin-mantle: 30, 32, 48;
+  --catppuccin-crust: 24, 25, 38;
+
+  --catppuccin-text: 202, 211, 245;
+
+  --catppuccin-blue: 138, 173, 244;
+  --catppuccin-red: 237, 135, 150;
+  --catppuccin-maroon: 238, 153, 160;
+  --catppuccin-yellow: 238, 212, 159;
+      }
+
       .cls-1 {
-        fill: #b4b4b4;
+        fill: rgb(var(--catppuccin-surface-0));
       }
 
       .cls-1, .cls-2, .cls-3, .cls-4 {
-        stroke: #414142;
+        stroke: rgb(var(--catppuccin-text));
         stroke-miterlimit: 10;
       }
 
@@ -16,7 +31,7 @@
       }
 
       .cls-5 {
-        fill: #414142;
+        fill: rgb(var(--catppuccin-text));
         font-family: Roboto-BoldItalic, Roboto, sans-serif;
         font-size: 10px;
         font-style: italic;
@@ -24,11 +39,11 @@
       }
 
       .cls-3 {
-        fill: #e2e4e5;
+        fill: rgb(var(--catppuccin-mantle));
       }
 
       .cls-4 {
-        fill: #818181;
+        fill: rgb(var(--catppuccin-overlay-0));
       }
     </style>
   </defs>
