@@ -1,6 +1,6 @@
 <template>
-  <figure>
-    <div id="figure" :class="classes" />
+  <figure :class="classes">
+    <div id="figure" />
     <figcaption v-if="caption">Figure. {{ caption }}</figcaption>
   </figure>
 </template>
@@ -50,7 +50,10 @@ html.dark #figure {
 }
 
 figcaption {
-  font-size: smaller;
+  font-size: small;
+  text-align: justify;
+
+  margin-top: 15px;
 }
 
 </style>
