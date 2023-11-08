@@ -138,14 +138,14 @@ The other configuration fields are ignored by the plugin since those only make s
 When you configured the debugger to [target a physical board](#configuring-warduino-for-debugging-on-a-physical-board) by default you start a remote debugger.
 Consequently, each issued debug operation is applied on the application running on the Physical board.
 
-See [available functionality](#plugin-functionality) for a detailed overview of the available functionality.
+See [available functionality](#functionality-overview) for a detailed overview of the available functionality.
 
 ## Remote Debugging on a Emulator
 
 When [configuring WARDuino for debugging on a Emulator](#configuring-warduino-for-debugging-on-a-emulator) by default you start a remote debugger where the process running the target application also runs locally on the same machine as the plugin.
 Consequently, each issued debug operation is applied on the application running on the emulator process but as opposed to [remote debugging on the physical board](#remote-debugging-on-a-physical-board) the debug latency is much smaller.
 
-See [available functionality](#plugin-functionality) for a detailed overview of the available functionality.
+See [available functionality](#functionality-overview) for a detailed overview of the available functionality.
 
 ## EDWARD: Event-based Out-of-place Debugger for WARDuino
 
@@ -155,7 +155,7 @@ If you are not yet familiar with event-based out-of-place debugging which is dif
 To enable EDWARD (Event-based out-of-place Debugger of WARDuino) you have two options.
 Either you enable it via the plugin command as explained in [pull debugsession command](#pull-debug-session) or by clicking on the `save` icon displayed on the `debugging timeline` debugger plugin view followed by the `debug` icon.
 
-## Plugin Functionality
+## Functionality Overview
 
 The following subsections details each of functionality supported by the plugin.
 For each of the functionalities, we will explicitely mention whether the functionality is available for when debugging on the emulator, physical board, and/or edward.
