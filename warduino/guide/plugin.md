@@ -129,8 +129,8 @@ This will cause the Plugin extension to configure the WARDuino debugger to targe
 ## Configuring WARDuino for debugging on a Emulator
 
 To enable debugging on the emulator set the `Warduino: Debug Mode` configuration value to `Embedded`.
-This will cause the Plugin extension to spawn a local WARDuino VM emulator which will run the target application.
-Once the local WARDuino VM emulator is spawned the plugin will connect to the VM debugger.
+This will cause the Plugin extension to spawn a local WARDuino VM emulator process which will run the target application.
+Once the local WARDuino VM emulator is spawned the plugin will connect to the VM debugger and will apply user specified debug operations to the process.
 The other configuration fields are ignored by the plugin since those only make sense for when debugging on a physical board.
 
 ## Plugin Commands
