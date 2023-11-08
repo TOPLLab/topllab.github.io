@@ -127,3 +127,43 @@ This will cause the Plugin extension to configure the WARDuino debugger to targe
   If you followed the default [plugin installation guide](/guide/plugin#installation), there is no need to change this value.
 
 ## Configuring WARDuino for debugging on a Emulator
+
+To enable debugging on the emulator set the `Warduino: Debug Mode` configuration value to `Embedded`.
+This will cause the Plugin extension to spawn a local WARDuino VM emulator which will run the target application.
+Once the local WARDuino VM emulator is spawned the plugin will connect to the VM debugger.
+The other configuration fields are ignored by the plugin since those only make sense for when debugging on a physical board.
+
+## Plugin Commands
+
+The following details the commands made available by the plugin when you press on `cmd+shift+p` for OSX and `ctr+shift+p` on a Linux-based OS.
+
+### Pull Debug Session
+
+> `warduino: Pull debugsession`
+
+While you are remote debugging on a physical board you can apply the command on demand to start the event-based out-of-place debugger.
+Once the command executes, it will cause the plugin to pull a snapshot from the board and spawn a emulator that proxies all the environment primitive function from the physical board.
+The snapshot will make sure that the emulator is started on the same state as the physical board.
+
+### Update Module
+
+> `warduino: Update Module`
+
+Is a command that you can execute to update the source code running on the WARDuino VM.
+The command will compile the source code and deploy the obtained Wasm binary module to the WARDuino VM.
+The WARDuino VM can be an emulated VM or a VM deployed on a physical board.
+After updating the module you can, if desired, restart the plugin which will enable debugging on the new source code.
+
+Note: as explained in [issue 121](https://github.com/TOPLLab/WARDuino/issues/121), when using update module command on a physical board, the updated module is not flashed which causes the new module to be lost in case of a board reboot.
+Future work aims to tackle this issue.
+
+### Commit Changes
+
+> `warduino: Commit changes`
+
+This command is only allowed for when using the event-based out-of-place debugger.
+Once you identified any potential bug and applied the necessery source-code fixes.
+The command can be used to then compile the new bug-free source-code and deploy the obtained WebAssembly module to the physical board.
+After updating the module you can, if desired, restart the plugin which will enable debugging on the new source code.
+
+Note: the command suffers from the same issue as [update module command](#update-module).
