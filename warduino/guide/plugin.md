@@ -82,9 +82,7 @@ You have two options:
 - [Embedded mode](/guide/plugin.md#debugging-on-the-board): In this mode, you configure the debugger to debug the target application on a physical board, such as an ESP32.
 
 The choice between debugging on a emulator or a physical board is crucial as it opens different debugging functionality and configurations.
-Section [Debugging on a Emulator](#debugging-on-a-emulator) and [Debugging on a Physical Board](#debugging-on-a-physical-board) elaboratons on those differences.
-
-## Debugging on a Physical Board
+Section [Configuring WARDuino for debugging on a Emulator](#configuring-warduino-for-debugging-on-a-emulator) and [Configuring WARDuino for debugging on a Physical Board](#configuring-warduino-for-debugging-on-a-physical-board) elaboratons on those configuration differences.
 
 To access the settings for the WARDuino debugger, open the settings of VSCode and search for the WARDuino specific settings by typing "warduino" in the search input area.
 For instance, for VSCode version 1.84.0 on OSX:
@@ -93,6 +91,8 @@ For instance, for VSCode version 1.84.0 on OSX:
 2. Select "Settings" from the dropdown.
 3. Select "Settings" from the new dropdown.
 4. In the search input area, type "warduino" to display the specific WARDuino configurations.
+
+## Configuring WARDuino for debugging on a Physical Board
 
 To enable debugging on the physical board set the `Warduino: Debug Mode` configuration value to `Embedded`.
 This will cause the Plugin extension to configure the WARDuino debugger to target an application running on a board and to read the configuration values provided by the following entries:
@@ -126,4 +126,4 @@ This will cause the Plugin extension to configure the WARDuino debugger to targe
   Is the path that points to the WABT toolchain version maintained by the TOPLLab.
   If you followed the default [plugin installation guide](/guide/plugin#installation), there is no need to change this value.
 
-## Debugging on a Emulator
+## Configuring WARDuino for debugging on a Emulator
