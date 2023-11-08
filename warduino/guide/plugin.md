@@ -162,6 +162,16 @@ For each of the functionalities, we will explicitely mention whether the functio
 
 ### Mainstream debug operations
 
+Regardless of the used debugger (remote or EDWARD), the debugger gives access to mainstream debug operations like adding a breakpoint, removing a breakpoint, pause the execution, etc, which are accessible via the little draggable pop-up.
+The following lists the currently available debug operations:
+
+- `pause`: pauses the application execution
+- `step over`: steps over the current instruction.
+- `stop`: stops the debugger.
+- `step back`: shows the previous program location. Note that in case of applying this operation on a physical board. Step back will not undo side-effects. Instead it will only show the previous state. There is a relation with `step-back` and the `debugging timeline` view of the plugin. More detail in [debugging timeline functionality](#debugging-timeline).
+
+### Debugging Timeline
+
 ## Plugin Commands
 
 The following details the commands made available by the plugin when you press on `cmd+shift+p` for OSX and `ctr+shift+p` on a Linux-based OS.
