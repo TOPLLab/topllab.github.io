@@ -141,7 +141,7 @@ Consequently, each debug operation is applied on the application running on the 
 
 See [available functionality](#functionality-overview) for a detailed overview of the available functionality.
 
-Note that while remote debugging it is very easy to switch to [EDWARD](/reference/edward/index) an event-based-out-place debugger that provides powerful debugging operations.
+Note that while remote debugging on a phyiscal board, it is very easy to switch to [EDWARD](/reference/edward/index) an event-based-out-place debugger that provides powerful debugging operations.
 See [EDWARD](#edward-event-based-out-of-place-debugger-for-warduino) on how to start such debugger.
 
 ## Remote Debugging on a Emulator
