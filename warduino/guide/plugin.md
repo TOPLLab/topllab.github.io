@@ -137,8 +137,8 @@ The other configuration fields are ignored by the plugin since those only make s
 
 ## Remote Debugging on a Physical Board
 
-When you configured the debugger to [target a physical board](#configuring-warduino-for-debugging-on-a-physical-board) by default you start a remote debugger.
-Consequently, each issued debug operation is applied on the application running on the Physical board.
+When you configured the debugger to [target a physical board](#configuring-warduino-for-debugging-on-a-physical-board) and you start the debugger, the plugin automatically starts by default a remote debugger.
+Consequently, each debug operation is applied on the application running on the Physical board.
 
 See [available functionality](#functionality-overview) for a detailed overview of the available functionality.
 
