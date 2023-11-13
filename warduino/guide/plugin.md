@@ -109,9 +109,8 @@ The following lists and clarifies such configuration values:
   For instance, to target the _M5StickC_ board the FQBN value should be set to `esp32:esp32:m5stick-c`, to target the _ESP32 Wrover Module_ board the value should be set to `esp32:esp32:esp32wrover`.
 
 - `Warduino: Baudrate` the baudrate to use with the serial connection to the board.
-  WARDuino supports the mainstream baudrate values (i.e., 9600, 115200, 19200).
-  Custom baudrate values are not supported.
-  If another baudrate value is necessary, feel free to open an issue.
+  WARDuino supports mainstream baudrate values (i.e., 9600, 115200, 19200) but custom baudrate values are not supported.
+  If a custom baudrate value is needed, feel free to open an issue.
 
 - `Warduino: Flash On Start` When debugging an application for the first time on a board toggle the `flash on start` checkbox.
   This will make sure that the WARDuino VM and the target application (pointed by `program` entry of the `.vscode/launch.json` file) is first compiled and flashed into the board.
