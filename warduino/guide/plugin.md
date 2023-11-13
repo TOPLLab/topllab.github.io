@@ -40,7 +40,9 @@ Before installing the plugin, make sure that you followed the [installation guid
 
 TODO: change config to allow breakpoints everywhere, etc.
 
-## Configurating VSCode to Use WARDuino
+## Debugger Configuration
+
+### Configurating VSCode to Use WARDuino
 
 After successfully [installing the plugin](/guide/plugin.md#installation), the initial task is to set up VSCode to utilize the WARDuino debugger.
 This can be achieved by following the standard [VSCode configuration approach](https://code.visualstudio.com/docs/editor/debugging): create a `.vscode/launch.json` file in the root directory of your source code. Ensure that the file includes the following entries:
@@ -67,7 +69,7 @@ Although the `button` application is bug-free, its simplicity makes it ideal for
 
 Throughout the remainder of this plugin documentation, we will continue to employ the same [button](/guide/examples/button) application to demonstrate the diverse range of debugger functionalities
 
-## Configurating the WARDuino Debugger
+### Configurating the WARDuino Debugger
 
 Once [VSCode has been configured](#configurating-vscode-to-use-warduino) to use the WARDuino debugger.
 You need to configure the WARDuino debugger to tell it in which mode you would like to debug the target application (in our case the `button`).
@@ -92,7 +94,7 @@ For instance, for VSCode version 1.84.0 on OSX:
 3. Select "Settings" from the new dropdown.
 4. In the search input area, type "warduino" to display the specific WARDuino configurations.
 
-## Configuring WARDuino for debugging on a Physical Board
+### Configuring WARDuino for debugging on a Physical Board
 
 To enable debugging on the physical board set the `Warduino: Debug Mode` configuration value to `Embedded`.
 This will cause the Plugin extension to configure the WARDuino debugger to target an application running on a board and to read the configuration values provided by the following entries:
@@ -126,7 +128,7 @@ This will cause the Plugin extension to configure the WARDuino debugger to targe
   Is the path that points to the WABT toolchain version maintained by the TOPLLab.
   If you followed the default [plugin installation guide](/guide/plugin#installation), there is no need to change this value.
 
-## Configuring WARDuino for debugging on a Emulator
+### Configuring WARDuino for debugging on a Emulator
 
 To enable debugging on the emulator set the `Warduino: Debug Mode` configuration value to `Embedded`.
 This will cause the Plugin extension to spawn a local WARDuino VM emulator process which will run the target application.
