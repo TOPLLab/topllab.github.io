@@ -72,27 +72,23 @@ Throughout the remainder of this plugin documentation, we will continue to emplo
 ### Configurating the WARDuino Debugger
 
 Once [VSCode has been configured](#configurating-vscode-to-use-warduino) to use the WARDuino debugger.
-You need to configure the WARDuino debugger to tell it in which mode you would like to debug the target application (application specified through the `program` key).
-Either the debugger debugs the target application on a [emulator](/guide/plugin.md#debugging-on-a-emulator).
-Or the debugger is configured to debug the target application on a [physical board](/guide/plugin.md#debugging-on-the-board) (e.g., ESP32).
+You need to configure the WARDuino debugger to tell it in which mode you would like to debug the target application (application specified through the `program` key in the `.vscode/launch.json` file):
 
-After setting up [VSCode to use the WARDuino debugger](#configurating-vscode-to-use-warduino), the next step is to configure the WARDuino debugger to specify the mode in which you want to debug the target application.
-You have two options:
+- [Emulator mode](#configuring-warduino-for-debugging-on-a-emulator): In this mode, the debugger will debug the target application on an emulator. The emulator is a process that runs the WARDuino VM which in turn runs the target application locally on the same machine as the plugin. When debugging on a emulator, the plugin connects to the emulator process and applies debug operations on the process as requested by the developer.
 
-- [Emulator mode](/guide/plugin.md#debugging-on-a-emulator): In this mode, the debugger will debug the target application on an emulator.
+- [Embedded mode](#configuring-warduino-for-debugging-on-a-physical-board): In this mode, you configure the debugger to debug the target application on a physical board, such as an ESP32. In this mode, the WARDuino VM is deployed on the physical board and runs the target application. The plugin connects to the physical board and applies debug operations issued by the developer.
 
-- [Embedded mode](/guide/plugin.md#debugging-on-the-board): In this mode, you configure the debugger to debug the target application on a physical board, such as an ESP32.
-
-The choice between debugging on a emulator or a physical board is crucial as it opens different debugging functionality and configurations.
-Section [Configuring WARDuino for debugging on a Emulator](#configuring-warduino-for-debugging-on-a-emulator) and [Configuring WARDuino for debugging on a Physical Board](#configuring-warduino-for-debugging-on-a-physical-board) elaboratons on those configuration differences.
-
-To access the settings for the WARDuino debugger, open the settings of VSCode and search for the WARDuino specific settings by typing "warduino" in the search input area.
-For instance, for VSCode version 1.84.0 on OSX:
+To configure the debugger for a particular mode, you first need to access the settings for the WARDuino debugger.
+For this you can open the settings of VSCode and search for the WARDuino specific settings by typing "warduino" in the search input area.
+For instance, for VSCode version 1.84.0 on OSX, you can access such settings by:
 
 1. Click on "Code" in the top menu.
 2. Select "Settings" from the dropdown.
 3. Select "Settings" from the new dropdown.
 4. In the search input area, type "warduino" to display the specific WARDuino configurations.
+
+Once the WARDuino vscode settings have been opened, you will be able to choose a mode.
+The following two sections elaborate on how to choose a particular mode.
 
 ### Configuring WARDuino for debugging on a Physical Board
 
