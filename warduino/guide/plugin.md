@@ -93,11 +93,14 @@ The following two sections elaborate on how to choose a particular mode.
 ### Configuring WARDuino for debugging on a Physical Board
 
 To enable debugging on the physical board set the `Warduino: Debug Mode` configuration value to `Embedded`.
-This will cause the Plugin extension to configure the WARDuino debugger to target an application running on a board and to read the configuration values provided by the following entries:
+This will cause the Plugin extension to configure the WARDuino debugger to target an application running on a board.
+
+If you opt for the `embedded` debug mode, additional mandatory and optional configuration values are made available to the developer.
+The following lists and clarifies such configuration values:
 
 - `Warduino: Port` The serial port address for accessing the physical board during debugging.
   On UNIX-based systems, this address is commonly designated as `/dev/ttyUSB0`.
-  Without specifying this port value, the plugin will be unable to establish communication with the physical board, resulting in a failure to initiate.
+  Without specifying this port value, the plugin will be unable to establish communication with the physical board, resulting in a plugin initialization failure.
 
 - `Warduino: Device` this configuration value should be set to the FQBN value of the target board.
   Currently, WARDuino is only supported on the _ESP32_ MCU and should therefore only be used for boards build on top of the ESP32.
