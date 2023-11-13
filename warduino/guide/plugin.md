@@ -65,9 +65,9 @@ This can be achieved by following the standard [VSCode configuration approach](h
 
 The `program` key of the json file specifies the entry file of the application that you want to debug.
 In this instance, we've opted for the `button` application introduced in [examples](/guide/examples/button).
-Although the `button` application is bug-free, its simplicity makes it ideal for illustrating the various available functionalities.
 
-Throughout the remainder of this plugin documentation, we will continue to employ the same [button](/guide/examples/button) application to demonstrate the diverse range of debugger functionalities
+Depending on the extension of the file pointed by the `program` entry.
+The plugin will load the required WebAssembly compilers and create source mappers accordindly.
 
 ### Configurating the WARDuino Debugger
 
