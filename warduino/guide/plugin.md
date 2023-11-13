@@ -72,7 +72,7 @@ Throughout the remainder of this plugin documentation, we will continue to emplo
 ### Configurating the WARDuino Debugger
 
 Once [VSCode has been configured](#configurating-vscode-to-use-warduino) to use the WARDuino debugger.
-You need to configure the WARDuino debugger to tell it in which mode you would like to debug the target application (in our case the `button`).
+You need to configure the WARDuino debugger to tell it in which mode you would like to debug the target application (application specified through the `program` key).
 Either the debugger debugs the target application on a [emulator](/guide/plugin.md#debugging-on-a-emulator).
 Or the debugger is configured to debug the target application on a [physical board](/guide/plugin.md#debugging-on-the-board) (e.g., ESP32).
 
