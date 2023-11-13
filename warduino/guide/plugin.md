@@ -210,6 +210,16 @@ The stack will grow and shrink throughout application execution.
 
 ### Events View
 
+The events view displays the events that can occur while debugging on the target application.
+These events can be either caused by hardware interrupts (e.g., press of a button) or incoming network messages (e.g., incoming MQTT message), may arise at any time.
+When they arise, events are added at the bottom of the events view.
+
+The plugin enables the possibility to decide when events get handled by the VM.
+However, this is (for now) only possible when debugging with EDWARD.
+To trigger the handling of an event, you can click on the `arrow down` button <img src="/images/arrow-down-icon-light.svg" class="inline-icon light"><img src="/images/arrow-down-icon-dark.svg" class="inline-icon dark"> on the right of the `Events` view name.
+Once clicked the VM will make sure that the event gets handled.
+This implies that advencing the computation will cause the program counter to jump to the callback handler of the event.
+
 ### Proxies View
 
 The proxies view is only relevant when debugging with EDWARD which is an event-based out-of-place debugger.
