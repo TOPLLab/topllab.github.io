@@ -172,7 +172,6 @@ If you are not yet familiar with event-based out-of-place debugging which is dif
 To enable EDWARD (Event-based out-of-place Debugger of WARDuino) you have two options:
 
 - Run the [pull debugsession command](#pull-debug-session).
-  This will cause the plugin to apply the needed configuration and co
 - Go to the [Debugging Timeline view](#debugging-timeline) and click on the `save` button to extract a debug session from the physical board.
   Once the whole session has been extracted click then on the `debug` button to start the EDRWARD debugger on the selected debug session.
 
