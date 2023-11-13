@@ -146,8 +146,16 @@ See [EDWARD](#edward-event-based-out-of-place-debugger-for-warduino) on how to s
 
 ## Remote Debugging on a Emulator
 
-When [configuring WARDuino for debugging on a Emulator](#configuring-warduino-for-debugging-on-a-emulator) by default you start a remote debugger where the process running the target application also runs locally on the same machine as the plugin.
-Consequently, each issued debug operation is applied on the application running on the emulator process but as opposed to [remote debugging on the physical board](#remote-debugging-on-a-physical-board) the debug latency is much smaller.
+When [configuring WARDuino for debugging on a Emulator](#configuring-warduino-for-debugging-on-a-emulator)
+you are implicitely chosing to remote debug the target application on a process called an emulator.
+The emulator is a process spawned by the plugin and that runs the WARDuino VM along the target application locally on the same machine as the plugin.
+
+An advantage of debugging on a emulator is the faster debugging experience: each debug operation issued through the plugin is instantely applied to the emulator process making the whole debugging experience blazingly fast.
+In contrast, when [remote debugging on a physical board](#remote-debugging-on-a-physical-board), each debug operation needs to first traverse a serial connection which can introduce delay in the debugging experience.
+This delay can become significant when opting for network-based communication.
+
+However, a major disadvantage when debugging on a emulator is the absence of the board hardware resources (e.g., pins, leds).
+Therefore, an emulator is mainly interesting to use during an early stage of debugging where the focus is on correctness of the software rather the correctness of interplay between software and hardware.
 
 See [available functionality](#functionality-overview) for a detailed overview of the available functionality.
 
