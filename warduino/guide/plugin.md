@@ -38,7 +38,16 @@ In this section, we will delve into the features provided by the plugin. The fol
 
 Before installing the plugin, make sure that you followed the [installation guide](/guide/get-started.md#installation) for the needed development software.
 
-TODO: change config to allow breakpoints everywhere, etc.
+Once the installation is completed follow the following steps:
+
+- Install VS Code (version 1.63.2 or higher)
+
+- (Optional) In case you plan to debug Textual WebAssembly source files make sure to install this [VSCode WebAssembly Syntax Highlight plugin](https://github.com/AlanCezarAraujo/vscode-webassembly-syntax-highlight).
+
+- Change the VSCode settings to enable allow `Allow Breakpoints Everywhere`.
+  This can be enabled by opening the VSCode settings and searching for `allow breakpoints everywhere` in the settings search input area.
+- run the installation bash script called `install.sh`.
+  This script will make sure to download the needed libraries such as the WARDuino VM and perform the right compilations.
 
 ## Debugger Configuration
 
