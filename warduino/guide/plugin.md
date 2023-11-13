@@ -172,7 +172,7 @@ If you are not yet familiar with event-based out-of-place debugging which is dif
 To enable EDWARD (Event-based out-of-place Debugger of WARDuino) you have two options:
 
 - Run the [pull debugsession command](#pull-debug-session).
-- Go to the [Debugging Timeline view](#debugging-timeline) and click on the `save` button to extract a debug session from the physical board.
+- Go to the [Debugging Timeline view](#debugging-timeline-view) and click on the `save` button to extract a debug session from the physical board.
   Once the whole session has been extracted click then on the `debug` button to start the EDRWARD debugger on the selected debug session.
 
 ## Functionality Overview
@@ -187,7 +187,7 @@ The following lists the currently available debug operations:
 - `pause`: pauses the application execution
 - `step over`: steps over the current instruction.
 - `stop`: stops the debugger.
-- `step back`: shows the previous program location. Note that in case of applying this operation on a physical board. Step back will not undo side-effects. Instead it will only show the previous state. There is a relation with `step-back` and the `debugging timeline` view of the plugin. More detail in [debugging timeline functionality](#debugging-timeline).
+- `step back`: shows the previous program location. Note that in case of applying this operation on a physical board. Step back will not undo side-effects. Instead it will only show the previous state. There is a relation with `step-back` and the `debugging timeline` view of the plugin. More detail in [debugging timeline functionality](#debugging-timeline-view).
 
 ### Debugging Timeline
 
