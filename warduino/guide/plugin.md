@@ -179,7 +179,6 @@ To enable EDWARD (Event-based out-of-place Debugger of WARDuino) you have two op
 ## Functionality Overview
 
 The following subsections details each of functionality supported by the plugin.
-For each of the functionalities, we will explicitely mention whether the functionality is available for when debugging on the emulator, physical board, and/or edward.
 
 ### Mainstream debug operations
 
