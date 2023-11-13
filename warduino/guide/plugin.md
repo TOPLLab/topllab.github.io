@@ -78,6 +78,11 @@ You need to configure the WARDuino debugger to tell it in which mode you would l
 
 - [Embedded mode](#configuring-warduino-for-debugging-on-a-physical-board): In this mode, you configure the debugger to debug the target application on a physical board, such as an ESP32. In this mode, the WARDuino VM is deployed on the physical board and runs the target application. The plugin connects to the physical board and applies debug operations issued by the developer.
 
+- [Proxy mode](#edward-event-based-out-of-place-debugger-for-warduino): This is a special mode that once activated enables [event-based out-of-place debugging](/reference/edward/index).
+  Activating this mode is not possible via configuration but can be activated by first enabling `embedded` mode.
+  Then switching to event-based out-of-place.
+  The required steps are detailed in [setting up EDWARD](#edward-event-based-out-of-place-debugger-for-warduino).
+
 To configure the debugger for a particular mode, you first need to access the settings for the WARDuino debugger.
 For this you can open the settings of VSCode and search for the WARDuino specific settings by typing "warduino" in the search input area.
 For instance, for VSCode version 1.84.0 on OSX, you can access such settings by:
