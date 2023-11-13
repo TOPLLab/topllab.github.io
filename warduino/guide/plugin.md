@@ -117,7 +117,8 @@ The following lists and clarifies such configuration values:
   After the flashing completes the plugin then connects automatically to the debugger.
   In the situation where you aim to debug an application that has already been previously deployed on the board (e.g., through a previous debug session) and is thus being executed by the WARDuino VM.
   You can uncheck `flash on start`.
-  This will bypass the default compilation and flashing process and connect immediately the plugin to the VM debugger.
+  This will bypass the default compilation and flashing process.
+  Instead, the plugin will immediately connect to the VM debugger.
 
 - `Warduino: WARDuino Tool Chain Path` Is the path that points to the WARDuino VM binary code.
   If you followed the default [plugin installation guide](/guide/plugin#installation), there is no need to change this value.
