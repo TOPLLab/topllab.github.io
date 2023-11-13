@@ -189,7 +189,92 @@ The following lists the currently available debug operations:
 - `stop`: stops the debugger.
 - `step back`: shows the previous program location. Note that in case of applying this operation on a physical board. Step back will not undo side-effects. Instead it will only show the previous state. There is a relation with `step-back` and the `debugging timeline` view of the plugin. More detail in [debugging timeline functionality](#debugging-timeline-view).
 
-### Debugging Timeline
+### Variables View
+
+As any other debugger, you can also get a view on the local variables, globals variables and arguments provided to functions.
+All of this information is displayed in the variables view.
+
+You can also freely modify any state displayed on the variables view.
+However, only valid state modifications will go through.
+For instance, if you decided to modify a variable holding a float number with a float value that will be accepted.
+In contrast, changing the variable to a string will naturally be refused.
+
+As explained in [step back operation](#mainstream-debug-operations) and [debugging history view](#debugging-timeline-view), it is possible to go back to previous application states.
+Modifying the variables of those past states is possible but only under special conditions.
+See [modifying the history](#modifying-the-history) for more details.
+
+### Stack View
+
+When debugging at the level of WebAssembly, the stack view will display the current state of the stack.
+The stack will grow and shrink throughout application execution.
+
+### Events View
+
+### Proxies View
+
+The proxies view is only relevant when debugging with EDWARD which is an event-based out-of-place debugger.
+To get acquinted with event-based out-of-place debugging technique see [documentation](/reference/edward/index).
+For information on how to start the EDWARD debugger see [debugging with EDWARD](#edward-event-based-out-of-place-debugger-for-warduino).
+
+The proxies view displays the primitive functions that are proxied by EDWARD during event-based out-of-place debugging.
+And for any of those functions the developer can decide when to stop proxying the function.
+For this, it suffices to click on the toggle box on the left of the primitive function name.
+Naturally, deactivated functions can be reactivated for proxy by clicking again on the toggle box.
+While debugging when encountering a primitive function that has been desactivated for proxy, the VM will run instead a default function implementation.
+
+The ability to choose at will which functions to proxy gives more fine-grained control over potential overhead imposed on physical boards.
+For instance, in the situation where it is crucial to preserve battery life, the developer could opt for proxying only the bare minimal functions.
+
+### Debugging Timeline View
+
+::: warning
+
+The debugging timeline view is still in an experimental state and is currently being improved.
+Therefore some functionality may not behave as expected.
+
+For instance, going back to a point in time where the LED of a physical board was off, will not turn the LED off.
+:::
+
+The debugging timeline view gives an history of each application state encountered by the developer when debugging the target application.
+Each entry in the view corresponds with a particular application state during the debugging session and can be viewed on demand by the developer and even modified under certain conditions.
+The following details these abilities.
+
+### Viewing the History
+
+To display previous application states, it suffices to click on the
+eye button <img src="/images/eye-icon-dark.svg" class="inline-icon dark"><img src="/images/eye-icon-light.svg" class="inline-icon light">
+associated to an entry in the view.
+When you click on the button, this will cause the plugin to change the views so to display the application state that was valid back in that time.
+
+Every time that you advance the computation of the target application while debugging (e.g., `step`, `run` until breakpoint is reached), a new entry is added at the top of the view.
+Consequently, the top entry in the view corresponds with the present i.e., the current application state which is valid for your target application.
+Whereas entries lower than the top entry display the past.
+The most bottom entry corresponds with the application state that the developer had when the debugger got started.
+
+Alternatively, another way on how to look at past application states is to press the `step back` button.
+The reason why you also get to see the whole debugging timeline is to give the developer a general overview of the whole history.
+This should make the jump back to a particular point in time much easier.
+
+### Modifying the History
+
+The possibility to alter the past is particularly interesting for exploratory debugging.
+For instance, if the developer suspects that a function that already got called may fail for particular arguments.
+It would be highly beneficial to the developer to go back to the point before the function gets called to let the developer change the arguments provided to the function.
+However, as explained in the [variables view](#variables-view), changing variables values is only possible for the present.
+Trying to modify past variables values (e.g., if you press `step back` and then try to change a variable) requires an additional step that we will clarify now.
+
+To enable the possibility to alter past application state.
+The developer needs to click on the `save` button <img src="/images/save-icon-light.svg" class="inline-icon light"><img src="/images/save-icon-dark.svg" class="inline-icon dark"> displayed on the top debugging timeline entry.
+When the `save` button is clicked, the plugin will ensure that the present state is saved as a point in time that can be:
+
+- Modified during a later debugging phase. For instance, if you advance the applicaiton execution through one step debug operation. You can now also step back and modify the state of the previous point in time since this was saved previously. If you modifiy a past state, the plugin will automatically redeploy the modified state to either the physical board or emulator. And debugging will then resume starting from that modified state.
+
+- Used as starting debugging point for when EDWARD is started. This is possible as soon as the full application state is successfully saved. The state is successfully saved once the `save` button icon gets replaced by the `debug start` icon <img src="/images/debug-start-icon-light.svg" class="inline-icon light"><img src="/images/debug-start-icon-dark.svg" class="inline-icon dark">
+  By pressing on the `debug start` button, you can start EDWARD on that particular point in time.
+
+You will notice that the `save` button is only available for the present.
+This is an intentional design choice since saving each point in time not only is a time consuming process but may also drastically affect battery life when debugging on a physical board.
+Deciding which points in time should be saved is a decision best left to the developers.
 
 ## Plugin Commands
 
