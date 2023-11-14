@@ -263,3 +263,24 @@ img.circuit, figure.circuit {
         width: 90%;
     }
 }
+
+
+html.dark img.inline-icon.light {
+  display: none;
+}
+
+html.dark img.inline-icon.dark {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+html:not(.dark) img.inline-icon.dark {
+  display: none;
+}
+
+html:not(.dark) img.inline-icon.light {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
