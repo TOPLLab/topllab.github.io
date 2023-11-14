@@ -15,11 +15,7 @@ Consequently, the plugin may crash unexpectedly or become unresponsive.
 
 :::
 
-::: information
-
-The following documentation assumes at least VSCode plugin version 0.4.1 and WARDuino version 0.4.2.
-
-:::
+The following documentation assumes the usage of at least **WARDuino VSCode plugin version 0.4.1** and **WARDuino version 0.4.2**.
 
 The VSCode Plugin is a VSCode extension designed for debugging applications running on the WARDuino VM. The plugin offers two debugging techniques: 1. [remote debugging](/reference/debugger) and 2. [event-based out-of-place debugging](/reference/edward/index).
 
@@ -45,16 +41,17 @@ Once the installation is completed follow the following steps:
 - (Optional) In case you plan to debug Textual WebAssembly source files make sure to install this [VSCode WebAssembly Syntax Highlight plugin](https://github.com/AlanCezarAraujo/vscode-webassembly-syntax-highlight).
 
 - Change the VSCode settings to enable allow `Allow Breakpoints Everywhere`.
-  This can be enabled by opening the VSCode settings and searching for `allow breakpoints everywhere` in the settings search input area.
-- run the installation bash script called `install.sh`.
-  This script will make sure to download the needed libraries such as the WARDuino VM and perform the right compilations.
+  For this, navigate to the VSCode settings and search for `Allow Breakpoints Everywhere` in the search bar.
+- Download the [WARDuino VSCode plugin](https://github.com/TOPLLab/WARDuino-VSCode) repo and execute the installation bash script named `install.sh`.
+  This script downloads and builds the essential libraries such as the WARDuino VM.
 
 ## Debugger Configuration
 
 ### Configurating VSCode to Use WARDuino
 
-After successfully [installing the plugin](/guide/plugin.md#installation), the initial task is to set up VSCode to utilize the WARDuino debugger.
-This can be achieved by following the standard [VSCode configuration approach](https://code.visualstudio.com/docs/editor/debugging): create a `.vscode/launch.json` file in the root directory of your source code. Ensure that the file includes the following entries:
+Once the [plugin installation](/guide/plugin.md#installation) completes, the initial task is to configure VSCode to use the WARDuino debugger.
+This can be achieved by following the standard [VSCode configuration method](https://code.visualstudio.com/docs/editor/debugging): create a `.vscode/launch.json` file in the root directory of your source code.
+Ensure that the file includes the following entries:
 
 ```JSON
 {
@@ -72,34 +69,35 @@ This can be achieved by following the standard [VSCode configuration approach](h
 }
 ```
 
-The `program` key of the json file specifies the entry file of the application that you want to debug.
+The `program` key within the JSON file specifies the application's entry file that needs to be debugged.
 In this instance, we've opted for the `button` application introduced in [examples](/guide/examples/button).
 
-Depending on the extension of the file pointed by the `program` entry.
-The plugin will load the required WebAssembly compilers and create source mappers accordindly.
+Depending on the file extension pointed by the `program` entry, the plugin will load the required WebAssembly compiler and create source mappers accordindly.
 
 ### Configurating the WARDuino Debugger
 
-Once [VSCode has been configured](#configurating-vscode-to-use-warduino) to use the WARDuino debugger.
-You need to configure the WARDuino debugger to tell it in which mode you would like to debug the target application (application specified through the `program` key in the `.vscode/launch.json` file):
+Upon [configuring VSCode for WARDuino](#configurating-vscode-to-use-warduino), the next step involves configuring the WARDuino debugger itself to specify the debugging mode for the target application (as specified by the `program` key in the `.vscode/launch.json` file).
+The debugger supprots the following modes for debugging:
 
-- [Emulator mode](#configuring-warduino-for-debugging-on-a-emulator): In this mode, the debugger will debug the target application on an emulator. The emulator is a process that runs the WARDuino VM which in turn runs the target application locally on the same machine as the plugin. When debugging on a emulator, the plugin connects to the emulator process and applies debug operations on the process as requested by the developer.
+- [Emulator mode](#configuring-warduino-for-debugging-on-a-emulator): Debugging takes place on an emulator, where the WARDuino VM runs the target application locally on the same machine as the plugin.
+  When debugging on a emulator, the plugin connects to the emulator process and applies debug operations on the process as requested by the developer.
 
-- [Embedded mode](#configuring-warduino-for-debugging-on-a-physical-board): In this mode, you configure the debugger to debug the target application on a physical board, such as an ESP32. In this mode, the WARDuino VM is deployed on the physical board and runs the target application. The plugin connects to the physical board and applies debug operations issued by the developer.
+- [Embedded mode](#configuring-warduino-for-debugging-on-a-physical-board): Configure the debugger to debug the target application on a physical board (e.g., ESP32).
+  In this mode, the WARDuino VM is deployed on the physical board and runs the target application.
+  The plugin connects to the physical board and applies debug operations issued by the developer.
 
-- [Proxy mode](#edward-event-based-out-of-place-debugger-for-warduino): This is a special mode that once activated enables [event-based out-of-place debugging](/reference/edward/index).
-  Activating this mode is not possible via configuration but can be activated by first enabling `embedded` mode.
-  Then switching to event-based out-of-place.
+- [Proxy mode](#edward-event-based-out-of-place-debugger-for-warduino): This unique mode enables [event-based out-of-place debugging](/reference/edward/index).
+  Activating this mode is not possible via configuration (although the two other modes can).
+  To activate this mode, start by first enabling `embedded` mode and then switch to event-based out-of-place.
   The required steps are detailed in [setting up EDWARD](#edward-event-based-out-of-place-debugger-for-warduino).
 
-To configure the debugger for a particular mode, you first need to access the settings for the WARDuino debugger.
+To configure the debugger for a specific mode, access the settings for the WARDuino debugger.
 For this you can open the settings of VSCode and search for the WARDuino specific settings by typing "warduino" in the search input area.
 For instance, for VSCode version 1.84.0 on OSX, you can access such settings by:
 
-1. Click on "Code" in the top menu.
-2. Select "Settings" from the dropdown.
-3. Select "Settings" from the new dropdown.
-4. In the search input area, type "warduino" to display the specific WARDuino configurations.
+1. Clicking on "Code" in the top menu.
+2. From the dropdown, select "Settings". Then select "Settings" again from the new dropdown.
+3. In the search input area, type "warduino" to reveal the WARDuino specific configurations.
 
 Once the WARDuino vscode settings have been opened, you will be able to choose a mode.
 The following two sections elaborate on how to choose a particular mode.
@@ -144,43 +142,44 @@ The following lists and clarifies such configuration values:
 ### Configuring WARDuino for debugging on a Emulator
 
 To enable debugging on the emulator set the `Warduino: Debug Mode` configuration value to `Embedded`.
-This will cause the Plugin extension to spawn a local WARDuino VM emulator process which will run the target application.
-Once the local WARDuino VM emulator is spawned the plugin will connect to the VM debugger and will apply user specified debug operations to the process.
-The other configuration fields are ignored by the plugin since those only make sense for when debugging on a physical board.
+This will cause the Plugin extension to spawn a local WARDuino VM emulator process that runs the target application.
+Once the local WARDuino VM emulator is spawned, the plugin connects to the VM debugger and applies user-specified debug operations to the process.
+
+The plugin disregards the other configuration fields as they are only relevant for debugging on a physical board.
 
 ## Remote Debugging on a Physical Board
 
-When you configured the debugger to [target a physical board](#configuring-warduino-for-debugging-on-a-physical-board) and you start the debugger, the plugin automatically starts by default a remote debugger.
+When configuring the debugger to [target a physical board](#configuring-warduino-for-debugging-on-a-physical-board), the plugin defaults to launching a remote debugger.
 Consequently, each debug operation is applied on the application running on the Physical board.
 
-See [available functionality](#functionality-overview) for a detailed overview of the available functionality.
+For a comprehensive overview of the available functionality when debugging on a board, refer to the [available functionality documentation](#functionality-overview).
 
-Note that while remote debugging on a phyiscal board, it is very easy to switch to [EDWARD](/reference/edward/index) an event-based-out-place debugger that provides powerful debugging operations.
+Note that while remote debugging on a phyiscal board you can easily switch to [EDWARD](/reference/edward/index) an event-based-out-place debugger that provides powerful debugging operations.
 See [EDWARD](#edward-event-based-out-of-place-debugger-for-warduino) on how to start such debugger.
 
 ## Remote Debugging on a Emulator
 
-When [configuring WARDuino for debugging on a Emulator](#configuring-warduino-for-debugging-on-a-emulator)
-you are implicitely chosing to remote debug the target application on a process called an emulator.
-The emulator is a process spawned by the plugin and that runs the WARDuino VM along the target application locally on the same machine as the plugin.
+When [configuring WARDuino for debugging on a Emulator](#configuring-warduino-for-debugging-on-a-emulator),
+you are opting for remote debugging the target application on a process called an emulator.
+This emulator, spawned by the plugin, runs the WARDuino VM alongside the target application on the local machine where the plugin also runs.
 
-An advantage of debugging on a emulator is the faster debugging experience: each debug operation issued through the plugin is instantely applied to the emulator process making the whole debugging experience blazingly fast.
-In contrast, when [remote debugging on a physical board](#remote-debugging-on-a-physical-board), each debug operation needs to first traverse a serial connection which can introduce delay in the debugging experience.
-This delay can become significant when opting for network-based communication.
+An advantage of debugging on a emulator is speed.
+Each debug operation issued through the plugin is instantely applied to the emulator process resulting in a remarkably fast debugging experience.
+In contrast, [remote debugging on a physical board](#remote-debugging-on-a-physical-board) involves debug operations traversing a serial connection, potentially introducing delays specially signficant with network-based communication.
 
-However, a major disadvantage when debugging on a emulator is the absence of the board hardware resources (e.g., pins, leds).
-Therefore, an emulator is mainly interesting to use during an early stage of debugging where the focus is on correctness of the software rather the correctness of interplay between software and hardware.
+However, a major disadvantage when debugging on a emulator is the absence of the board hardware resources (e.g., pins, LEDs).
+Therefore, an emulator is primairly useful during the initial debugging stages where the focus is on software correctness rather than the interaction between software and hardware.
 
-See [available functionality](#functionality-overview) for a detailed overview of the available functionality.
+For a comprehensive overview of the available functionality when debugging on a emulator, refer to the [available functionality documentation](#functionality-overview).
 
 ## EDWARD: Event-based Out-of-place Debugger for WARDuino
 
 The following introduces how to start EDWARD which is the event-based out-of-place debugger of WARDuino.
-If you are not yet familiar with event-based out-of-place debugging which is different than remote debugging please consult the introductory page [event-based out-of-place debugging documentation](/reference/edward/index).
+If you are not yet familiar with event-based out-of-place debugging which is different from remote debugging please consult the introductory page [event-based out-of-place debugging documentation](/reference/edward/index).
 
 To enable EDWARD (Event-based out-of-place Debugger of WARDuino) you have two options:
 
-- Run the [pull debugsession command](#pull-debug-session).
+- Run the [pull debug session command](#pull-debug-session).
 - Go to the [Debugging Timeline view](#debugging-timeline-view) and click on the `save` button to extract a debug session from the physical board.
   Once the whole session has been extracted click then on the `debug` button to start the EDRWARD debugger on the selected debug session.
 
@@ -190,27 +189,27 @@ The following subsections details each of functionality supported by the plugin.
 
 ### Mainstream debug operations
 
-Regardless of the used debugger (remote or EDWARD), the debugger gives access to mainstream debug operations like adding a breakpoint, removing a breakpoint, pause the execution, etc, which are accessible via the little draggable pop-up.
-The following lists the currently available debug operations:
+Whether using the remote debugger or EDWARD, both provide access to fundamental debug operations accessible through a draggable pop-up interface.
+The operations include:
 
 - `pause`: pauses the application execution
-- `step over`: steps over the current instruction.
+- `step`: step to the next instruction.
 - `stop`: stops the debugger.
-- `step back`: shows the previous program location. Note that in case of applying this operation on a physical board. Step back will not undo side-effects. Instead it will only show the previous state. There is a relation with `step-back` and the `debugging timeline` view of the plugin. More detail in [debugging timeline functionality](#debugging-timeline-view).
+- `step back`: shows the previous program location.
+  Note that in case of applying this operation on a physical board.
+  Step back will not undo side-effects but instead will only show the previous state.
 
 ### Variables View
 
-As any other debugger, you can also get a view on the local variables, globals variables and arguments provided to functions.
-All of this information is displayed in the variables view.
+As with other debuggers, you have access to view local and global variables as well as function arguments, all conveniently displayed in the variables view.
 
-You can also freely modify any state displayed on the variables view.
-However, only valid state modifications will go through.
-For instance, if you decided to modify a variable holding a float number with a float value that will be accepted.
-In contrast, changing the variable to a string will naturally be refused.
+While debugging, the variables view allows you to modify displayed states, but only valid modifications are accepted.
+For example, changing a variable holding a float number to another float value is permitted.
+However, attempting to change it to a string will be rejected.
 
-As explained in [step back operation](#mainstream-debug-operations) and [debugging history view](#debugging-timeline-view), it is possible to go back to previous application states.
-Modifying the variables of those past states is possible but only under special conditions.
-See [modifying the history](#modifying-the-history) for more details.
+Regarding the [step back operation](#mainstream-debug-operations) and the [debugging history view](#debugging-timeline-view), revisiting previous application states is feasible.
+Modifying variables within those past states is possible under specific conditions.
+For further details, refer to the documentation on [modifying the history](#modifying-the-history).
 
 ### Stack View
 
@@ -220,14 +219,14 @@ The stack will grow and shrink throughout application execution.
 ### Events View
 
 The events view displays the events that can occur while debugging on the target application.
-These events can be either caused by hardware interrupts (e.g., press of a button) or incoming network messages (e.g., incoming MQTT message), may arise at any time.
-When they arise, events are added at the bottom of the events view.
+These events can be either caused by hardware interrupts (e.g., press of a button) or incoming network messages (e.g., incoming MQTT message) and may arise at any time.
+As they occur, events are appended at the bottom of the events view.
 
 The plugin enables the possibility to decide when events get handled by the VM.
 However, this is (for now) only possible when debugging with EDWARD.
 To trigger the handling of an event, you can click on the `arrow down` button <img src="/images/arrow-down-icon-light.svg" class="inline-icon light"><img src="/images/arrow-down-icon-dark.svg" class="inline-icon dark"> on the right of the `Events` view name.
-Once clicked the VM will make sure that the event gets handled.
-This implies that advencing the computation will cause the program counter to jump to the callback handler of the event.
+Once clicked the VM will make sure that the next event in the queue gets handled.
+This implies that after clicking on the buttona and advencing the computation with for instance a step debug operation, will cause the program counter to jump to the callback handler of the event.
 
 ### Proxies View
 
@@ -236,10 +235,9 @@ To get acquinted with event-based out-of-place debugging technique see [document
 For information on how to start the EDWARD debugger see [debugging with EDWARD](#edward-event-based-out-of-place-debugger-for-warduino).
 
 The proxies view displays the primitive functions that are proxied by EDWARD during event-based out-of-place debugging.
-And for any of those functions the developer can decide when to stop proxying the function.
-For this, it suffices to click on the toggle box on the left of the primitive function name.
-Naturally, deactivated functions can be reactivated for proxy by clicking again on the toggle box.
-While debugging when encountering a primitive function that has been desactivated for proxy, the VM will run instead a default function implementation.
+Developers can selectively stop proxying any of these functions by toggling the checkbox on the left side of the primitive function name.
+Deactivated functions can be reactivated for proxying by clicking on the toggle box again.
+During debugging, if a deactivated primitive function is encountered, the VM will execute a default function implementation instead.
 
 The ability to choose at will which functions to proxy gives more fine-grained control over potential overhead imposed on physical boards.
 For instance, in the situation where it is crucial to preserve battery life, the developer could opt for proxying only the bare minimal functions.
@@ -248,52 +246,52 @@ For instance, in the situation where it is crucial to preserve battery life, the
 
 ::: warning
 
-The debugging timeline view is still in an experimental state and is currently being improved.
-Therefore some functionality may not behave as expected.
+The debugging timeline view is currently in an experimental phase and is actively undergoing enhancements.
+Consequently, certain functionality might not behave as anticipated.
 
-For instance, going back to a point in time where the LED of a physical board was off, will not turn the LED off.
+For example, stepping back to a specific moment when the LED of a physical board was off will not automatically turn the LED off again."
 :::
 
-The debugging timeline view gives an history of each application state encountered by the developer when debugging the target application.
-Each entry in the view corresponds with a particular application state during the debugging session and can be viewed on demand by the developer and even modified under certain conditions.
-The following details these abilities.
+The debugging timeline view provides a comprehensive history of every application state encountered while debugging the target application.
+Each entry in this view represents a specific application state during the debugging session.
+Developers can access these entries at their convenience and, under certain conditions, modify them.
+The following elaborates on these capabilities.
 
 ### Viewing the History
 
-To display previous application states, it suffices to click on the
-eye button <img src="/images/eye-icon-dark.svg" class="inline-icon dark"><img src="/images/eye-icon-light.svg" class="inline-icon light">
-associated to an entry in the view.
-When you click on the button, this will cause the plugin to change the views so to display the application state that was valid back in that time.
+To view previous application states, simply click on the eye icon <img src="/images/eye-icon-dark.svg" class="inline-icon dark"><img src="/images/eye-icon-light.svg" class="inline-icon light"> associated with an entry in the view.
+Clicking this button prompts the plugin to switch the views to display the application state from that specific point in time.
 
 Every time that you advance the computation of the target application while debugging (e.g., `step`, `run` until breakpoint is reached), a new entry is added at the top of the view.
 Consequently, the top entry in the view corresponds with the present i.e., the current application state which is valid for your target application.
 Whereas entries lower than the top entry display the past.
 The most bottom entry corresponds with the application state that the developer had when the debugger got started.
 
-Alternatively, another way on how to look at past application states is to press the `step back` button.
-The reason why you also get to see the whole debugging timeline is to give the developer a general overview of the whole history.
-This should make the jump back to a particular point in time much easier.
+Alternatively, another way on how to look at past application states is by pressing the `step back` button.
+The availability of the complete debugging timeline aims to provide developers with an overview of the entire history, simplifying the process of navigating to a specific point in time.
 
 ### Modifying the History
 
-The possibility to alter the past is particularly interesting for exploratory debugging.
-For instance, if the developer suspects that a function that already got called may fail for particular arguments.
-It would be highly beneficial to the developer to go back to the point before the function gets called to let the developer change the arguments provided to the function.
-However, as explained in the [variables view](#variables-view), changing variables values is only possible for the present.
-Trying to modify past variables values (e.g., if you press `step back` and then try to change a variable) requires an additional step that we will clarify now.
+The capability to modify past states is particularly valuable in exploratory debugging scenarios.
+For instance, if a developer suspects that a function previously called might fail for specific arguments, revisiting the point before that function call to adjust the arguments would be highly beneficial.
+However, as noted in the [variables view](#variables-view), altering variable values is restricted to the present.
+Attempting to modify past variables (e.g., when you are in the present and then you press `step back` and then try to change a variable) requires an additional step, which we'll clarify now.
 
-To enable the possibility to alter past application state.
-The developer needs to click on the `save` button <img src="/images/save-icon-light.svg" class="inline-icon light"><img src="/images/save-icon-dark.svg" class="inline-icon dark"> displayed on the top debugging timeline entry.
-When the `save` button is clicked, the plugin will ensure that the present state is saved as a point in time that can be:
+To enable alterning past application state, developers needs to click on the `save` button <img src="/images/save-icon-light.svg" class="inline-icon light"><img src="/images/save-icon-dark.svg" class="inline-icon dark"> displayed on the top entry of the debugging timeline.
+Upon clicking the `save` button, the plugin preserves the present state.
+The preserved state can be:
 
-- Modified during a later debugging phase. For instance, if you advance the applicaiton execution through one step debug operation. You can now also step back and modify the state of the previous point in time since this was saved previously. If you modifiy a past state, the plugin will automatically redeploy the modified state to either the physical board or emulator. And debugging will then resume starting from that modified state.
+- Modified in subsequent debugging phases: For instance, after advancing the application's execution through one-step debug operation, you can step back and modify the previously saved state.
+  The plugin will automatically deploy the modified state to the target VM (either the physical board or emulator depending on your debugging mode).
+  Debugging then resumes from the adjusted state.
 
-- Used as starting debugging point for when EDWARD is started. This is possible as soon as the full application state is successfully saved. The state is successfully saved once the `save` button icon gets replaced by the `debug start` icon <img src="/images/debug-start-icon-light.svg" class="inline-icon light"><img src="/images/debug-start-icon-dark.svg" class="inline-icon dark">
-  By pressing on the `debug start` button, you can start EDWARD on that particular point in time.
+- Used as the starting point when initiating EDWARD:
+  Once the complete application state is successfully saved, the `save` button icon transforms into a `debug start` icon <img src="/images/debug-start-icon-light.svg" class="inline-icon light"><img src="/images/debug-start-icon-dark.svg" class="inline-icon dark">.
+  Clicking this `debug start` button launches EDWARD to debug starting from that specific saved point in time.
 
-You will notice that the `save` button is only available for the present.
-This is an intentional design choice since saving each point in time not only is a time consuming process but may also drastically affect battery life when debugging on a physical board.
-Deciding which points in time should be saved is a decision best left to the developers.
+Note that the `save` button is intentionally available only for the present.
+Saving the application state is a time-consuming process that may significantly impact battery life when debugging on a physical board.
+Deciding which points in time to save is a decision best left to the developers.
 
 ## Plugin Commands
 
@@ -303,21 +301,21 @@ The following details the commands made available by the plugin when you press o
 
 > `warduino: Pull debugsession`
 
-While you are remote debugging on a physical board you can apply the command on demand to start the event-based out-of-place debugger.
-Once the command executes, it will cause the plugin to pull a snapshot from the board and spawn a emulator that proxies all the environment primitive function from the physical board.
-The snapshot will make sure that the emulator is started on the same state as the physical board.
+During remote debugging on a physical board, you have the option to start EDWARD.
+For this, you can execute the `pull debug session` at any point in time during remote debugging.
+Upon execution of the command, the plugin captures a snapshot from the board and initiates an emulator.
+This emulator proxies all environment primitive functions from the physical board.
 
 ### Update Module
 
 > `warduino: Update Module`
 
-Is a command that you can execute to update the source code running on the WARDuino VM.
-The command will compile the source code and deploy the obtained Wasm binary module to the WARDuino VM.
-The WARDuino VM can be an emulated VM or a VM deployed on a physical board.
-After updating the module you can, if desired, restart the plugin which will enable debugging on the new source code.
+The `update module` command allows you to modify the source code running on the WARDuino VM.
+Executing this command compiles the source code and deploys the resulting Wasm binary module to the WARDuino VM, which can be either an emulated VM or one deployed on a physical board.
+After updating the module, you can restart the plugin, enabling debugging with the new source code.
 
-Note: as explained in [issue 121](https://github.com/TOPLLab/WARDuino/issues/121), when using update module command on a physical board, the updated module is not flashed which causes the new module to be lost in case of a board reboot.
-Future work aims to tackle this issue.
+Note: As outlined in [issue 121](https://github.com/TOPLLab/WARDuino/issues/121), using the `update module` command on a physical board doesn't flash the updated module, leading to loss of the module upon board reboot.
+Future efforts are underway to address this issue.
 
 ### Commit Changes
 
