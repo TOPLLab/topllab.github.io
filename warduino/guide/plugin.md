@@ -32,7 +32,7 @@ In this section, we will delve into the features provided by the plugin. The fol
 - Upload new source code on the device once a fault has been fixed.
 - Debug on a board
 - Debug on an emulator.
-- Control over the events (e.g., button press, incoming MQTT message) and the handling of it.
+- Control over interrupts (e.g., button press, incoming MQTT message) and the handling of it.
 
 ## Installation
 
