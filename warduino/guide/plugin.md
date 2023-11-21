@@ -1,9 +1,8 @@
 # VS Code Plugin
 
-::: warning
+::: tip WARDuino VS Code 0.4.1
 
-Soon to be released!
-The VS Code plugin has not been published yet. Look out for it in the VS Code Marketplace!
+This page describes the VS Code plugin [version 0.4.1](https://github.com/TOPLLab/WARDuino-VSCode/releases/tag/v0.4.1), which works with WARDuino [version 0.4.2](https://github.com/TOPLLab/WARDuino/releases/tag/v0.4.2).
 
 :::
 
@@ -15,14 +14,15 @@ Consequently, the plugin may crash unexpectedly or become unresponsive.
 
 :::
 
-The following documentation assumes the usage of at least **WARDuino VSCode plugin version 0.4.1** and **WARDuino version 0.4.2**.
+The WARDuino plugin is a VS Code extension designed for debugging applications running on the WARDuino VM. The plugin offers two debugging techniques:
 
-The VSCode Plugin is a VSCode extension designed for debugging applications running on the WARDuino VM. The plugin offers two debugging techniques: 1. [remote debugging](/reference/debugger) and 2. [event-based out-of-place debugging](/reference/edward/index).
+1. [remote debugging](/reference/debugger) and
+2. [event-based out-of-place debugging](/reference/edward/index).
 
-In this section, we will delve into the features provided by the plugin. The following non-exhaustive listing gives a brief overview of noteworthy functionality supported by the plugin:
+Noteworthy functionality of the plugin:
 
-- On-demand switch from [remote debugging](/reference/debugger) to [event-based out-of-place debugging](/reference/edward/index).
-- Access to classical debug operations: add a breakpoint, remove a breakpoint, step, step-over, run, and more.
+- On-demand switching from [remote debugging](/reference/debugger) to [event-based out-of-place debugging](/reference/edward/index).
+- Access to classic debug operations: add a breakpoint, remove a breakpoint, step, step-over, run, and more.
 - Access to advanced debug operations: step back debug operations to view past state. (experimental)
 - A view on the whole debugging history to easily jump back to a previous state. (experimental)
 - Upload new source code on the device once a fault has been fixed.
@@ -30,30 +30,44 @@ In this section, we will delve into the features provided by the plugin. The fol
 - Debug on an emulator.
 - Control over interrupts (e.g., button press, incoming MQTT message) and the handling of it.
 
-## Installation
+## Manual Installation {#installation}
+
+::: warning
+
+Soon to be released!
+The VS Code plugin has not been published yet. Look out for it in the VS Code Marketplace!
+
+:::
 
 Before installing the plugin, make sure that you followed the [installation guide](/guide/get-started.md#installation) for the needed development software.
 
-Once the installation is completed follow the following steps:
+Once the installation is completed follow these steps:
 
 - Install VS Code (version 1.63.2 or higher)
 
-- (Optional) In case you plan to debug Textual WebAssembly source files make sure to install this [VSCode WebAssembly Syntax Highlight plugin](https://github.com/AlanCezarAraujo/vscode-webassembly-syntax-highlight).
+- (Optional) In case you plan to debug Textual WebAssembly source files make sure to install this [VS Code WebAssembly Syntax Highlight plugin](https://github.com/AlanCezarAraujo/vscode-webassembly-syntax-highlight).
 
-- Change the VSCode settings to enable allow `Allow Breakpoints Everywhere`.
-  For this, navigate to the VSCode settings and search for `Allow Breakpoints Everywhere` in the search bar.
-- Download the [WARDuino VSCode plugin](https://github.com/TOPLLab/WARDuino-VSCode) repo and execute the installation bash script named `install.sh`.
+- Change the VS Code settings to enable allow `Allow Breakpoints Everywhere`.
+  For this, navigate to the VS Code settings and search for `Allow Breakpoints Everywhere` in the search bar.
+- Download the [WARDuino VS Code plugin](https://github.com/TOPLLab/WARDuino-VSCode) repo and execute the installation bash script named `install.sh`.
   This script downloads and builds the essential libraries such as the WARDuino VM.
 
-## Debugger Configuration
+## Getting started
 
-### Configurating VSCode to Use WARDuino
+Open your project folder.
+If you don't have a project yet, you can use the [AssemblyScript template](https://github.com/TOPLLab/as-warduino-template) for WARDuino to get started quickly.
 
-Once the [plugin installation](/guide/plugin.md#installation) completes, the initial task is to configure VSCode to use the WARDuino debugger.
-This can be achieved by following the standard [VSCode configuration method](https://code.visualstudio.com/docs/editor/debugging): create a `.vscode/launch.json` file in the root directory of your source code.
-Ensure that the file includes the following entries:
+###  Configure VS Code Debugger {#vscode-config}
 
-```JSON
+::: tip Add `launch.json` file
+If you use any of our templates, you can skip this configuration step.
+The template contains the correct launch file.
+:::
+
+To use the WARDuino plugin to debug your project, you need to create a `launch.json` file in the `.vscode` subfolder of your project root directory [<sup>\[1\]</sup>](https://code.visualstudio.com/docs/editor/debugging).
+The file should look like this:
+
+```json
 {
     "version": "0.4.1",
     "configurations": [
@@ -61,7 +75,7 @@ Ensure that the file includes the following entries:
             "type": "WARDuinoDBG",
             "request": "launch",
             "name": "Debug WARDuino",
-            "program": "${workspaceFolder}/button.ts",
+            "program": "${workspaceFolder}/src/main.ts",
             "stopOnEntry": true,
             "trace": false
         }
@@ -70,39 +84,35 @@ Ensure that the file includes the following entries:
 ```
 
 The `program` key within the JSON file specifies the application's entry file that needs to be debugged.
-In this instance, we've opted for the `button` application introduced in [examples](/guide/examples/button).
 
-Depending on the file extension pointed by the `program` entry, the plugin will load the required WebAssembly compiler and create source mappers accordindly.
+Depending on the file extension pointed by the `program` entry, the plugin will load the required WebAssembly compiler and create source mappers accordingly.
 
-### Configurating the WARDuino Debugger
+### Configure the Plugin
 
-Upon [configuring VSCode for WARDuino](#configurating-vscode-to-use-warduino), the next step involves configuring the WARDuino debugger itself to specify the debugging mode for the target application (as specified by the `program` key in the `.vscode/launch.json` file).
-The debugger supprots the following modes for debugging:
-
-- [Emulator mode](#configuring-warduino-for-debugging-on-a-emulator): Debugging takes place on an emulator, where the WARDuino VM runs the target application locally on the same machine as the plugin.
-  When debugging on a emulator, the plugin connects to the emulator process and applies debug operations on the process as requested by the developer.
-
-- [Embedded mode](#configuring-warduino-for-debugging-on-a-physical-board): Configure the debugger to debug the target application on a physical board (e.g., ESP32).
-  In this mode, the WARDuino VM is deployed on the physical board and runs the target application.
-  The plugin connects to the physical board and applies debug operations issued by the developer.
-
-- [Proxy mode](#edward-event-based-out-of-place-debugger-for-warduino): This unique mode enables [event-based out-of-place debugging](/reference/edward/index).
-  Activating this mode is not possible via configuration (although the two other modes can).
-  To activate this mode, start by first enabling `embedded` mode and then switch to event-based out-of-place.
-  The required steps are detailed in [setting up EDWARD](#edward-event-based-out-of-place-debugger-for-warduino).
-
-To configure the debugger for a specific mode, access the settings for the WARDuino debugger.
-For this you can open the settings of VSCode and search for the WARDuino specific settings by typing "warduino" in the search input area.
-For instance, for VSCode version 1.84.0 on OSX, you can access such settings by:
+The WARDuino plugin is highly customizable.
+You can access the settings for the WARDuino debugger, by opening the settings window of VS Code and typing "warduino" in the search input area.
 
 1. Clicking on "Code" in the top menu.
 2. From the dropdown, select "Settings". Then select "Settings" again from the new dropdown.
 3. In the search input area, type "warduino" to reveal the WARDuino specific configurations.
 
-Once the WARDuino vscode settings have been opened, you will be able to choose a mode.
-The following two sections elaborate on how to choose a particular mode.
+#### Configure the Debugger Mode
 
-### Configuring WARDuino for debugging on a Physical Board
+Once the WARDuino vscode settings have been opened, you will be able to choose between two modes of debugging.
+
+- **Emulator mode**: Debugging takes place on an emulator, where the WARDuino VM runs the target application locally on the same machine as the plugin.
+  When debugging on a emulator, the plugin connects to the emulator process and applies debug operations on the process as requested by the developer. [-> configure the emulator](#emulator-config)
+
+- **Embedded mode**: Configure the debugger to debug the target application on a physical board (e.g., ESP32).
+  In this mode, the WARDuino VM is deployed on the physical board and runs the target application.
+  The plugin connects to the physical board and applies debug operations issued by the developer. [-> configure a physical board](#board-config)
+
+
+When using the embedded mode, the plugin can also switch to **out-of-place mode**.
+This mode cannot be set through the settings, but is activated during debugging ([-> EDWARD](#edward)).
+
+
+#### Configure the Plugin for a Physical Board {#board-config}
 
 To enable debugging on the physical board set the `Warduino: Debug Mode` configuration value to `Embedded`.
 This will cause the Plugin extension to configure the WARDuino debugger to target an application running on a board.
@@ -139,7 +149,7 @@ The following lists and clarifies such configuration values:
   Is the path that points to the WABT toolchain version maintained by the TOPLLab.
   If you followed the default [plugin installation guide](/guide/plugin#installation), there is no need to change this value.
 
-### Configuring WARDuino for debugging on a Emulator
+#### Configure the Plugin for an Emulator {#emulator-config}
 
 To enable debugging on the emulator set the `Warduino: Debug Mode` configuration value to `Embedded`.
 This will cause the Plugin extension to spawn a local WARDuino VM emulator process that runs the target application.
@@ -147,32 +157,32 @@ Once the local WARDuino VM emulator is spawned, the plugin connects to the VM de
 
 The plugin disregards the other configuration fields as they are only relevant for debugging on a physical board.
 
-## Remote Debugging on a Physical Board
+## Debugging on a Physical Board {#board-debugging}
 
-When configuring the debugger to [target a physical board](#configuring-warduino-for-debugging-on-a-physical-board), the plugin defaults to launching a remote debugger.
+When configuring the debugger to [target a physical board](#board-config), the plugin defaults to launching a remote debugger.
 Consequently, each debug operation is applied on the application running on the Physical board.
 
-For a comprehensive overview of the available functionality when debugging on a board, refer to the [available functionality documentation](#functionality-overview).
+For a comprehensive overview of the available functionality when debugging on a board, refer to the [available functionality documentation](#features).
 
 Note that while remote debugging on a phyiscal board you can easily switch to [EDWARD](/reference/edward/index) an event-based-out-place debugger that provides powerful debugging operations.
-See [EDWARD](#edward-event-based-out-of-place-debugger-for-warduino) on how to start such debugger.
+See [EDWARD](#edward) on how to start such debugger.
 
-## Remote Debugging on a Emulator
+## Debugging on an Emulator {#emulator-debugging}
 
-When [configuring WARDuino for debugging on a Emulator](#configuring-warduino-for-debugging-on-a-emulator),
+When [configuring WARDuino for debugging on a Emulator](#emulator-config),
 you are opting for remote debugging the target application on a process called an emulator.
 This emulator, spawned by the plugin, runs the WARDuino VM alongside the target application on the local machine where the plugin also runs.
 
-An advantage of debugging on a emulator is speed.
+An advantage of debugging on an emulator is speed.
 Each debug operation issued through the plugin is instantely applied to the emulator process resulting in a remarkably fast debugging experience.
-In contrast, [remote debugging on a physical board](#remote-debugging-on-a-physical-board) involves debug operations traversing a serial connection, potentially introducing delays specially signficant with network-based communication.
+In contrast, [remote debugging on a physical board](#board-debugging) involves debug operations traversing a serial connection, potentially introducing delays specially significant with network-based communication.
 
-However, a major disadvantage when debugging on a emulator is the absence of the board hardware resources (e.g., pins, LEDs).
-Therefore, an emulator is primairly useful during the initial debugging stages where the focus is on software correctness rather than the interaction between software and hardware.
+However, a major disadvantage when debugging on an emulator is the absence of the board hardware resources (e.g., pins, LEDs).
+Therefore, an emulator is primarily useful during the initial debugging stages where the focus is on software correctness rather than the interaction between software and hardware.
 
-For a comprehensive overview of the available functionality when debugging on a emulator, refer to the [available functionality documentation](#functionality-overview).
+For a comprehensive overview of the available functionality when debugging on a emulator, refer to the [available functionality documentation](#features).
 
-## EDWARD: Event-based Out-of-place Debugger for WARDuino
+## Debugging with EDWARD {#edward}
 
 The following introduces how to start EDWARD which is the event-based out-of-place debugger of WARDuino.
 If you are not yet familiar with event-based out-of-place debugging which is different from remote debugging please consult the introductory page [event-based out-of-place debugging documentation](/reference/edward/index).
@@ -183,9 +193,9 @@ To enable EDWARD (Event-based out-of-place Debugger of WARDuino) you have two op
 - Go to the [Debugging Timeline view](#debugging-timeline-view) and click on the `save` button to extract a debug session from the physical board.
   Once the whole session has been extracted click then on the `debug` button to start the EDRWARD debugger on the selected debug session.
 
-## Functionality Overview
+## Features
 
-The following subsections details each of functionality supported by the plugin.
+The following subsections detail the features supported by the plugin.
 
 ### Mainstream debug operations
 
@@ -226,13 +236,13 @@ The plugin enables the possibility to decide when events get handled by the VM.
 However, this is (for now) only possible when debugging with EDWARD.
 To trigger the handling of an event, you can click on the `arrow down` button <img src="/images/arrow-down-icon-light.svg" class="inline-icon light"><img src="/images/arrow-down-icon-dark.svg" class="inline-icon dark"> on the right of the `Events` view name.
 Once clicked the VM will make sure that the next event in the queue gets handled.
-This implies that after clicking on the buttona and advencing the computation with for instance a step debug operation, will cause the program counter to jump to the callback handler of the event.
+This implies that after clicking on the button and advancing the computation with for instance a step debug operation, will cause the program counter to jump to the callback handler of the event.
 
 ### Proxies View
 
 The proxies view is only relevant when debugging with EDWARD which is an event-based out-of-place debugger.
-To get acquinted with event-based out-of-place debugging technique see [documentation](/reference/edward/index).
-For information on how to start the EDWARD debugger see [debugging with EDWARD](#edward-event-based-out-of-place-debugger-for-warduino).
+To get acquainted with event-based out-of-place debugging technique see [documentation](/reference/edward/index).
+For information on how to start the EDWARD debugger see [debugging with EDWARD](#edward).
 
 The proxies view displays the primitive functions that are proxied by EDWARD during event-based out-of-place debugging.
 Developers can selectively stop proxying any of these functions by toggling the checkbox on the left side of the primitive function name.
@@ -244,12 +254,12 @@ For instance, in the situation where it is crucial to preserve battery life, the
 
 ### Debugging Timeline View
 
-::: warning
+::: danger Experimental feature
 
 The debugging timeline view is currently in an experimental phase and is actively undergoing enhancements.
 Consequently, certain functionality might not behave as anticipated.
 
-For example, stepping back to a specific moment when the LED of a physical board was off will not automatically turn the LED off again."
+For example, stepping back to a specific moment when the LED of a physical board was off will not automatically turn the LED off again.
 :::
 
 The debugging timeline view provides a comprehensive history of every application state encountered while debugging the target application.
@@ -293,9 +303,9 @@ Note that the `save` button is intentionally available only for the present.
 Saving the application state is a time-consuming process that may significantly impact battery life when debugging on a physical board.
 Deciding which points in time to save is a decision best left to the developers.
 
-## Plugin Commands
+## VS Code Commands
 
-The following details the commands made available by the plugin when you press on `cmd+shift+p` for OSX and `ctr+shift+p` on a Linux-based OS.
+The following details the commands made available by the plugin when you press on `cmd+shift+p` for OSX and `ctrl+shift+p` on a Linux-based OS.
 
 ### Pull Debug Session
 
@@ -314,15 +324,18 @@ The `update module` command allows you to modify the source code running on the 
 Executing this command compiles the source code and deploys the resulting Wasm binary module to the WARDuino VM, which can be either an emulated VM or one deployed on a physical board.
 After updating the module, you can restart the plugin, enabling debugging with the new source code.
 
-Note: As outlined in [issue 121](https://github.com/TOPLLab/WARDuino/issues/121), using the `update module` command on a physical board doesn't flash the updated module, leading to loss of the module upon board reboot.
+::: danger Persistence Issues
+
+As outlined in [issue 121](https://github.com/TOPLLab/WARDuino/issues/121), using the `update module` command on a physical board doesn't flash the updated module, leading to loss of the module upon board reboot.
 Future efforts are underway to address this issue.
+:::
 
 ### Commit Changes
 
 > `warduino: Commit changes`
 
 This command is only allowed for when using the event-based out-of-place debugger.
-Once you identified any potential bug and applied the necessery source-code fixes.
+Once you identified any potential bug and applied the necessary source-code fixes.
 The command can be used to then compile the new bug-free source-code and deploy the obtained WebAssembly module to the physical board.
 After updating the module you can, if desired, restart the plugin which will enable debugging on the new source code.
 
