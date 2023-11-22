@@ -6,7 +6,7 @@ This page describes the VS Code plugin [version 0.4.1](https://github.com/TOPLLa
 
 :::
 
-::: warning
+::: warning Unstable prerelease
 
 The plugin is still in experimental phase.
 The following describes the current state of the VS Code plugin, which is not yet fully stable.
@@ -32,11 +32,9 @@ Noteworthy functionality of the plugin:
 
 ## Manual Installation {#installation}
 
-::: warning
+::: warning Soon to be released!
 
-Soon to be released!
 The VS Code plugin has not been published yet. Look out for it in the VS Code Marketplace!
-
 :::
 
 Before installing the plugin, make sure that you followed the [installation guide](/guide/get-started.md#installation) for the needed development software.
@@ -324,7 +322,7 @@ The `update module` command allows you to modify the source code running on the 
 Executing this command compiles the source code and deploys the resulting Wasm binary module to the WARDuino VM, which can be either an emulated VM or one deployed on a physical board.
 After updating the module, you can restart the plugin, enabling debugging with the new source code.
 
-::: danger Persistence Issues
+::: danger Persistence issues
 
 As outlined in [issue 121](https://github.com/TOPLLab/WARDuino/issues/121), using the `update module` command on a physical board doesn't flash the updated module, leading to loss of the module upon board reboot.
 Future efforts are underway to address this issue.

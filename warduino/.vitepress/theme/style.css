@@ -254,7 +254,7 @@ html::-webkit-scrollbar-thumb:hover, pre::-webkit-scrollbar-thumb:hover, aside::
  * -------------------------------------------------------------------------- */
 
 img.circuit, figure.circuit {
-    width: 64%;
+    width: 75%;
     margin: auto;
 }
 

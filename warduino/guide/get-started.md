@@ -9,7 +9,7 @@ In this guide, you will find instructions on how to start programming software f
 
 To start writing programs for WARDuino in your favorite language you need to install the WARDuino **language library**.
 
-::: warning
+::: warning Prerelease libraries
 
 The WARDuino library packages for AssemblyScript and Rust have not been released officially yet.
 You can download them from [GitHub](https://github.com/TOPLLab/WARDuino-libs).
@@ -109,8 +109,8 @@ Command-line arguments always overwrite commands in the `.config` file.
 
 ## Flashing using ESP-IDF
 
-::: warning
-Primitive support for IDF is under construction.
+::: warning Under construction
+Primitive support for IDF is incomplete (see [implementation status](/reference/primitives)).
 :::
 
 Before you can compile and flash with ESP-IDF, you must install and enable the toolchain. You also need to disable the watchdog timer:
