@@ -1,5 +1,5 @@
 <script setup>
-import photo from '../../components/photo.vue'
+import illustration from '../../components/illustration.vue'
 </script>
 
 # Analog Read Serial
@@ -16,7 +16,7 @@ For this example you require:
 1. A microcontroller
 2. Potentiometer or other sensor
 
-<photo src="/images/analog-circuit.svg" darkmode="/images/analog-circuit-dark.svg" classes="circuit"/>
+<illustration src="/images/analog-circuit.svg" darkmode="/images/analog-circuit-dark.svg" classes="circuit"/>
 
 ## Program
 

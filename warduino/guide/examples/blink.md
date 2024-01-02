@@ -1,5 +1,5 @@
 <script setup>
-import photo from '../../components/photo.vue'
+import illustration from '../../components/illustration.vue'
 </script>
 
 # Blink
@@ -17,7 +17,7 @@ For this example you require:
 
 The LED and 220 ohm resistor are optional, most microcontrollers come with a built-in LED that you can use for this example.
 
-<photo src="/images/led-circuit.svg" darkmode="/images/led-circuit-dark.svg" classes="circuit"/>
+<illustration src="/images/led-circuit.svg" darkmode="/images/led-circuit-dark.svg" classes="circuit"/>
 
 ## Program
 

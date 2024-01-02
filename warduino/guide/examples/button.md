@@ -1,5 +1,5 @@
 <script setup>
-import photo from '../../components/photo.vue'
+import illustration from '../../components/illustration.vue'
 </script>
 
 # Button
@@ -17,7 +17,7 @@ For this example you require:
 4. An LED
 5. 220 ohm resistor
 
-<photo src="/images/button-circuit.svg" darkmode="/images/button-circuit-dark.svg" classes="circuit"/>
+<illustration src="/images/button-circuit.svg" darkmode="/images/button-circuit-dark.svg" classes="circuit"/>
 
 ## Program
 

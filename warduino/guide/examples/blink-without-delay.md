@@ -1,5 +1,5 @@
 <script setup>
-import photo from '../../components/photo.vue'
+import illustration from '../../components/illustration.vue'
 </script>
 
 # Blink Without Delay
@@ -15,7 +15,7 @@ For this example you require:
 2. An LED
 3. 220 ohm resistor
 
-<photo src="/images/led-circuit.svg" darkmode="/images/led-circuit-dark.svg" classes="circuit"/>
+<illustration src="/images/led-circuit.svg" darkmode="/images/led-circuit-dark.svg" classes="circuit"/>
 
 ## Program
 

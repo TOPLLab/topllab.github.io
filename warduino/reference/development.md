@@ -1,3 +1,7 @@
+<script setup>
+import illustration from '../components/illustration.vue'
+</script>
+
 # Developing WARDuino
 
 This guide is for people who want to help with development.
@@ -9,7 +13,7 @@ Additionally, there is a third version to run on desktops with its own command-l
 
 Each version of the virtual machine has a slightly different way of receiving debugging messages, has a different entry point, and has their own primitive implementations.
 Each version has its own folder under [platforms](https://github.com/TOPLLab/WARDuino/tree/main/platforms) in the git repository.
-The implementations of the primitives for each platform are found in the [Primitives](https://github.com/TOPLLab/WARDuino/tree/main/src/Primitives) folder.
+The implementations of the primitives for each platform are found in the [src/Primitives](https://github.com/TOPLLab/WARDuino/tree/main/src/Primitives) folder.
 
 ## Debugging the Virtual Machine
 
@@ -28,7 +32,7 @@ The Arduino version can be debugged using the new [Arduino IDE 2](https://docs.a
 ### ESP32 WROVER KIT V4.1 Tutorial
 
 The ESP32 WROVER KIT v4.1 has been extensively used to debug and develop the WARDuino virtual machine.
-It comes standard with a JTAG to USB interface, which makes debugging fairly easy to setup &mdash as JTAGs go.
+It comes standard with a JTAG to USB interface, which makes debugging fairly easy to setup—as JTAGs go.
 
 #### First Time Setup
 
@@ -97,5 +101,4 @@ idf.py gdb
 
 **Debugging with VS Code.** Espressif has also developed a [VS Code plugin](https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/DEBUGGING.md) to use OpenOCD debugging.
 
-![](/images/openocd.png){data-zoomable}
-
+<illustration src="/images/openocd.png" zoomable="false" caption="An active debug session of a WARDuino instance in the OpenOCD plugin for VS Code." />

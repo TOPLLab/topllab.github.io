@@ -250,6 +250,18 @@ html::-webkit-scrollbar-thumb:hover, pre::-webkit-scrollbar-thumb:hover, aside::
 }
 
 /**
+ * Light/dark mode
+ * -------------------------------------------------------------------------- */
+
+html:not(.dark) .dark-visible {
+    display: none;
+}
+
+html:is(.dark) .light-visible {
+    display: none;
+}
+
+/**
  * Circuits
  * -------------------------------------------------------------------------- */
 

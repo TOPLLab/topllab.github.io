@@ -1,6 +1,6 @@
 <template>
   <figure :class="classes">
-    <div id="figure" />
+    <img :src="light" class="light-visible" :class="zoom"><img :src="dark" class="dark-visible" :class="zoom">
     <figcaption v-if="caption">Figure. {{ caption }}</figcaption>
   </figure>
 </template>
@@ -27,28 +27,23 @@ export default {
      type: String,
      required: false
    },
+   zoomable: {
+     type: Boolean,
+     required: false,
+     default: false
+   }
  },
   data() {
    return {
-     'light': `url(${withBase(this.src)})`,
-     'dark': `url(${withBase(this.darkmode ? this.darkmode : this.src)})`
+     'light': withBase(this.src),
+     'dark': withBase(this.darkmode ? this.darkmode : this.src),
+     'zoom': this.zoomable ? 'data-zoomable' : ''
    }
   },
 }
 </script>
 
 <style scoped>
-#figure {
-  background: v-bind(light) no-repeat center;
-  background-size: contain;
-  height: 0;
-  padding-top: 50%;
-}
-
-html.dark #figure {
-  background: v-bind(dark) no-repeat center;
-}
-
 figcaption {
   font-size: small;
   text-align: justify;

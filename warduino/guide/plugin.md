@@ -337,4 +337,6 @@ Once you identified any potential bug and applied the necessary source-code fixe
 The command can be used to then compile the new bug-free source-code and deploy the obtained WebAssembly module to the physical board.
 After updating the module you can, if desired, restart the plugin which will enable debugging on the new source code.
 
-Note: the command suffers from the same issue as [update module command](#update-module).
+::: danger Persistence issues
+The command suffers from the same persistence issue as [update module command](#update-module).
+:::

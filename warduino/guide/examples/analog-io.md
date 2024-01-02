@@ -1,5 +1,5 @@
 <script setup>
-import photo from '../../components/photo.vue'
+import illustration from '../../components/illustration.vue'
 </script>
 
 # Analog In, Out Serial
@@ -15,7 +15,7 @@ For this example you require:
 3. An LED
 4. 220 ohm resistor
 
-<photo src="/images/analog-io-circuit.svg" darkmode="/images/analog-io-circuit-dark.svg" classes="circuit"/>
+<illustration src="/images/analog-io-circuit.svg" darkmode="/images/analog-io-circuit-dark.svg" classes="circuit"/>
 
 ## Program
 

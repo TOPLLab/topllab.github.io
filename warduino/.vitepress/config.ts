@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import mediumZoom from 'medium-zoom'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -99,3 +100,16 @@ export default defineConfig({
     ]
   }
 })
+
+/**
+pluginOptions: {
+  '@vuepress/medium-zoom': {
+    selector: 'img.zoom-custom-imgs',
+        // medium-zoom options here
+        // See: https://github.com/francoischalifour/medium-zoom#options
+        options: {
+      margin: 16
+    }
+  }
+},
+ */
