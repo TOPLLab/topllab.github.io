@@ -8,6 +8,8 @@ export default defineConfig({
 
   base: '/WARDuino/',
 
+  head: [['link', { rel: 'icon', href: '/WARDuino/favicon.ico' }]],
+
   lastUpdated: true,
 
   markdown: {
