@@ -29,6 +29,6 @@ export default {
     })
   },
   enhanceApp({ app, router, siteData }) {
-    // ...
+    // app.component('Home', home);
   }
 }

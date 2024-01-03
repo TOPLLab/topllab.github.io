@@ -1,5 +1,5 @@
 <script setup>
-import illustration from '../../components/illustration.vue'
+import illustration from '../../.vitepress/components/illustration.vue'
 </script>
 
 # Button

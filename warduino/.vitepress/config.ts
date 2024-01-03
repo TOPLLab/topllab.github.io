@@ -1,19 +1,31 @@
-import { defineConfig } from 'vitepress'
-import mediumZoom from 'medium-zoom'
+import {fileURLToPath, URL} from 'node:url'
+import {defineConfig} from 'vitepress'
+
+const base = '/WARDuino/';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "WARDuino Docs",
   description: "A VitePress Site",
 
-  base: '/WARDuino/',
+  base: base,
 
-  head: [['link', { rel: 'icon', href: '/WARDuino/favicon.ico' }]],
+  head: [['link', { rel: 'icon', href: `${base}favicon.ico` }]],
 
   lastUpdated: true,
 
   markdown: {
     //lineNumbers: true
+  },
+
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPHome\.vue$/,
+          replacement: '/.vitepress/components/home.vue'
+        }
+      ]}
   },
 
   themeConfig: {
@@ -32,7 +44,7 @@ export default defineConfig({
         text: "Programmer's Guide",
         items: [
           { text: 'Getting Started', link: '/guide/get-started' },
-          { text: 'Examples',  
+          { text: 'Examples',
             collapsed: true,
             items: [
               { text: 'Overview', link: '/guide/examples/' },
@@ -67,7 +79,7 @@ export default defineConfig({
             items: [
               { text: 'Overview', link: '/reference/edward/' },
               { text: 'Protocol', link: '/reference/edward/protocol' },
-              { text: 'Examples',  
+              { text: 'Examples',
                 items: [
                   { text: 'Debugging Hardware', link: '/reference/edward/hardware' },
                   { text: 'Debugging Concurrency', link: '/reference/edward/concurrency' }

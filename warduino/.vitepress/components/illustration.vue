@@ -1,6 +1,6 @@
 <template>
   <figure :class="classes">
-    <img :src="light" class="light-visible" :class="zoom"><img :src="dark" class="dark-visible" :class="zoom">
+    <img :src="light" class="light-visible" :class="zoom" :alt="caption"><img :src="dark" class="dark-visible" :class="zoom" :alt="caption">
     <figcaption v-if="caption">Figure. {{ caption }}</figcaption>
   </figure>
 </template>
