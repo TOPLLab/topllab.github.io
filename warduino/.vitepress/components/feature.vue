@@ -70,7 +70,7 @@ article {
   padding: 0;
   letter-spacing: -0.02em;
   line-height: 24px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
 }
 
