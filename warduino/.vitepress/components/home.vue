@@ -22,6 +22,7 @@ const {frontmatter: fm} = useData()
     </div>
 
     <!-- features -->
+    <!--
     <div class="features">
       <div class="container">
         <div class="grid column-3">
@@ -64,47 +65,100 @@ const {frontmatter: fm} = useData()
         </div>
       </div>
     </div>
+    -->
 
     <!-- details -->
     <div class="details">
       <div class="container">
         <div class="vp-doc grow">
-          <h2></h2>
+
           <div style="display: flex; flex-flow: column nowrap; gap: 24px; justify-content: space-between">
             <div class="grow divider">
               <article class="list">
-                <h4>Getting started</h4>
+                <div class="heading">
+                  <div class="icon">
+                    <span class="material-symbols-rounded">rocket_launch</span>
+                  </div>
+                  <div>
+                    <h4>Getting started</h4>
+                  </div>
+                </div>
                 <p><a href="./guide/get-started.html">-&gt; Get started</a></p>
                 <p><a href="./guide/examples/index.html">-&gt; Examples</a></p>
                 <p><a href="./guide/latch.html">-&gt; Automated testing</a></p>
                 <p><a href="./guide/plugin.html">-&gt; Debugging in VS Code</a></p>
               </article>
               <article class="list">
-                <h4>Developer's guide</h4>
-                <p><a style="font-size: 14px" href="./reference/development.html">-&gt; Development</a></p>
-                <p><a href="./reference/debug-protocol.html">-&gt; Debugger reference</a></p>
-                <p><a href="./reference/platforms.html">-&gt; Supported platforms</a></p>
+                <div class="heading">
+                  <div class="icon">
+                    <span class="material-symbols-rounded">menu_book</span>
+                  </div>
+                  <div>
+                    <h4>References</h4>
+                  </div>
+                </div>
                 <p><a href="./reference/primitives.html">-&gt; WARDuino primitives</a></p>
-                <p><a href="./reference/edward/index.html">-&gt; EDWARD reference</a></p>
+                <p><a href="./reference/debug-protocol.html">-&gt; Debug protocol</a></p>
+                <p><a href="./reference/edward/index.html">-&gt; EDWARD debugger</a></p>
                 <p><a href="./latch/index.html">-&gt; Latch reference</a></p>
               </article>
               <article class="list">
-                <h4>Examples</h4>
+                <div class="heading">
+                  <div class="icon">
+                    <span class="material-symbols-rounded">school</span>
+                  </div>
+                  <div>
+                    <h4>Examples & Tutorials</h4>
+                  </div>
+                </div>
                 <p><a href="./guide/examples/analog.html">-&gt; Analog Read Serial</a></p>
                 <p><a href="./guide/examples/blink.html">-&gt; Blinking LED</a></p>
                 <p><a href="./guide/examples/button.html">-&gt; Button</a></p>
                 <p><a href="./guide/examples/index.html">-&gt; More ...</a></p>
               </article>
+
             </div>
 
             <div class="grow divider">
               <article class="list">
-                <h4>Templates</h4>
+                <div class="heading">
+                  <div class="icon">
+                    <span class="material-symbols-rounded">terminal</span>
+                  </div>
+                  <div>
+                    <h4>Developer's guide</h4>
+                  </div>
+                </div>
+                <p><a style="font-size: 14px" href="./reference/development.html">-&gt; Development</a></p>
+                <p><a href="./reference/platforms.html">-&gt; Supported platforms</a></p>
+              </article>
+              <article class="list">
+                <div class="heading">
+                  <div class="icon">
+                    <span class="material-symbols-rounded">package</span>
+                  </div>
+                  <div>
+                    <h4>Templates</h4>
+                  </div>
+                </div>
                 <p><a href="https://github.com/TOPLLab/as-warduino-template">-&gt; AssemblyScript</a></p>
               </article>
+              <div></div>
             </div>
           </div>
+
           <h2></h2>
+
+          <h4 class="center">Research</h4>
+          <p class="center">
+            WARDuino and the related projects documented here, are being developed as part of active research projects.
+            The principle investigators at Ghent University and the VUB, maintain this documentation website and the associated software.
+            You can find out more about the research on the <i>published articles</i> page.
+          </p>
+          <p class="center"><a href="./articles/index.html">-&gt; Published articles</a></p>
+
+          <h2></h2>
+
 
         </div>
       </div>
@@ -114,6 +168,8 @@ const {frontmatter: fm} = useData()
 </template>
 
 <style scoped>
+@import "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200";
+
 /* features */
 .home {
   padding-bottom: 96px;
@@ -293,13 +349,6 @@ const {frontmatter: fm} = useData()
   }
 }
 
-@media (max-width: 960px) {
-  .grid > .item {
-    width: calc(50% - 24px);
-  }
-}
-
-
 @media (max-width: 640px) {
   .grid > .item {
     width: 100%;
@@ -308,12 +357,39 @@ const {frontmatter: fm} = useData()
 
 /* details */
 
+.heading {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  box-sizing: border-box;
+  margin-right: 8px;
+  margin-top: 5px;
+}
+
+.icon > span {
+  line-height: 24px;
+  letter-spacing: -0.02em;
+
+}
+
 .grow {
   flex-grow: 1;
 }
 
-.center {
+h4.center {
   text-align: center;
+}
+
+p.center {
+  max-width: 688px;
+  margin:  0 auto;
+}
+
+
+@media (max-width: 640px) {
+  max-width: 100%;
 }
 
 .divider {
@@ -322,10 +398,10 @@ const {frontmatter: fm} = useData()
 }
 
 .divider > * {
-  flex-grow: 1;
+  flex: 1;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 640px) {
   .divider {
     flex-wrap: wrap;
     gap: 24px;
@@ -333,17 +409,12 @@ const {frontmatter: fm} = useData()
   }
 
   .divider > * {
-    width: calc(50% - 24px);
-  }
-}
-
-@media (max-width: 640px) {
-  .divider > * {
+    flex: 0 0 auto;
     width: 100%;
   }
 }
 
-.list > p {
+p {
   font-size: 14px;
   margin-top: 2px;
   margin-bottom: 0;
