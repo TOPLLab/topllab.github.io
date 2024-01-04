@@ -70,29 +70,39 @@ const {frontmatter: fm} = useData()
       <div class="container">
         <div class="vp-doc grow">
           <h2></h2>
-          <div class="grow divider">
-            <article class="list">
-              <h4>Getting started</h4>
-              <p><a href="./guide/get-started.html">-&gt; Get started</a></p>
-              <p><a href="./guide/examples/index.html">-&gt; Examples</a></p>
-              <p><a href="./guide/latch.html">-&gt; Automated testing</a></p>
-              <p><a href="./guide/plugin.html">-&gt; Debugging in VS Code</a></p>
-            </article>
-            <article class="list">
-              <h4>Developer's guide</h4>
-              <p><a style="font-size: 14px" href="./reference/development.html">-&gt; Development</a></p>
-              <p><a href="./reference/debug-protocol.html">-&gt; Debugger reference</a></p>
-              <p><a href="./reference/platforms.html">-&gt; Supported platforms</a></p>
-              <p><a href="./reference/primitives.html">-&gt; WARDuino primitives</a></p>
-              <p><a href="./reference/edward/index.html">-&gt; EDWARD reference</a></p>
-            </article>
-            <article class="list">
-              <h4>Examples</h4>
-              <p><a href="./guide/examples/analog.html">-&gt; Analog Read Serial</a></p>
-              <p><a href="./guide/examples/blink.html">-&gt; Blinking LED</a></p>
-              <p><a href="./guide/examples/button.html">-&gt; Button</a></p>
-              <p><a href="./guide/examples/index.html">-&gt; More ...</a></p>
-            </article>
+          <div style="display: flex; flex-flow: column nowrap; gap: 24px; justify-content: space-between">
+            <div class="grow divider">
+              <article class="list">
+                <h4>Getting started</h4>
+                <p><a href="./guide/get-started.html">-&gt; Get started</a></p>
+                <p><a href="./guide/examples/index.html">-&gt; Examples</a></p>
+                <p><a href="./guide/latch.html">-&gt; Automated testing</a></p>
+                <p><a href="./guide/plugin.html">-&gt; Debugging in VS Code</a></p>
+              </article>
+              <article class="list">
+                <h4>Developer's guide</h4>
+                <p><a style="font-size: 14px" href="./reference/development.html">-&gt; Development</a></p>
+                <p><a href="./reference/debug-protocol.html">-&gt; Debugger reference</a></p>
+                <p><a href="./reference/platforms.html">-&gt; Supported platforms</a></p>
+                <p><a href="./reference/primitives.html">-&gt; WARDuino primitives</a></p>
+                <p><a href="./reference/edward/index.html">-&gt; EDWARD reference</a></p>
+                <p><a href="./latch/index.html">-&gt; Latch reference</a></p>
+              </article>
+              <article class="list">
+                <h4>Examples</h4>
+                <p><a href="./guide/examples/analog.html">-&gt; Analog Read Serial</a></p>
+                <p><a href="./guide/examples/blink.html">-&gt; Blinking LED</a></p>
+                <p><a href="./guide/examples/button.html">-&gt; Button</a></p>
+                <p><a href="./guide/examples/index.html">-&gt; More ...</a></p>
+              </article>
+            </div>
+
+            <div class="grow divider">
+              <article class="list">
+                <h4>Templates</h4>
+                <p><a href="https://github.com/TOPLLab/as-warduino-template">-&gt; AssemblyScript</a></p>
+              </article>
+            </div>
           </div>
           <h2></h2>
 
@@ -283,6 +293,13 @@ const {frontmatter: fm} = useData()
   }
 }
 
+@media (max-width: 960px) {
+  .grid > .item {
+    width: calc(50% - 24px);
+  }
+}
+
+
 @media (max-width: 640px) {
   .grid > .item {
     width: 100%;
@@ -308,6 +325,24 @@ const {frontmatter: fm} = useData()
   flex-grow: 1;
 }
 
+@media (max-width: 960px) {
+  .divider {
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: space-between;
+  }
+
+  .divider > * {
+    width: calc(50% - 24px);
+  }
+}
+
+@media (max-width: 640px) {
+  .divider > * {
+    width: 100%;
+  }
+}
+
 .list > p {
   font-size: 14px;
   margin-top: 2px;
@@ -315,6 +350,5 @@ const {frontmatter: fm} = useData()
   padding-top: 8px;
   line-height: 24px;
   font-weight: 400;
-  color: var(--vp-c-text-2);
 }
 </style>
