@@ -2,7 +2,7 @@
 import citation from '../.vitepress/components/citation.vue'
 </script>
 
-# Research Articles
+# Published Articles
 
 ## EDWARD (2022)
 

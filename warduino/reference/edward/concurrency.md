@@ -1,6 +1,6 @@
 # Debugging Concurrency
 
-The EDWARD debugger is can help debug concurrency issues better than the classic [remote debugger](/reference/debugger.md) of WARDuino. Here we will illustrate how with a representative example.
+The EDWARD debugger can help debug concurrency issues better than the classic [remote debugger](/reference/architecture.md#classic) of WARDuino. Here we will illustrate how with a representative example.
 
 ## The Application
 
@@ -26,7 +26,7 @@ export function main(): void {
 
 The callbacks will change a delta variable, which the program uses to update the LED brightness accordingly in steps of `5` procent.
 
-After subscribing, the code will continually checking the connection to the MQTT broker and the local Wi-Fi network, as well as update the LED brightness.
+After subscribing, the code will continually check the connection to the MQTT broker and the local Wi-Fi network, as well as update the LED brightness.
 
 ```ts
 // ...

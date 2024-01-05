@@ -1,5 +1,5 @@
 ---
-next: Latch Reference
+next: Technical References
 ---
 # Platform Support
 

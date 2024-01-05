@@ -21,47 +21,14 @@ const {frontmatter: fm} = useData()
       </div>
     </div>
 
-    <!-- features -->
+    <!-- projects -->
     <!--
     <div class="features">
       <div class="container">
-        <div class="grid column-3">
-          <div class="item">
-            <feature icon="rocket_launch"
-                     header="Get started"
-                     tagline="Start developing programs with WARDuino."
-                     link="/guide/get-started"/>
-          </div>
-          <div class="item">
-            <feature icon="terminal"
-                     header="IDE support"
-                     tagline="Manual for the WARDuino VS Code plugin."
-                     link="/guide/plugin"/>
-          </div>
-          <div class="item">
-            <feature icon="check_box"
-                     header="Testing"
-                     tagline="Get started with the Latch testing framework."
-                     link="/guide/latch"/>
-          </div>
-          <div class="item">
-            <feature icon="school"
-                     header="Examples & Tutorials"
-                     tagline="A selection of examples to get you started with WARDuino."
-                     link="/guide/examples/"/>
-          </div>
-          <div class="item">
-            <feature icon="menu_book"
-                     header="Developer's guide"
-                     tagline="Documentation of the WARDuino virtual machine implementation."
-                     link="/reference/"/>
-          </div>
-          <div class="item">
-            <feature icon="diversity_3"
-                     header="Research"
-                     tagline="Research articles published around the WARDuino project."
-                     link="/articles/"/>
-          </div>
+        <div class="grow divider">
+          <h4 class="center">WARDuino</h4>
+          <h4 class="center">EDWARD</h4>
+          <h4 class="center">Latch</h4>
         </div>
       </div>
     </div>
@@ -71,6 +38,7 @@ const {frontmatter: fm} = useData()
     <div class="details">
       <div class="container">
         <div class="vp-doc grow">
+<!--          <h2></h2>-->
 
           <div style="display: flex; flex-flow: column nowrap; gap: 24px; justify-content: space-between">
             <div class="grow divider">
@@ -85,8 +53,8 @@ const {frontmatter: fm} = useData()
                 </div>
                 <p><a href="./guide/get-started.html">-&gt; Get started</a></p>
                 <p><a href="./guide/examples/index.html">-&gt; Examples</a></p>
+                <p><a href="./guide/plugin/">-&gt; VS Code plugin</a></p>
                 <p><a href="./guide/latch.html">-&gt; Automated testing</a></p>
-                <p><a href="./guide/plugin.html">-&gt; Debugging in VS Code</a></p>
               </article>
               <article class="list">
                 <div class="heading">
@@ -97,10 +65,11 @@ const {frontmatter: fm} = useData()
                     <h4>References</h4>
                   </div>
                 </div>
-                <p><a href="./reference/primitives.html">-&gt; WARDuino primitives</a></p>
-                <p><a href="./reference/debug-protocol.html">-&gt; Debug protocol</a></p>
+                <p><a href="./reference/architecture.html">-&gt; WARDuino architecture</a></p>
+                <p><a href="./reference/primitives.html">-&gt; Built-in primitives</a></p>
+                <p><a href="./reference/debug-protocol.html">-&gt; Remote debug protocol</a></p>
                 <p><a href="./reference/edward/index.html">-&gt; EDWARD debugger</a></p>
-                <p><a href="./latch/index.html">-&gt; Latch reference</a></p>
+                <p><a href="./latch/index.html">-&gt; Latch testing</a></p>
               </article>
               <article class="list">
                 <div class="heading">
@@ -108,13 +77,12 @@ const {frontmatter: fm} = useData()
                     <span class="material-symbols-rounded">school</span>
                   </div>
                   <div>
-                    <h4>Examples & Tutorials</h4>
+                    <h4>Tutorials</h4>
                   </div>
                 </div>
-                <p><a href="./guide/examples/analog.html">-&gt; Analog Read Serial</a></p>
-                <p><a href="./guide/examples/blink.html">-&gt; Blinking LED</a></p>
-                <p><a href="./guide/examples/button.html">-&gt; Button</a></p>
-                <p><a href="./guide/examples/index.html">-&gt; More ...</a></p>
+                <p><a href="./guide/examples/index.html">-&gt; Example programs</a></p>
+                <p><a href="./guide/plugin/tutorial.html">-&gt; Debugging with VS Code</a></p>
+                <p><a href="./reference/edward/concurrency.html">-&gt; Debugging concurrency issues</a></p>
               </article>
 
             </div>
@@ -129,8 +97,11 @@ const {frontmatter: fm} = useData()
                     <h4>Developer's guide</h4>
                   </div>
                 </div>
-                <p><a style="font-size: 14px" href="./reference/development.html">-&gt; Development</a></p>
+                <p><a style="font-size: 14px" href="./reference/contributing.html">-&gt; Contributing</a></p>
+                <p><a style="font-size: 14px" href="./reference/development.html">-&gt; Debugging the debugger</a></p>
                 <p><a href="./reference/platforms.html">-&gt; Supported platforms</a></p>
+                <p><a href="https://github.com/orgs/TOPLLab/projects/1" target="_blank">-&gt; Roadmap <span
+                    class="material-symbols-rounded">open_in_new</span></a></p>
               </article>
               <article class="list">
                 <div class="heading">
@@ -141,7 +112,8 @@ const {frontmatter: fm} = useData()
                     <h4>Templates</h4>
                   </div>
                 </div>
-                <p><a href="https://github.com/TOPLLab/as-warduino-template">-&gt; AssemblyScript</a></p>
+                <p><a href="https://github.com/TOPLLab/as-warduino-template" target="_blank">-&gt; AssemblyScript <span
+                    class="material-symbols-rounded">open_in_new</span></a></p>
               </article>
               <div></div>
             </div>
@@ -152,7 +124,8 @@ const {frontmatter: fm} = useData()
           <h4 class="center">Research</h4>
           <p class="center">
             WARDuino and the related projects documented here, are being developed as part of active research projects.
-            The principle investigators at Ghent University and the VUB, maintain this documentation website and the associated software.
+            The principle investigators at Ghent University and the VUB, maintain this documentation website and the
+            associated software.
             You can find out more about the research on the <i>published articles</i> page.
           </p>
           <p class="center"><a href="./articles/index.html">-&gt; Published articles</a></p>
@@ -365,7 +338,7 @@ const {frontmatter: fm} = useData()
 .icon {
   box-sizing: border-box;
   margin-right: 8px;
-  margin-top: 5px;
+  vertical-align: text-bottom;
 }
 
 .icon > span {
@@ -384,12 +357,14 @@ h4.center {
 
 p.center {
   max-width: 688px;
-  margin:  0 auto;
+  margin: 0 auto;
 }
 
 
 @media (max-width: 640px) {
-  max-width: 100%;
+  p.center {
+    max-width: 100%;
+  }
 }
 
 .divider {
@@ -421,5 +396,10 @@ p {
   padding-top: 8px;
   line-height: 24px;
   font-weight: 400;
+}
+
+a > span {
+  font-size: inherit;
+  font-weight: inherit;
 }
 </style>

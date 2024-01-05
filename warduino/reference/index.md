@@ -2,11 +2,19 @@
 import citation from '../.vitepress/components/citation.vue'
 </script>
 
-# WARDuino
+# Technical Reference
 
-The WARDuino virtual machine is a WebAssembly runtime for microcontrollers, which runs both under the Arduino and ESP-IDF toolchains.
-
-Here you will find a full reference on the virtual machine and its core components.
+The reference documentation present here goes into the technical details of WARDuino, EDWARD, the VS Code plugin and Latch.
 If you are looking to just get started with programming, [the Programmer's Guide](/guide/get-started) explains how to use WARDuino to write software using AssemblyScript or Rust.
 
-<citation file="/warduino.bib" url="https://doi.org/10.1145/3357390.3361029" />
+[-> WARDuino architecture](architecture.md)
+
+[-> Built-in Primitives](primitives.md)
+
+[-> Remote debug protocol](debug-protocol.md)
+
+[-> EDWARD reference](edward/index.md)
+
+[-> Latch reference](/latch/index.md)
+
+[-> Plugin reference](plugin.md)

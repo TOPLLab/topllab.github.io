@@ -5,6 +5,7 @@ import illustration from '../.vitepress/components/illustration.vue'
 # Developing WARDuino
 
 This guide is for people who want to help with development.
+We highly recommend you first read more on the [architecture](architecture.md) of the virtual machine in the technical reference.
 
 ## A Tale of three Versions
 

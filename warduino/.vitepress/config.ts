@@ -59,22 +59,38 @@ export default defineConfig({
               { text: 'MQTT Smartlamp', link: '/guide/examples/smartlamp' },
             ]
           },
-          { text: 'VS Code Plugin', link: '/guide/plugin' },
+          { text: 'VS Code Plugin',
+            collapsed: true,
+            items: [
+              { text: 'Installation', link: '/guide/plugin/' },
+              { text: 'Getting Started', link: '/guide/plugin/get-started' },
+              { text: 'Debugging Hardware', link: '/guide/plugin/tutorial' },
+            ]
+          },
           { text: 'Testing on Hardware', link: '/guide/latch' }
         ]
       },
 
       {
-        text: 'WARDuino Reference',
+        text: "Developer's Guide",
+        collapsed: true,
+        items: [
+          { text: 'Contributing', link: '/reference/contributing' },
+          { text: 'Development', link: '/reference/development' },
+          { text: 'Platform Support', link: '/reference/platforms' },
+        ]
+      },
+
+      {
+        text: 'Technical Reference',
         collapsed: true,
         items: [
           { text: 'Overview', link: '/reference/' },
-          { text: 'Development', link: '/reference/development' },
+          { text: 'Architecture', link: '/reference/architecture' },
           { text: 'Primitives', link: '/reference/primitives' },
-          { text: 'Remote Debugger', link: '/reference/debugger' },
           { text: 'Debug Protocol', link: '/reference/debug-protocol' },
           {
-            text: 'EDWARD Reference',
+            text: 'EDWARD',
             collapsed: true,
             items: [
               { text: 'Overview', link: '/reference/edward/' },
@@ -87,21 +103,20 @@ export default defineConfig({
               },
             ]
           },
-          { text: 'Platform Support', link: '/reference/platforms' }
+          {
+            text: 'Latch',
+            collapsed: true,
+            items: [
+              { text: 'Overview', link: '/latch/' },
+              { text: 'Latch API', link: '/latch/api' },
+            ]
+          },
+          { text: 'VS Code Plugin', link: '/reference/plugin' }
         ]
       },
 
       {
-        text: 'Latch Reference',
-        collapsed: true,
-        items: [
-          { text: 'Overview', link: '/latch/' },
-          { text: 'Latch API', link: '/latch/api' }
-        ]
-      },
-
-      {
-        text: 'Research Articles',
+        text: 'Published Articles',
         collapsed: true,
         items: [
             { text: 'Overview', link: '/articles/' },

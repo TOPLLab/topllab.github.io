@@ -1,3 +1,6 @@
+---
+next: VS Code Plugin
+---
 # Smartlamp App with MQTT
 
 
