@@ -128,7 +128,7 @@ const {frontmatter: fm} = useData()
             associated software.
             You can find out more about the research on the <i>published articles</i> page.
           </p>
-          <p class="center"><a href="./articles/index.html">-&gt; Published articles</a></p>
+          <p class="center"><a href="./articles/">-&gt; Published articles</a></p>
 
           <h2></h2>
 

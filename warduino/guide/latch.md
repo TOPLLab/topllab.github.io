@@ -2,7 +2,8 @@
 title: Latch
 next: Developer's Guide
 ---
-# Testing: Latch framework
+
+# Testing on Hardware
 
 **<span style="font-variant: small-caps;">Latch</span> (Large-scale Automated Testing on Constraint Hardware)** is a novel testing framework for running large scale unit and integration tests in constrained environments.
 

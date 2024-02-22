@@ -117,10 +117,7 @@ export default defineConfig({
 
       {
         text: 'Published Articles',
-        collapsed: true,
-        items: [
-            { text: 'Overview', link: '/articles/' },
-        ]
+        link: '/articles/'
       }
     ],
 

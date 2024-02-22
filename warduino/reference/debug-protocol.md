@@ -3,9 +3,9 @@ next: EDWARD
 ---
 # Debug Protocol Reference Sheet
 
-::: tip Debug protocol 0.4.2
+::: tip Debug protocol 0.4.3
 
-This page describes the debug protocol of WARDuino [version 0.4.2](https://github.com/TOPLLab/WARDuino/releases/tag/v0.4.2).
+This page describes the debug protocol of WARDuino [version 0.4.3](https://github.com/TOPLLab/WARDuino/releases/tag/v0.4.3).
 
 :::
 
