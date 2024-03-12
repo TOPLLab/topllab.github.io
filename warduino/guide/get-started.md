@@ -5,7 +5,12 @@ next: 'Examples'
 
 In this guide, you will find instructions on how to start programming software for microcontrollers in AssemblyScript and Rust by using WARDuino.
 
-## Installation
+## 📦️ Prerequisites
+
+- node and npm
+- arduino toolchain: [see our guide](#arduino)
+
+## ✨ Installation {#installation}
 
 To start writing programs for WARDuino in your favorite language you need to install the WARDuino **language library**.
 
@@ -33,12 +38,12 @@ Once you have written your program and compiled it to WebAssembly, you need to i
 
 ```bash
 cd $HOME/Arduino/libraries/
-git clone git@github.com:TOPLLab/WARDuino.git
+git clone --recurse-submodules --branch v0.4.3 git@github.com:TOPLLab/WARDuino.git
 ```
 
 WARDuino currently supports both the Arduino and ESP-IDF toolchains. To use Arduino, you need to install the [arduino-cli](https://github.com/arduino/arduino-cli). For ESP-IDF you need to install the full toolchain, instructions can be found on the [official website](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html#get-started-step-by-step).
 
-## Arduino Toolchain Setup
+## 🛠️ Arduino Toolchain Setup {#arduino}
 
 In order to setup the Arduino toolchain for WARDuino, you need to first install the [arduino-cli](https://arduino.github.io/arduino-cli/0.21/installation/).
 You will also need `python3` with the `pyserial` package.
@@ -62,7 +67,7 @@ Add the ESP32 board manager URL to the config file:
 ```yaml
 board_manager:
   additional_urls:
-      - https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json
+      - https://espressif.github.io/arduino-esp32/package_esp32_index.json
 ```
 
 Then, update the index and install the ESP32 platform.
@@ -83,9 +88,9 @@ arduino-cli lib install "PubSubClient" # for MQTT
 arduino-cli lib install "Adafruit NeoPixel"
 ```
 
-If you haven't done so already, clone (or symlink) the WARDuino repository to `~/Arduino/libraries/WARDuino` to make it available to Arduino.
+If you haven't done so already, clone (or symlink) the WARDuino repository to `~/Arduino/libraries/WARDuino` to make it available to Arduino. (see [#installation](#installation))
 
-## Flashing using Arduino
+## 📸 Flashing using Arduino
 
 After setting up the Arduino toolchain, you can upload your programs with the Makefile in the `platforms/Arduino` folder of the WARDuino virtual machine.
 You can supply all the arguments through the command-line, or write all of them in a `.config` file in the same directory as the Makefile.
@@ -107,7 +112,7 @@ make flash
 
 Command-line arguments always overwrite commands in the `.config` file.
 
-## Flashing using ESP-IDF
+## 📸 Flashing using ESP-IDF
 
 ::: warning Under construction
 Primitive support for IDF is incomplete (see [implementation status](/reference/primitives)).
