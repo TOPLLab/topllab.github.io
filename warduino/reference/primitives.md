@@ -10,18 +10,18 @@ The WARDuino virtual machine includes built-in primitives that provide access to
 
 The built-in primitives are divided conceptually into different modules, according to the functionality they provide. The primitives are hardware dependent and so have to be implemented for each hardware platform separately. The table below list all modules, and on which platforms they are supported.
 
-| Module              |      Arduino          |        ESP IDF        |    Raspberry Pi    |
-|:------------------- |:---------------------:|:---------------------:|:------------------:|
-| analog I/O          | :white_check_mark:    |  :heavy_minus_sign:   | :heavy_minus_sign: |
-| digital I/O         | :white_check_mark:    |  :white_check_mark:   | :heavy_minus_sign: |
-| external interrupts | :white_check_mark:    |  :heavy_minus_sign:   | :heavy_minus_sign: |
-| http                | :construction_worker: |  :heavy_minus_sign:   | :heavy_minus_sign: |
-| mqtt                | :construction_worker: |  :heavy_minus_sign:   | :heavy_minus_sign: |
-| neopixel            | :construction_worker: |  :heavy_minus_sign:   | :heavy_minus_sign: |
-| serial              | :white_check_mark:    |  :heavy_minus_sign:   | :heavy_minus_sign: |
-| spi                 | :white_check_mark:    |  :heavy_minus_sign:   | :heavy_minus_sign: |
-| time                | :white_check_mark:    | :construction_worker: | :heavy_minus_sign: |
-| wifi                | :white_check_mark:    |  :heavy_minus_sign:   | :heavy_minus_sign: |
+| Module              |      Arduino          |        ESP IDF        |         Zephyr        |
+|:------------------- |:---------------------:|:---------------------:|:---------------------:|
+| analog I/O          | :white_check_mark:    | :heavy_minus_sign:    | :construction_worker: |
+| digital I/O         | :white_check_mark:    | :white_check_mark:    | :construction_worker: |
+| external interrupts | :white_check_mark:    | :heavy_minus_sign:    | :heavy_minus_sign:    |
+| http                | :construction_worker: | :heavy_minus_sign:    | :heavy_minus_sign:    |
+| mqtt                | :construction_worker: | :heavy_minus_sign:    | :heavy_minus_sign:    |
+| neopixel            | :construction_worker: | :heavy_minus_sign:    | :heavy_minus_sign:    |
+| serial              | :white_check_mark:    | :heavy_minus_sign:    | :heavy_minus_sign:    |
+| spi                 | :white_check_mark:    | :heavy_minus_sign:    | :heavy_minus_sign:    |
+| time                | :white_check_mark:    | :construction_worker: | :heavy_minus_sign:    |
+| wifi                | :white_check_mark:    | :heavy_minus_sign:    | :heavy_minus_sign:    |
 
 :white_check_mark: = implemented | :construction_worker: = partially implemented | :heavy_minus_sign: = not implemented
 

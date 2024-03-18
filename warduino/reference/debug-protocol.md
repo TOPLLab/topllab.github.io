@@ -1,11 +1,16 @@
 ---
 next: EDWARD
 ---
+<script setup>
+    import { data } from '../.vitepress/config.data.ts'
+
+    const url = "https://github.com/TOPLLab/WARDuino/releases/tag/v" + data.vm.version;
+</script>
 # Debug Protocol Reference Sheet
 
-::: tip Debug protocol 0.4.3
+::: tip Debug protocol {{ data.vm.version }}
 
-This page describes the debug protocol of WARDuino [version 0.4.3](https://github.com/TOPLLab/WARDuino/releases/tag/v0.4.3).
+This page describes the debug protocol of WARDuino <a :href="url" target="_blank">version {{ data.vm.version }}</a>.
 
 :::
 

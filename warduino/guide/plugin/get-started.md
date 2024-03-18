@@ -1,3 +1,6 @@
+<script setup>
+    import { data } from '../../.vitepress/config.data.ts'
+</script>
 # Getting Started
 
 ##  Launch the Plugin {#launch}
@@ -18,9 +21,9 @@ The template contains the correct launch file.
 To use the WARDuino plugin to debug your project, you need to create a `launch.json` file in the `.vscode` subfolder of your project root directory [<sup>\[1\]</sup>](https://code.visualstudio.com/docs/editor/debugging).
 The file should look like this:
 
-```json
+```json-vue
 {
-    "version": "0.4.1",
+    "version": "{{ data.plugin.version }}",
     "configurations": [
         {
             "type": "WARDuinoDBG",

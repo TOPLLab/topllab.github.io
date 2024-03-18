@@ -1,8 +1,14 @@
+<script setup>
+    import { data } from '../../.vitepress/config.data.ts'
+
+    const vm = "https://github.com/TOPLLab/WARDuino/releases/tag/v" + data.vm.version;
+    const plugin = "https://github.com/TOPLLab/WARDuino-VSCode/releases/tag/v" + data.plugin.version;
+</script>
 # VS Code Plugin
 
-::: tip WARDuino VS Code 0.4.1
+::: tip WARDuino VS Code {{ data.plugin.version }}
 
-This page describes the VS Code plugin [version 0.4.1](https://github.com/TOPLLab/WARDuino-VSCode/releases/tag/v0.4.1), which works with WARDuino [version 0.4.2](https://github.com/TOPLLab/WARDuino/releases/tag/v0.4.2).
+This page describes the VS Code plugin <a :href="plugin" target="_blank">version {{ data.plugin.version }}</a>, which works with WARDuino <a :href="vm" target="_blank">version {{ data.vm.version }}</a>.
 
 :::
 

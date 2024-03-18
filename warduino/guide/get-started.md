@@ -1,6 +1,11 @@
 ---
 next: 'Examples'
 ---
+
+<script setup>
+    import { data } from '../.vitepress/config.data.ts'
+</script>
+
 # Getting Started
 
 In this guide, you will find instructions on how to start programming software for microcontrollers in AssemblyScript and Rust by using WARDuino.
@@ -24,7 +29,7 @@ You can download them from [GitHub](https://github.com/TOPLLab/WARDuino-libs).
 ::: code-group
 
 ```bash [AS]
-npm install as-warduino
+npm install 'https://gitpkg.now.sh/TOPLLab/WARDuino-libs/glue/assemblyscript?main'
 ```
 
 ```bash [Rust]
@@ -36,59 +41,37 @@ cargo install warduino
 The language library provides access to the [primitives](/reference/primitives) of WARDuino directly from AssemblyScript or Rust. 
 Once you have written your program and compiled it to WebAssembly, you need to install WARDuino and the toolchains of the platform you are targeting.
 
-```bash
+
+```bash-vue
 cd $HOME/Arduino/libraries/
-git clone --recurse-submodules --branch v0.4.3 git@github.com:TOPLLab/WARDuino.git
+git clone --recurse-submodules --branch v{{ data.vm.version }} git@github.com:TOPLLab/WARDuino.git
 ```
+
+
 
 WARDuino currently supports both the Arduino and ESP-IDF toolchains. To use Arduino, you need to install the [arduino-cli](https://github.com/arduino/arduino-cli). For ESP-IDF you need to install the full toolchain, instructions can be found on the [official website](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html#get-started-step-by-step).
 
-## 🛠️ Arduino Toolchain Setup {#arduino}
+## 🎉 Your First Project
 
-In order to setup the Arduino toolchain for WARDuino, you need to first install the [arduino-cli](https://arduino.github.io/arduino-cli/0.21/installation/).
-You will also need `python3` with the `pyserial` package.
-
-Second, create the config file:
+To get started quickly, you can use the [AssemblyScript template](https://github.com/TOPLLab/as-warduino-template).
 
 ```bash
-arduino-cli config init
+git clone git@github.com:TOPLLab/as-warduino-template.git
+cd as-warduino-template
+npm i
 ```
 
-If you need additional boards, such as the esp32 boards, you can add them in the generated config file.
-
-To find the location of your config file you can run:
+Now you can compile the example program.
 
 ```bash
-arduino-cli config dump --verbose
+npm run build
 ```
 
-Add the ESP32 board manager URL to the config file:
-
-```yaml
-board_manager:
-  additional_urls:
-      - https://espressif.github.io/arduino-esp32/package_esp32_index.json
-```
-
-Then, update the index and install the ESP32 platform.
+Now you can flash your program.
 
 ```bash
-arduino-cli core update-index
-arduino-cli core install esp32:esp32
+cd ~/Arduino/libraries/WARDuino/
 ```
-
-::: warning
-To use ESP32 boards with WARDuino you need at least version 2.0.2 of the board manager.
-:::
-
-Thirdly, make sure you install the `PubSubClient` and `Adafruit NeoPixel` library, which are used by some primitives.
-
-```bash
-arduino-cli lib install "PubSubClient" # for MQTT
-arduino-cli lib install "Adafruit NeoPixel"
-```
-
-If you haven't done so already, clone (or symlink) the WARDuino repository to `~/Arduino/libraries/WARDuino` to make it available to Arduino. (see [#installation](#installation))
 
 ## 📸 Flashing using Arduino
 
@@ -139,4 +122,51 @@ make flash
 ```
 
 Or simply run `idf.py flash`.
+
+## 🛠️ Arduino Toolchain Setup {#arduino}
+
+In order to setup the Arduino toolchain for WARDuino, you need to first install the [arduino-cli](https://arduino.github.io/arduino-cli/0.21/installation/).
+You will also need `python3` with the `pyserial` package.
+
+Second, create the config file:
+
+```bash
+arduino-cli config init
+```
+
+If you need additional boards, such as the esp32 boards, you can add them in the generated config file.
+
+To find the location of your config file you can run:
+
+```bash
+arduino-cli config dump --verbose
+```
+
+Add the ESP32 board manager URL to the config file:
+
+```yaml
+board_manager:
+  additional_urls:
+      - https://espressif.github.io/arduino-esp32/package_esp32_index.json
+```
+
+Then, update the index and install the ESP32 platform.
+
+```bash
+arduino-cli core update-index
+arduino-cli core install esp32:esp32
+```
+
+::: warning
+To use ESP32 boards with WARDuino you need at least version 2.0.2 of the board manager.
+:::
+
+Thirdly, make sure you install the `PubSubClient` and `Adafruit NeoPixel` library, which are used by some primitives.
+
+```bash
+arduino-cli lib install "PubSubClient" # for MQTT
+arduino-cli lib install "Adafruit NeoPixel"
+```
+
+If you haven't done so already, clone (or symlink) the WARDuino repository to `~/Arduino/libraries/WARDuino` to make it available to Arduino. (see [#installation](#installation))
 
