@@ -1,6 +1,6 @@
 # Examples
 
-All examples can be found in the [repository](https://github.com/TOPLLab/WARDuino/tree/main/examples) of the WARDuino virtual machine.
+All examples can be found in the [repository](https://github.com/TOPLLab/WARDuino/tree/main/tutorials) of the WARDuino virtual machine.
 
 ## Basics
 
