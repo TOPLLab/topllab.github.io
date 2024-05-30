@@ -12,13 +12,13 @@ The built-in primitives are divided conceptually into different modules, accordi
 
 | Module              |      Arduino          |        ESP IDF        |         Zephyr        |
 |:------------------- |:---------------------:|:---------------------:|:---------------------:|
-| analog I/O          | :white_check_mark:    | :heavy_minus_sign:    | :construction_worker: |
-| digital I/O         | :white_check_mark:    | :white_check_mark:    | :construction_worker: |
+| analog I/O          | :white_check_mark:    | :heavy_minus_sign:    | :heavy_minus_sign:    |
+| digital I/O         | :white_check_mark:    | :white_check_mark:    | :white_check_mark:    |
 | external interrupts | :white_check_mark:    | :heavy_minus_sign:    | :heavy_minus_sign:    |
 | http                | :construction_worker: | :heavy_minus_sign:    | :heavy_minus_sign:    |
 | mqtt                | :construction_worker: | :heavy_minus_sign:    | :heavy_minus_sign:    |
 | neopixel            | :construction_worker: | :heavy_minus_sign:    | :heavy_minus_sign:    |
-| serial              | :white_check_mark:    | :heavy_minus_sign:    | :heavy_minus_sign:    |
+| serial              | :white_check_mark:    | :heavy_minus_sign:    | :construction_worker: |
 | spi                 | :white_check_mark:    | :heavy_minus_sign:    | :heavy_minus_sign:    |
 | time                | :white_check_mark:    | :construction_worker: | :heavy_minus_sign:    |
 | wifi                | :white_check_mark:    | :heavy_minus_sign:    | :heavy_minus_sign:    |
