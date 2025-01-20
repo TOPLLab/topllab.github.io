@@ -32,6 +32,7 @@ Messages are always ended by a newline.
 | Step (over)                                   |  05  | -                                | STEP! / AT [address]! |         `05` |
 | Add [breakpoint](#breakpoints)                |  06  | Breakpoint address               | BP [address]!         |     `06d902` |
 | Remove [breakpoint](#breakpoints)             |  07  | Breakpoint address               | BP [address]!         |     `07d902` |
+| Continue for                                  |  08  | Instruction count (i32)          |                       |       `0801` |
 | [Inspect](#inspect) specific state components |  09  | Number of components + their IDs | [json](#example)      | `0900020104` |
 | Dump VM state                                 |  10  | -                                | [json](#dumps)        |         `10` |
 | Dump local variables                          |  11  | -                                | [json](#dumps)        |         `11` |
