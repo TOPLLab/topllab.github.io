@@ -4,6 +4,14 @@ import citation from '../.vitepress/components/citation.vue'
 
 # Published Articles
 
+## Latch (2024)
+
+<citation file="/latch.bib" url= "https://doi.org/10.1016/j.scico.2024.103157" />
+
+A test framework, Latch, for large-scale automated testing on constrained hardware, built on a test specification language utilizing the WARDuino debug operations.
+
+[-> technical reference](/guide/latch.html)
+
 ## WARDuino 2.0 (2024)
 
 <citation file="/cola.bib" url= "https://doi.org/10.1016/j.cola.2024.101268" />
