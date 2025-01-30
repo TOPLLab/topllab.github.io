@@ -18,8 +18,8 @@ function until(attempt: () => void,
 export function main(): void {
     // Connect to Wi-Fi
     until(
-        () => { WiFi.connect(config.SSID, config.PASSWORD); },
-        WiFi.connected);
+        WiFi.connected,
+        () => { WiFi.connect(config.SSID, config.PASSWORD); });
     let message = "Connected to wifi network with ip: ";
     print(message.concat(WiFi.localip()));
    
