@@ -9,11 +9,13 @@ If you are looking to just get started with programming, [the Programmer's Guide
 
 [-> WARDuino architecture](architecture.md)
 
-[-> Built-in Primitives](primitives.md)
+[-> Built-in Actions](actions/index.md)
 
 [-> Remote debug protocol](debug-protocol.md)
 
 [-> EDWARD reference](edward/index.md)
+
+[-> MIO reference](mio/index.md)
 
 [-> Latch reference](/latch/index.md)
 

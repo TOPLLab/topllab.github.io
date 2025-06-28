@@ -21,10 +21,9 @@ November 14, 2024 | 4 min read
 
 ***
 
-In this blog post, we discuss the wide applicability of the [MIO multiverse debugger]() in WARDuino.
+In this blog post, we discuss the wide applicability of the [MIO multiverse debugger](/reference/mio/) in WARDuino.
 
 ## Binary Counter with LEDs
-
 
 ## Lego Mindstorms Color Dial
 

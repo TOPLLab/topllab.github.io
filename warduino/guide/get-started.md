@@ -38,7 +38,7 @@ cargo install warduino
 
 :::
 
-The language library provides access to the [primitives](/reference/primitives) of WARDuino directly from AssemblyScript or Rust. 
+The language library provides access to the [actions](/reference/actions/) of WARDuino directly from AssemblyScript or Rust. 
 Once you have written your program and compiled it to WebAssembly, you need to install WARDuino and the toolchains of the platform you are targeting.
 
 
@@ -98,7 +98,7 @@ Command-line arguments always overwrite commands in the `.config` file.
 ## 📸 Flashing using ESP-IDF
 
 ::: warning Under construction
-Primitive support for IDF is incomplete (see [implementation status](/reference/primitives)).
+Primitive support for IDF is incomplete (see [implementation status](/reference/actions/)).
 :::
 
 Before you can compile and flash with ESP-IDF, you must install and enable the toolchain. You also need to disable the watchdog timer:

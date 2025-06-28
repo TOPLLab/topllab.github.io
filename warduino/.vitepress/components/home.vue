@@ -68,6 +68,7 @@ const {frontmatter: fm} = useData()
                 <p><a href="./reference/architecture.html">-&gt; WARDuino architecture</a></p>
                 <p><a href="./reference/actions/index.html">-&gt; Built-in actions</a></p>
                 <p><a href="./reference/debug-protocol.html">-&gt; Remote debug protocol</a></p>
+                <p><a href="./reference/mio/index.html">-&gt; MIO debugger</a></p>
                 <p><a href="./reference/edward/index.html">-&gt; EDWARD debugger</a></p>
                 <p><a href="./latch/index.html">-&gt; Latch testing</a></p>
               </article>
