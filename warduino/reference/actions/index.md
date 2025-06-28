@@ -1,4 +1,4 @@
-# Built-in Primitives
+# Built-in Actions
 
 ::: tip Programming in high-level languages
 

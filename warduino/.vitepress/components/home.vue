@@ -66,7 +66,7 @@ const {frontmatter: fm} = useData()
                   </div>
                 </div>
                 <p><a href="./reference/architecture.html">-&gt; WARDuino architecture</a></p>
-                <p><a href="./reference/primitives.html">-&gt; Built-in primitives</a></p>
+                <p><a href="./reference/actions/index.html">-&gt; Built-in actions</a></p>
                 <p><a href="./reference/debug-protocol.html">-&gt; Remote debug protocol</a></p>
                 <p><a href="./reference/edward/index.html">-&gt; EDWARD debugger</a></p>
                 <p><a href="./latch/index.html">-&gt; Latch testing</a></p>
@@ -115,7 +115,17 @@ const {frontmatter: fm} = useData()
                 <p><a href="https://github.com/TOPLLab/as-warduino-template" target="_blank">-&gt; AssemblyScript <span
                     class="material-symbols-rounded">open_in_new</span></a></p>
               </article>
-              <div></div>
+              <article class="list">
+                <div class="heading">
+                  <div class="icon">
+                    <span class="material-symbols-rounded">newsstand</span>
+                  </div>
+                  <div>
+                    <h4>Blog posts</h4>
+                  </div>
+                </div>
+                <p><a style="font-size: 14px" href="./blog/multiverse.html">-&gt; Applications for the MIO debugger</a></p>
+              </article>
             </div>
           </div>
 

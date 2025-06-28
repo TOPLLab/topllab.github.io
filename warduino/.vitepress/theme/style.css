@@ -151,6 +151,15 @@ html::-webkit-scrollbar-thumb:hover, pre::-webkit-scrollbar-thumb:hover, aside::
 }
 
 /**
+ * General restyling
+ * -------------------------------------------------------------------------- */
+.vp-doc h2 {
+  border-top: none;
+  margin: 16px 0 16px;
+}
+
+
+/**
  * Component: Button
  * -------------------------------------------------------------------------- */
 

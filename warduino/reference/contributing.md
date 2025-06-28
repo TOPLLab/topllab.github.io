@@ -23,8 +23,6 @@ border-color: rgba(46, 160, 67, 0.4);
 
 ## ✨ How Can I Contribute?
 
-If you want to help with development, issues on the [roadmap](https://github.com/orgs/TOPLLab/projects/1) with low priority are a good starting point.
-
 Any sort of contribution is welcome! Including, but not limited to:
 
 - Report a bug you identified

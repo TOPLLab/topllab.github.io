@@ -126,3 +126,11 @@ The `Halt (02)` debug message stops the virtual machine, while the `Reset (13)` 
 
 WARDuino also supports out-of-place debugging through the EDWARD debugger. A similar overview of the debug messages for EDWARD can be found in [this reference sheet](/reference/edward/protocol).
 
+### Transfer state
+
+Write `ffff` followed by `aaaa` to the start of the memory.
+
+```plaintext
+520002060002ffff060204aaaa
+```
+

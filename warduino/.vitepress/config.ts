@@ -87,7 +87,12 @@ export default defineConfig({
         items: [
           { text: 'Overview', link: '/reference/' },
           { text: 'Architecture', link: '/reference/architecture' },
-          { text: 'Primitives', link: '/reference/primitives' },
+          { text: 'Actions',
+            collapsed: true,
+            items: [
+                { text: 'Overview', link: '/reference/actions/' },
+            ]
+          },
           { text: 'Debug Protocol', link: '/reference/debug-protocol' },
           {
             text: 'EDWARD',
@@ -112,6 +117,14 @@ export default defineConfig({
             ]
           },
           { text: 'VS Code Plugin', link: '/reference/plugin' }
+        ]
+      },
+
+      {
+        text: "Blog Posts",
+        collapsed: true,
+        items: [
+          { text: 'Applications for the MIO debugger', link: '/blog/multiverse' },
         ]
       },
 
