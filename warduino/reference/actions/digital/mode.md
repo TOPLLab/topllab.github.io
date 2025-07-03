@@ -15,7 +15,8 @@ function pinMode(pin: i32, mode: PinMode): void
 ```
 
 ```rust [Rust]
-fn pin_mode(pin: i32, mode: PinMode)
+fn pin_mode(pin: u32, mode: PinMode)
+```
 :::
 
 ## Supported platforms
@@ -29,5 +30,26 @@ fn pin_mode(pin: i32, mode: PinMode)
 ### WebAssembly
 
 - **pin**: must be a valid I/O pin number of the microcontroller
-- **mode**: either 0 (input) or 1 (output)
+- **mode**: either 0 (input) or 2 (output)
 
+### AssemblyScript
+
+```ts [AS]
+enum PinMode {
+    /** Input mode for digital pins */
+    INPUT  = 0x0,
+    /** Output mode for digital pins */
+    OUTPUT = 0x2,
+}
+```
+
+### Rust
+
+```rust [Rust]
+enum PinMode {
+    /** Input mode for digital pins */
+    INPUT  = 0x0,
+    /** Output mode for digital pins */
+    OUTPUT = 0x2,
+}
+```
