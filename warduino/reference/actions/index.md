@@ -2,7 +2,7 @@
 
 The WARDuino virtual machine includes built-in actions (sometimes we refer to these as primitives) that provide access to hardware and IoT specific functionality in WebAssembly programs.
 
-## WebAssembly Actions
+## Overview
 
 The built-in actions are implemented seperately for each hardware platform.
 We group the built-in actions into modules, which are listed in the table below.
@@ -37,3 +37,10 @@ The actions can be imported in WebAssembly from the `env` module.
 
 The WARDuino virtual machine is open-source, and developers are encouraged to extend the existing primitives with their own functionality.
 
+## Actions documentation
+
+**Digital I/O**
+
+- [pin mode](/references/actions/mode)
+- [digital write](/references/actions/write)
+- [digital read](/references/actions/read)
