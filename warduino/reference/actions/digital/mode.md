@@ -2,6 +2,12 @@
 
 This action changes the mode of a digital I/O pin to either `INPUT` or `OUTPUT`.
 
+---
+
+|               | Emulator |      Arduino          |        ESP IDF        |         Zephyr        |
+|:------------------- |:--------:|:---------------------:|:---------------------:|:---------------------:|
+| Support | ⏪ | ✅ | ✅ | ⏪ |
+
 ## Interface
 
 ::: code-group
@@ -18,12 +24,6 @@ function pinMode(pin: i32, mode: PinMode): void
 fn pin_mode(pin: u32, mode: PinMode)
 ```
 :::
-
-## Supported platforms
-
-|               | Emulator |      Arduino          |        ESP IDF        |         Zephyr        |
-|:------------------- |:--------:|:---------------------:|:---------------------:|:---------------------:|
-| Support | ⏪ | ✅ | ✅ | ⏪ |
 
 ## Parameters
 

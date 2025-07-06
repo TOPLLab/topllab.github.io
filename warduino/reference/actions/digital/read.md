@@ -2,6 +2,12 @@
 
 This action changes changes the signal of a digital I/O pin to either `LOW` or `HIGH`.
 
+---
+
+|               | Emulator |      Arduino          |        ESP IDF        |         Zephyr        |
+|:------------------- |:--------:|:---------------------:|:---------------------:|:---------------------:|
+| Support | ⏪ | ✅ | ✅ | ⏪ |
+
 ## Interface
 
 ::: code-group
@@ -18,12 +24,6 @@ function digitalRead(pin: i32, value: PinVoltage): void
 fn digital_read(pin: u32, value: PinVoltage)
 ```
 :::
-
-## Supported platforms
-
-|               | Emulator |      Arduino          |        ESP IDF        |         Zephyr        |
-|:------------------- |:--------:|:---------------------:|:---------------------:|:---------------------:|
-| Support | ⏪ | ✅ | ✅ | ⏪ |
 
 ## Parameters
 
