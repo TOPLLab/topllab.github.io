@@ -91,6 +91,14 @@ export default defineConfig({
             collapsed: true,
             items: [
                 { text: 'Overview', link: '/reference/actions/' },
+                { text: 'Digital I/O',
+                  collapsed: true,
+                  items: [
+                    { text: 'Pin mode', link: '/reference/actions/digital/mode' },
+                    { text: 'Digital read', link: '/reference/actions/digital/read' },
+                    { text: 'Digital write', link: '/reference/actions/digital/write' },
+                  ]
+                },
             ]
           },
           { text: 'Debug Protocol', link: '/reference/debug-protocol' },
