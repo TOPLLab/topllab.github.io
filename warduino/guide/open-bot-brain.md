@@ -6,6 +6,12 @@ To use WARDuino on this hardware, the Zephyr platform should be used. To get sta
 
 By default Zephyr will use the [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) to flash the board, which you will also need to install.
 
+## Cloning WARDuino
+To get started with WARDuino for Open Bot Brain you will first need to clone it using the following command:
+```bash
+git clone --recursive git@github.com:TOPLLab/WARDuino.git
+```
+
 ## Adding your program
 Before building WARDuino you will need to specify the program which the VM will execute when starting. To achieve this, you will need to compile your WebAssembly program and place the resulting executable in the `platforms/Zephyr` directory with the name `upload.wasm`.
 
