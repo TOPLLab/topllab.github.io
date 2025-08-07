@@ -54,6 +54,7 @@ const {frontmatter: fm} = useData()
                 <p><a href="./guide/get-started.html">-&gt; Get started</a></p>
                 <p><a href="./guide/examples/index.html">-&gt; Examples</a></p>
                 <p><a href="./guide/plugin/">-&gt; VS Code plugin</a></p>
+                <p><a href="./guide/open-bot-brain.html">-&gt; Open Bot Brain</a></p>
                 <p><a href="./guide/latch.html">-&gt; Automated testing</a></p>
               </article>
               <article class="list">
