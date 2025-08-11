@@ -11,7 +11,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: vuepress-deploy
-      uses: jenkey2011/vuepress-deploy@master
+      uses: rdenarie/vuepress-deploy@master
       env:
         ACCESS_TOKEN: ${{ secrets.PAGES_TOKEN }}
         TARGET_REPO: topllab/WARDuino
