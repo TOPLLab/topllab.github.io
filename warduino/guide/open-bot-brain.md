@@ -137,6 +137,8 @@ In terms of inputs we supports UART based sensors such as the EV3 Color and Gyro
 ### Example usage
 To illustrate how some of these primitives could be used we show a simple line follower example program. This robot has two wheels and drives left or right depending on if it sees a dark or a light color with its color sensor. By doing so the robot will follow the edge of a dark line on the floor.
 
+![Line follower robot](/images/line-follower.jpg)
+
 Since a lot of this code is similar to the blink example, we highlighted the main changes. In particular we now import three extra primitives and disable the sleep mode on the motor drivers. Using this setup a simple line follower can be written in just a few lines of code as shown in the `main` function.
 
 ```ts:line-numbers [AS]
