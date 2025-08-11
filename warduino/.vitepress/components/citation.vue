@@ -56,7 +56,7 @@ export default {
   },
 
   created() {
-    fetch(withBase(this.file), {
+    fetch(window.location.origin + withBase(this.file), {
       headers: {
         'Content-Type': 'text/plain'
       }
