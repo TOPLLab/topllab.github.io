@@ -67,6 +67,7 @@ export default defineConfig({
               { text: 'Debugging Hardware', link: '/guide/plugin/tutorial' },
             ]
           },
+          { text: 'Open Bot Brain', link: '/guide/open-bot-brain' },
           { text: 'Testing on Hardware', link: '/guide/latch' }
         ]
       },
@@ -124,7 +125,7 @@ export default defineConfig({
               { text: 'Latch API', link: '/latch/api' },
             ]
           },
-          { text: 'VS Code Plugin', link: '/reference/plugin' }
+          { text: 'VS Code Plugin', link: '/reference/plugin' },
         ]
       },
 
