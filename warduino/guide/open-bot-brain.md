@@ -225,6 +225,7 @@ export function main(): void { // [!code focus:19]
             driveMotor(OutputPort.port1, 0);
             driveMotor(OutputPort.port2, 5000);
         }
+        delay(5);
     }
 }
 ```
